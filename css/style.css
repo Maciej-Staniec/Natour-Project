@@ -6,3 +6,21 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* A cross-browser reset, often referred to as a CSS reset or a CSS normalization, is a technique used to reset or normalize default browser styling to create a consistent starting point for styling elements across different web browsers.
+
+Different browsers have their default styles for various HTML elements. This can lead to inconsistencies in appearance and layout between browsers. A CSS reset aims to neutralize these default styles, removing browser-specific styling differences, and providing a consistent baseline styling for your webpage across different browsers. */
+
+/* Reset margins and paddings for all elements */
+* {
+  /* Each html element has default margin and padding. We want to provide consistency across all browsers so we set their value to 0. */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Optional: Include border and padding in the element's total width and height */
+}
+
+/* When it comes to fonts, we want to default their settings in the body element as it gives us a powerful inheritance property. */
+
+body {
+  font: "Lato", sans-serif;
+}
