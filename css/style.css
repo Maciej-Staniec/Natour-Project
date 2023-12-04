@@ -23,4 +23,19 @@ Different browsers have their default styles for various HTML elements. This can
 
 body {
   font: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* 1.7 Line height means that the line height is 1.7x times bigger than the default value. */
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  /* This property sets the height of the HTML element to 95% of the current viewport. Monitors vary in size, so this property resizes the elements based on the maximum height of the view port. */
+  height: 95vh;
+  background-image: url(../img/hero.jpg);
+  /* Set the image to cover the whole width of the viewport */
+  background-size: cover;
+  /* Setting up the image position to top makes it stay in the middle when we use a device with a different viewport size.*/
+  background-position: top;
 }
