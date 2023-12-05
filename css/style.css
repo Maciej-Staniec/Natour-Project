@@ -22,7 +22,7 @@ Different browsers have their default styles for various HTML elements. This can
 /* When it comes to fonts, we want to default their settings in the body element as it gives us a powerful inheritance property. */
 
 body {
-  font: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
   /* 1.7 Line height means that the line height is 1.7x times bigger than the default value. */
@@ -45,5 +45,28 @@ body {
   /* Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.*/
   background-position: top;
   /* syntax: (x y(first point), x y (2nd point), x y (3rd point), x y (4th point) */
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(0% 100%, 50% 0, 100% 100%); */
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* We don't need to specify the width property. A browser will figure it out. */
+  height: 35px;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+}
+.heading-primary-sub {
 }
