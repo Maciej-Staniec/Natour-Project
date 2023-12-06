@@ -1,0 +1,62 @@
+--- 01. TYPOGRAPHY SYSTEM
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+**** Font weights:
+Default: 400
+100
+300
+400
+700
+900
+
+**** Line heights:
+Default: 1
+
+
+**** Letter spacing
+3.6rem
+1.75rem
+
+--- 02. WHITESPACE
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+--- 03. COLOURS
+
+MAIN COLOR: #e67e22
+
+TINTS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+SHADES:
+
+ACCENTS:
+
+GREYS:
+#333
+#555
+#6f6f6f
+#767676
+#888
+#aaa
+#ddd
+#eee
+
+--- 04. IMAGES
+height:
+width:
+
+--- 05. ICONS
+height:
+width:
+
+--- 06. SHADOWS
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
+
+--- 07. BORDER-RADIUS
+Default:
+Medium:

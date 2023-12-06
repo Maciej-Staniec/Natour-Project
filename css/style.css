@@ -1,12 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
 /* A cross-browser reset, often referred to as a CSS reset or a CSS normalization, is a technique used to reset or normalize default browser styling to create a consistent starting point for styling elements across different web browsers.
 
 Different browsers have their default styles for various HTML elements. This can lead to inconsistencies in appearance and layout between browsers. A CSS reset aims to neutralize these default styles, removing browser-specific styling differences, and providing a consistent baseline styling for your webpage across different browsers. */
@@ -17,6 +8,10 @@ Different browsers have their default styles for various HTML elements. This can
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Optional: Include border and padding in the element's total width and height */
+}
+
+html {
+  font-size: 62.5%;
 }
 
 /* When it comes to fonts, we want to default their settings in the body element as it gives us a powerful inheritance property. */
@@ -61,12 +56,47 @@ body {
   height: 35px;
 }
 
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
 }
 
 .heading-primary-main {
+  display: block;
+  font-size: 6.2rem;
+  letter-spacing: 3.6rem;
+  font-weight: 400;
+
+  animation-name: MoveInLeft;
+  animation-duration: 3s;
 }
+
 .heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1.75rem;
+  font-weight: 700;
+}
+
+@keyframes MoveInLeft {
+  /* Start of the animation */
+  0% {
+    opacity: 0;
+    /* We want the header to fade in from the left */
+    transform: translateX(-100px);
+  }
+
+  /* Finish of the animation */
+  100% {
+    opacity: 1;
+    /* And we want it to stop at its current position (-50%) */
+    transform: translate(0);
+  }
 }
