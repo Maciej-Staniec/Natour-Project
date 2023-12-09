@@ -52,8 +52,14 @@ body {
 }
 
 .logo {
-  /* We don't need to specify the width property. A browser will figure it out. */
+  /* We don't need to specify the width property. Browsers will figure it out. */
   height: 35px;
+  backface-visibility: hidden;
+}
+
+/* Apply animation on hover */
+.logo:hover {
+  animation: enlarge 1s ease-in-out;
 }
 
 .text-box {
@@ -66,6 +72,9 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  /* To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to usethe backface-visibility property as set its value to hidden*/
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -75,7 +84,10 @@ body {
   font-weight: 400;
 
   animation-name: MoveInLeft;
-  animation-duration: 3s;
+  animation-duration: 1s;
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+  animation-timing-function: ease-out;
 }
 
 .heading-primary-sub {
@@ -83,6 +95,9 @@ body {
   font-size: 2rem;
   letter-spacing: 1.75rem;
   font-weight: 700;
+
+  /* Let's use a CSS property, which contain all the necessary animation properties to shorten our code. */
+  animation: MoveInRight 1s ease-out;
 }
 
 @keyframes MoveInLeft {
@@ -93,10 +108,68 @@ body {
     transform: translateX(-100px);
   }
 
+  80% {
+    transform: translateX(10px);
+  }
+
   /* Finish of the animation */
   100% {
     opacity: 1;
-    /* And we want it to stop at its current position (-50%) */
-    transform: translate(0);
+    /* And we want it to stop at its current position (-50% on the element's X axis) */
+    transform: translateX(0);
   }
+}
+
+@keyframes MoveInRight {
+  /* Start of the animation */
+  0% {
+    opacity: 0;
+    /* We want the header to fade in from the right */
+    transform: translateX(100px);
+  }
+
+  /* 60% {
+    transform:rotate(-20deg)
+  } */
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  /* Finish of the animation */
+  100% {
+    opacity: 1;
+    /* And we want it to stop at its current position (-50% on the element's X axis) */
+    transform: translateX(0);
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+
+  50% {
+    transform: scale(1.2); /* Scale to 120% */
+  }
+
+  100% {
+    transform: scale(1); /* Back to initial scale */
+  }
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  padding: 1.6rem 4.8rem;
+  
+  border: none;
+  cursor: pointer;
+  border-radius: 10rem;
+  text-transform: uppercase;
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
 }

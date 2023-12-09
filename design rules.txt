@@ -25,11 +25,10 @@ Default: 1
 
 --- 03. COLOURS
 
-MAIN COLOR: #e67e22
+MAIN COLOR: #55c57a
 
 TINTS:
 Light green: #7ed56f
-Medium green: #55c57a
 Dark green: #28b485
 
 SHADES:
@@ -37,14 +36,7 @@ SHADES:
 ACCENTS:
 
 GREYS:
-#333
-#555
-#6f6f6f
-#767676
-#888
-#aaa
-#ddd
-#eee
+#777
 
 --- 04. IMAGES
 height:
@@ -54,9 +46,12 @@ width:
 height:
 width:
 
+--- 05. LOGO
+height: 35px
+width:
+
 --- 06. SHADOWS
 box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
 
 --- 07. BORDER-RADIUS
-Default:
-Medium:
+Buttons: 1.6rem 4.8rem
