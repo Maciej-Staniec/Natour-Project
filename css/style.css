@@ -158,15 +158,18 @@ body {
   }
 }
 
-.btn,
+/* We use pseudoclasses to style elements under certain conditions */
+/* The :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage. */
 .btn:link,
+/* the visited pseudo class targets links that have already been visited or clicked by the user.*/
 .btn:visited {
   padding: 1.6rem 4.8rem;
-  
+  text-decoration: none;
   border: none;
   cursor: pointer;
   border-radius: 10rem;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .btn-white {
