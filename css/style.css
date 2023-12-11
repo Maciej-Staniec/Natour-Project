@@ -67,14 +67,16 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* Anchor tags - "a" elements are treated as text. Therefore, setting the text-align property works for them. */
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-
-  /* To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to usethe backface-visibility property as set its value to hidden*/
+  /* To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to use the backface-visibility property and set its value to hidden*/
   backface-visibility: hidden;
+  margin-bottom: 6.4rem;
 }
 
 .heading-primary-main {
@@ -166,10 +168,20 @@ body {
   padding: 1.6rem 4.8rem;
   text-decoration: none;
   border: none;
-  cursor: pointer;
+  /* cursor: pointer; */
   border-radius: 10rem;
   text-transform: uppercase;
+  /* Using display: inline-block; for the buttons allows them to sit next to each other horizontally in the same line while applying margin between them to create spacing. It also accepts block-level properties such as setting width, height, padding, and margins.*/
   display: inline-block;
+}
+
+/* :hover: Applies styles when the mouse pointer is over the link. */
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* :active: Applies styles when the link is being activated (usually when it's being clicked). */
+.btb:active {
 }
 
 .btn-white {
