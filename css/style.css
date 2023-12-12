@@ -173,15 +173,49 @@ body {
   text-transform: uppercase;
   /* Using display: inline-block; for the buttons allows them to sit next to each other horizontally in the same line while applying margin between them to create spacing. It also accepts block-level properties such as setting width, height, padding, and margins.*/
   display: inline-block;
-}
 
+  /* How transition: all Works:
+  Applies Transition to All Properties: It sets a transition effect for all properties that can be transitioned (e.g., width, height, color, background, etc.) within the specified element.
+  Uniform Transition for All Changes: When any of these properties change (due to a CSS change, hover effect, class change, etc.), the transition effect defined by transition: all will be applied uniformly to those changes. */
+  /* Syntax:  transition: all <duration> <timing-function> <delay>; */
+  transition: all 0.2s ease;
+
+  /* Timing functions
+  A timing function in CSS is used to define the pace or speed curve of a transition or animation between two states of an element. It determines how the intermediate values of a transition are calculated over time, affecting the acceleration and deceleration of the animation.
+
+  Common Timing Functions:
+  1. Ease (default):
+  ease: Starts slow, accelerates, then slows down toward the end of the transition. It's commonly used and provides a smooth and natural transition.
+  2. Linear:
+  linear: Progresses at a constant speed throughout the transition, without acceleration or deceleration. The change occurs at a constant rate.
+  3. Ease-in, Ease-out Variations:
+  ease-in: Starts the transition slowly and accelerates as it progresses.
+  ease-out: Begins the transition at full speed and decelerates as it finishes.
+  ease-in-out: Combines ease-in and ease-out, starting and ending the transition slowly with an acceleration in the middle.
+  */
+}
 /* :hover: Applies styles when the mouse pointer is over the link. */
 .btn:hover {
   transform: translateY(-3px);
+  /* 
+  The box-shadow CSS property adds a shadow effect to an element. It creates a shadow around the border-box of an element, allowing you to create depth and dimensionality in your designs. 
+
+  Syntax:
+  box-shadow: h-offset v-offset blur spread color inset;
+
+  - h-offset: Horizontal offset of the shadow. Positive values move the shadow right, negative values move it left.
+  - v-offset: Vertical offset of the shadow. Positive values move the shadow down, negative values move it up.
+  - blur: Optional parameter that specifies the blur radius. Larger values create a more blurred shadow.
+  - spread: Optional parameter that specifies the spread radius. Positive - values expand the shadow, negative values shrink it.
+  - color: Color of the shadow. Can be a keyword, hex, RGB, or RGBA value.
+  - inset: Optional keyword that creates an inner shadow if specified.
+  */
+  box-shadow: 0 5px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* :active: Applies styles when the link is being activated (usually when it's being clicked). */
-.btb:active {
+.btn:active {
+  transform: translateY(-1px);
 }
 
 .btn-white {
