@@ -210,15 +210,48 @@ body {
   - color: Color of the shadow. Can be a keyword, hex, RGB, or RGBA value.
   - inset: Optional keyword that creates an inner shadow if specified.
   */
-  box-shadow: 0 5px 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* :active: Applies styles when the link is being activated (usually when it's being clicked). */
 .btn:active {
   transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-white {
   background-color: white;
   color: #777;
+}
+
+/* 
+************** Pseudo elements **************
+
+Pseudo-elements in CSS allow you to style specific parts of an HTML element without adding extra HTML markup code. They target certain parts of an element's content or structure, enabling you to apply styles to those parts. Pseudo-elements are powerful tools to enhance the presentation and styling of specific parts of an element's content or structure without modifying the HTML structure itself.
+
+Common Pseudo-elements:
+::before: Adds content before the selected element's content.
+::after: Adds content after the selected element's content.
+::first-line: Styles the first line of text within an element.
+::first-letter: Styles the first letter of text within an element.
+::selection: Styles the portion of text selected by the user.
+
+Pseudo-elements use double colons (::) in modern CSS to distinguish them from pseudo-classes (e.g., :hover, :focus). However, for compatibility reasons, single colons (:) are still supported in some older browsers.
+
+ */
+
+.btn::after {
+  /* By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content propery must be stated, even if it is going to be empty.*/
+  content: "";
+  /* We want the pseudo element look exactly the same as the button. Therefore, we want to specify its properties like height and width to be the same that is setting their value to 100%. It works, because pseudo element is treated like a child element of the parent element (button).*/
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+}
+
+/* We also want to specify the colour of the pseudo element to be white, but this has to be applied to .btn-white class. */
+.btn-white::after {
+  content: "";
+  background-color: white;
 }
