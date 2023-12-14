@@ -193,6 +193,7 @@ body {
   ease-out: Begins the transition at full speed and decelerates as it finishes.
   ease-in-out: Combines ease-in and ease-out, starting and ending the transition slowly with an acceleration in the middle.
   */
+  position: relative;
 }
 /* :hover: Applies styles when the mouse pointer is over the link. */
 .btn:hover {
@@ -241,17 +242,28 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
  */
 
 .btn::after {
-  /* By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content propery must be stated, even if it is going to be empty.*/
+  /* By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content property must be declared, even if it is empty.*/
   content: "";
-  /* We want the pseudo element look exactly the same as the button. Therefore, we want to specify its properties like height and width to be the same that is setting their value to 100%. It works, because pseudo element is treated like a child element of the parent element (button).*/
+  /* We want the pseudo element look exactly the same as the button. Therefore, we want to specify its properties like height and width to be the same. Therefore, we need to set their values to 100% (100% of the parent element). It works, because pseudo element is treated like a child element of the parent element (button).*/
   display: inline-block;
   height: 100%;
   width: 100%;
   border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
 }
 
-/* We also want to specify the colour of the pseudo element to be white, but this has to be applied to .btn-white class. */
+/* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
 .btn-white::after {
   content: "";
   background-color: white;
+}
+
+/* We want to see the advanced animation only if we hover over the button */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
