@@ -267,3 +267,32 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
+
+@keyframes MoveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-animated {
+  /* Syntax of the animation property
+  animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+  - name: Specifies the name of the @keyframes rule that defines the animation.
+  - duration: Specifies how long the animation will take to complete (e.g., 1s, 500ms).
+  - timing-function: Defines the speed curve or pacing of the animation (e.g., ease, linear, ease-in-out, cubic-bezier()).
+  - delay: Specifies a delay before the animation starts (e.g., 0s, 1s).
+  - iteration-count: Defines the number of times the animation will run (infinite or a numeric value).
+  - direction: Specifies whether the animation plays forward, backward, or alternates (e.g., normal, reverse, alternate).
+  - fill-mode: Controls the styles applied to the element before and after the animation (e.g., forwards, backwards, both).
+  - play-state: Specifies whether the animation is running or paused (e.g., running, paused).
+ */
+  animation: MoveInButton 0.5s ease-out 0.75s;
+  /* animation fill mode set to backwards applies the 0% animation declaration to our button before the animation happens. Therefore, we don't have to explicitly apply these styles to the button which prevents confusion. */
+  animation-fill-mode: backwards;
+}
