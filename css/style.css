@@ -53,24 +53,24 @@ body {
   position: relative;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   /* We don't need to specify the width property. Browsers will figure it out. */
   height: 3.5rem;
   backface-visibility: hidden;
 }
 
 /* Apply animation on hover */
-.logo:hover {
+.header__logo:hover {
   animation: enlarge 1s ease-in-out;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -87,7 +87,7 @@ body {
   margin-bottom: 6.4rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6.2rem;
   letter-spacing: 3.6rem;
@@ -100,7 +100,7 @@ body {
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   letter-spacing: 1.75rem;
@@ -229,7 +229,7 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.btn-white {
+.btn--white {
   background-color: white;
   color: #777;
 }
@@ -266,7 +266,7 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
 }
 
 /* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
-.btn-white::after {
+.btn--white::after {
   content: "";
   background-color: white;
 }
@@ -288,7 +288,7 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
   }
 }
 
-.btn-animated {
+.btn--animated {
   /* Syntax of the animation property
   animation: name duration timing-function delay iteration-count direction fill-mode play-state;
 
