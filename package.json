@@ -1,0 +1,27 @@
+{
+  "name": "natour-project",
+  "version": "1.0.0",
+  "description": "Landing page for Natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maciej-Staniec/Natour-Project.git"
+  },
+  "keywords": [
+    "Natours",
+    "landing",
+    "page"
+  ],
+  "author": "Maciej Staniec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maciej-Staniec/Natour-Project/issues"
+  },
+  "homepage": "https://github.com/Maciej-Staniec/Natour-Project#readme",
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}
