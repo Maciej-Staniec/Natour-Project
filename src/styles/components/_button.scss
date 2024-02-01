@@ -1,0 +1,127 @@
+.btn {
+  /* We use pseudoclasses to style elements under certain conditions */
+
+  /* The :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage. */
+  &:link,
+/* the visited pseudo class targets links that have already been visited or clicked by the user.*/
+  &:visited {
+    font-size: 1.6rem;
+    padding: 1.6rem 4.8rem;
+    text-decoration: none;
+    border: none;
+    /* cursor: pointer; */
+    border-radius: 10rem;
+    text-transform: uppercase;
+    /* Using display: inline-block; for the buttons allows them to sit next to each other horizontally in the same line while applying margin between them to create spacing. It also accepts block-level properties such as setting width, height, padding, and margins.*/
+    display: inline-block;
+
+    /* How transition: all Works:
+  Applies Transition to All Properties: It sets a transition effect for all properties that can be transitioned (e.g., width, height, color, background, etc.) within the specified element.
+  Uniform Transition for All Changes: When any of these properties change (due to a CSS change, hover effect, class change, etc.), the transition effect defined by transition: all will be applied uniformly to those changes. */
+    /* Syntax:  transition: all <duration> <timing-function> <delay>; */
+    transition: all 0.2s ease;
+
+    /* Timing functions
+  A timing function in CSS is used to define the pace or speed curve of a transition or animation between two states of an element. It determines how the intermediate values of a transition are calculated over time, affecting the acceleration and deceleration of the animation.
+
+  Common Timing Functions:
+  1. Ease (default):
+  ease: Starts slow, accelerates, then slows down toward the end of the transition. It's commonly used and provides a smooth and natural transition.
+  2. Linear:
+  linear: Progresses at a constant speed throughout the transition, without acceleration or deceleration. The change occurs at a constant rate.
+  3. Ease-in, Ease-out Variations:
+  ease-in: Starts the transition slowly and accelerates as it progresses.
+  ease-out: Begins the transition at full speed and decelerates as it finishes.
+  ease-in-out: Combines ease-in and ease-out, starting and ending the transition slowly with an acceleration in the middle.
+  */
+    position: relative;
+  }
+  /* :hover: Applies styles when the mouse pointer is hovering over the link element. */
+  &:hover {
+    transform: translateY(-3px);
+    /* 
+  The box-shadow CSS property adds a shadow effect to an element. It creates a shadow around the border-box of an element, allowing you to create depth and dimensionality in your designs. 
+
+  Syntax:
+  box-shadow: h-offset v-offset blur spread color inset;
+
+  - h-offset: Horizontal offset of the shadow. Positive values move the shadow right, negative values move it left.
+  - v-offset: Vertical offset of the shadow. Positive values move the shadow down, negative values move it up.
+  - blur: Optional parameter that specifies the blur radius. Larger values create a more blurred shadow.
+  - spread: Optional parameter that specifies the spread radius. Positive - values expand the shadow, negative values shrink it.
+  - color: Color of the shadow. Can be a keyword, hex, RGB, or RGBA value.
+  - inset: Optional keyword that creates an inner shadow if specified.
+  */
+    box-shadow: 0 5px 20px rgba($color-black, 0.3);
+    /* We want to see the advanced animation only if we hover over the button */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* :active: Applies styles when the link is being activated (usually when it's being clicked). */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.3);
+  }
+
+  /* 
+************** Pseudo elements **************
+
+Pseudo-elements in CSS allow you to style specific parts of an HTML element without adding extra HTML markup code. They target certain parts of an element's content or structure, enabling you to apply styles to those parts. Pseudo-elements are powerful tools to enhance the presentation and styling of specific parts of an element's content or structure without modifying the HTML structure itself.
+
+Common Pseudo-elements:
+::before: Adds content before the selected element's content.
+::after: Adds content after the selected element's content.
+::first-line: Styles the first line of text within an element.
+::first-letter: Styles the first letter of text within an element.
+::selection: Styles the portion of text selected by the user.
+
+Pseudo-elements use double colons (::) in modern CSS to distinguish them from pseudo-classes (e.g., :hover, :focus). However, for compatibility reasons, single colons (:) are still supported in some older browsers.
+
+ */
+
+  &::after {
+    /* By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content property must be declared, even if it is empty.*/
+    content: "";
+    /* We want the pseudo element look exactly the same as the button. Therefore, we want to specify its properties like height and width to be the same. Therefore, we need to set their values to 100% (100% of the parent element). It works, because pseudo element is treated like a child element of the parent element (button).*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    /* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
+    &::after {
+      content: "";
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    /* Syntax of the animation property
+  animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+  - name: Specifies the name of the @keyframes rule that defines the animation.
+  - duration: Specifies how long the animation will take to complete (e.g., 1s, 500ms).
+  - timing-function: Defines the speed curve or pacing of the animation (e.g., ease, linear, ease-in-out, cubic-bezier()).
+  - delay: Specifies a delay before the animation starts (e.g., 0s, 1s).
+  - iteration-count: Defines the number of times the animation will run (infinite or a numeric value).
+  - direction: Specifies whether the animation plays forward, backward, or alternates (e.g., normal, reverse, alternate).
+  - fill-mode: Controls the styles applied to the element before and after the animation (e.g., forwards, backwards, both).
+  - play-state: Specifies whether the animation is running or paused (e.g., running, paused).
+ */
+    animation: MoveInButton 0.5s ease-out 0.75s;
+    /* animation fill mode set to backwards applies the 0% animation declaration to our button before the animation happens. Therefore, we don't have to explicitly apply these styles to the button which prevents confusion. */
+    animation-fill-mode: backwards;
+  }
+}

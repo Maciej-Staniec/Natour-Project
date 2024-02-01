@@ -1,0 +1,68 @@
+@keyframes MoveInLeft {
+  /* Start of the animation */
+  0% {
+    opacity: 0;
+    /* We want the header to fade in from the left */
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  /* Finish of the animation */
+  100% {
+    opacity: 1;
+    /* And we want it to stop at its current position (-50% on the element's X axis) */
+    transform: translateX(0);
+  }
+}
+
+@keyframes MoveInRight {
+  /* Start of the animation */
+  0% {
+    opacity: 0;
+    /* We want the header to fade in from the right */
+    transform: translateX(10rem);
+  }
+
+  /* 60% {
+    transform:rotate(-20deg)
+  } */
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  /* Finish of the animation */
+  100% {
+    opacity: 1;
+    /* And we want it to stop at its current position (-50% on the element's X axis) */
+    transform: translateX(0);
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+
+  50% {
+    transform: scale(1.2); /* Scale to 120% */
+  }
+
+  100% {
+    transform: scale(1); /* Back to initial scale */
+  }
+}
+
+@keyframes MoveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

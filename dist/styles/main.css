@@ -32,76 +32,6 @@ body {
   box-sizing: border-box; /* Optional: Include border and padding in the element's total width and height */
 }
 
-.header {
-  /* This property sets the height of the HTML element to 95% of the current viewport. Monitors vary in size, so this property resizes the elements based on the maximum height of the view port. */
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(39, 180, 133, 0.8)), url(../img/hero.jpg);
-  /* Set the image to cover the whole width of the viewport */
-  background-size: cover;
-  /* Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.*/
-  background-position: top;
-  /* syntax: (x y(first point), x y (2nd point), x y (3rd point), x y (4th point) */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* clip-path: polygon(0% 100%, 50% 0, 100% 100%); */
-  position: relative;
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  /* We don't need to specify the width property. Browsers will figure it out. */
-  height: 3.5rem;
-  backface-visibility: hidden;
-}
-
-/* Apply animation on hover */
-.header__logo:hover {
-  animation: enlarge 1s ease-in-out;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* Anchor tags - "a" elements are treated as text. Therefore, setting the text-align property works for them. */
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to use the backface-visibility property and set its value to hidden*/
-  backface-visibility: hidden;
-  margin-bottom: 6.4rem;
-}
-
-.heading-primary--main {
-  display: block;
-  font-size: 6.2rem;
-  letter-spacing: 3.6rem;
-  font-weight: 400;
-  animation-name: MoveInLeft;
-  animation-duration: 1s;
-  /* animation-delay: 3s; */
-  /* animation-iteration-count: 3; */
-  animation-timing-function: ease-out;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  font-weight: 700;
-  /* Let's use a CSS property, which contain all the necessary animation properties to shorten our code. */
-  animation: MoveInRight 1s ease-out;
-}
-
 @keyframes MoveInLeft {
   /* Start of the animation */
   0% {
@@ -150,10 +80,37 @@ body {
     transform: scale(1); /* Back to initial scale */
   }
 }
-/* We use pseudoclasses to style elements under certain conditions */
-/* The :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage. */
-.btn:link,
-.btn:visited {
+@keyframes MoveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.btn {
+  /* We use pseudoclasses to style elements under certain conditions */
+  /* The :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage. */
+  /* :hover: Applies styles when the mouse pointer is hovering over the link element. */
+  /* :active: Applies styles when the link is being activated (usually when it's being clicked). */
+  /* 
+  ************** Pseudo elements **************
+
+  Pseudo-elements in CSS allow you to style specific parts of an HTML element without adding extra HTML markup code. They target certain parts of an element's content or structure, enabling you to apply styles to those parts. Pseudo-elements are powerful tools to enhance the presentation and styling of specific parts of an element's content or structure without modifying the HTML structure itself.
+
+  Common Pseudo-elements:
+  ::before: Adds content before the selected element's content.
+  ::after: Adds content after the selected element's content.
+  ::first-line: Styles the first line of text within an element.
+  ::first-letter: Styles the first letter of text within an element.
+  ::selection: Styles the portion of text selected by the user.
+
+  Pseudo-elements use double colons (::) in modern CSS to distinguish them from pseudo-classes (e.g., :hover, :focus). However, for compatibility reasons, single colons (:) are still supported in some older browsers.
+
+   */
+}
+.btn:link, .btn:visited {
   font-size: 1.6rem;
   padding: 1.6rem 4.8rem;
   text-decoration: none;
@@ -183,8 +140,6 @@ body {
   */
   position: relative;
 }
-
-/* :hover: Applies styles when the mouse pointer is over the link. */
 .btn:hover {
   transform: translateY(-3px);
   /* 
@@ -201,34 +156,16 @@ body {
   - inset: Optional keyword that creates an inner shadow if specified.
   */
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  /* We want to see the advanced animation only if we hover over the button */
 }
-
-/* :active: Applies styles when the link is being activated (usually when it's being clicked). */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
-
-.btn--white {
-  background-color: white;
-  color: #777;
-}
-
-/* 
-************** Pseudo elements **************
-
-Pseudo-elements in CSS allow you to style specific parts of an HTML element without adding extra HTML markup code. They target certain parts of an element's content or structure, enabling you to apply styles to those parts. Pseudo-elements are powerful tools to enhance the presentation and styling of specific parts of an element's content or structure without modifying the HTML structure itself.
-
-Common Pseudo-elements:
-::before: Adds content before the selected element's content.
-::after: Adds content after the selected element's content.
-::first-line: Styles the first line of text within an element.
-::first-letter: Styles the first letter of text within an element.
-::selection: Styles the portion of text selected by the user.
-
-Pseudo-elements use double colons (::) in modern CSS to distinguish them from pseudo-classes (e.g., :hover, :focus). However, for compatibility reasons, single colons (:) are still supported in some older browsers.
-
- */
 .btn::after {
   /* By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content property must be declared, even if it is empty.*/
   content: "";
@@ -243,27 +180,14 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
   z-index: -1;
   transition: all 0.4s;
 }
-
-/* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  /* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
+}
 .btn--white::after {
   content: "";
-  background-color: white;
-}
-
-/* We want to see the advanced animation only if we hover over the button */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-@keyframes MoveInButton {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  100% {
-    opacity: 1;
-  }
+  background-color: #fff;
 }
 .btn--animated {
   /* Syntax of the animation property
@@ -281,4 +205,68 @@ Pseudo-elements use double colons (::) in modern CSS to distinguish them from ps
   animation: MoveInButton 0.5s ease-out 0.75s;
   /* animation fill mode set to backwards applies the 0% animation declaration to our button before the animation happens. Therefore, we don't have to explicitly apply these styles to the button which prevents confusion. */
   animation-fill-mode: backwards;
+}
+
+.header {
+  /* This property sets the height of the HTML element to 95% of the current viewport. Monitors vary in size, so this property resizes the elements based on the maximum height of the view port. */
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero.jpg);
+  /* Set the image to cover the whole width of the viewport */
+  background-size: cover;
+  /* Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.*/
+  background-position: top;
+  /* syntax: (x y(first point), x y (2nd point), x y (3rd point), x y (4th point) */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(0% 100%, 50% 0, 100% 100%); */
+  position: relative;
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  /* We don't need to specify the width property. Browsers will figure it out. */
+  height: 3.5rem;
+  backface-visibility: hidden;
+  /* Apply animation on hover */
+}
+.header__logo:hover {
+  animation: enlarge 1s ease-in-out;
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Anchor tags - "a" elements are treated as text. Therefore, setting the text-align property works for them. */
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to use the backface-visibility property and set its value to hidden*/
+  backface-visibility: hidden;
+  margin-bottom: 6.4rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6.2rem;
+  letter-spacing: 3.6rem;
+  font-weight: 400;
+  animation-name: MoveInLeft;
+  animation-duration: 1s;
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+  animation-timing-function: ease-out;
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1.75rem;
+  font-weight: 700;
+  /* Let's use a CSS property, which contain all the necessary animation properties to shorten our code. */
+  animation: MoveInRight 1s ease-out;
 }/*# sourceMappingURL=main.css.map */
