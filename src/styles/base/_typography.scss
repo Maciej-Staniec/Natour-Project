@@ -1,0 +1,40 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  // font-size: 16px;
+  // 1.7 Line height means that the line height is 1.7x times bigger than the default value.
+  // font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  // To stop web browsers from moving the html element to the top at the end of the animation (shaking issue) we need to use the backface-visibility property and set its value to hidde
+  backface-visibility: hidden;
+  margin-bottom: 6.4rem;
+
+  &--main {
+    display: block;
+    font-size: 6.2rem;
+    letter-spacing: 3.6rem;
+    font-weight: 400;
+
+    animation-name: MoveInLeft;
+    animation-duration: 1s;
+    // animation-delay: 3s;
+    // animation-iteration-count: 3;
+    animation-timing-function: ease-out;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+
+    // Let's use a CSS property, which contain all the necessary animation properties to shorten our code.
+    animation: MoveInRight 1s ease-out;
+  }
+}

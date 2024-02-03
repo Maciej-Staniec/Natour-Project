@@ -2,34 +2,27 @@
 
 Different browsers have their default styles for various HTML elements. This can lead to inconsistencies in appearance and layout between browsers. A CSS reset aims to neutralize these default styles, removing browser-specific styling differences, and providing a consistent baseline styling for your webpage across different browsers. */
 
-/* Reset margins and paddings for all elements, including pseudo elements by setting margin, padding and box sizing in the universal selector.*/
+// Reset margins and paddings for all elements, including pseudo elements by setting margin, padding and box sizing in the universal selector.
 *,
 *::before,
 *::after {
-  /* Each html element has default margin and padding. We want to provide consistency across all browsers so we set their value to 0. */
+  // Each html element has default margin and padding. We want to provide consistency across all browsers so we set their value to 0.
   margin: 0;
   padding: 0;
-  /* We want every element on our website to inherit the border-box value from the body element. Overall, it is a better practice than just setting the border-box value in the universal selector. */
+  // We want every element on our website to inherit the border-box value from the body element. Overall, it is a better practice than just setting the border-box value in the universal selector.
   box-sizing: inherit;
 }
 
 html {
-  /* The issue with setting the font-size to pixels is that it overwrites the font size set by the user in the browser settings. This is especially true for visually impaired people - they change the browser's default font size to a bigger one. By declaring it in pixels, we remove the ability for these people to view our website properly.  */
+  // The issue with setting the font-size to pixels is that it overwrites the font size set by the user in the browser settings. This is especially true for visually impaired people - they change the browser's default font size to a bigger one. By declaring it in pixels, we remove the ability for these people to view our website properly.
   font-size: 10px;
-  /* The default size of the web browser is 16px. We want to have a default root font size set to 10px. In order to make it possible for the visually impaired people to apply their font size setting, we have to use percentage value as this allows those people to scale font size to their size, unlike setting the font size to the fixed 10px value. */
+  // The default size of the web browser is 16px. We want to have a default root font size set to 10px. In order to make it possible for the visually impaired people to apply their font size setting, we have to use percentage value as this allows those people to scale font size to their size, unlike setting the font size to the fixed 10px value.
   font-size: 62.5%;
 }
 
-/* When it comes to fonts, we want to default their settings in the body element as it gives us a powerful inheritance property. */
+// When it comes to fonts, we want to default their settings in the body element as it gives us a powerful inheritance property.
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  /* 1.7 Line height means that the line height is 1.7x times bigger than the default value. */
-  /* font-size: 1.6rem; */
-  line-height: 1.7;
-  color: $color-grey-dark;
   padding: 3rem;
-  box-sizing: border-box; /* Optional: Include border and padding in the element's total width and height */
+  box-sizing: border-box; // Optional: Include border and padding in the element's total width and height
 }
