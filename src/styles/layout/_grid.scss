@@ -1,0 +1,28 @@
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+  margin: 0 auto;
+
+  // The :not(selector) pseudo class selects all elements that do not match the specified selector. You can select multiple elements within the :not() pseudo-class separated by comma. These can be html elements, classes or IDs.
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  .col-1-of-2 {
+    // calc() in SASS is much more powerful than in CSS as we can mix various units. In CSS we can only use 1 particular unit to do calculations.
+    width: calc((100% - $gutter-horizontal) / 2);
+    float: left;
+    background-color: $color-primary-light;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - $gutter-horizontal) / 3);
+    float: left;
+  }
+}
