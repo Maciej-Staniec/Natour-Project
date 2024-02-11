@@ -98,6 +98,17 @@ body {
   animation: MoveInRight 1s ease-out;
 }
 
+.heading-secondary {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .btn {
   /* We use pseudoclasses to style elements under certain conditions */
   /* The :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage. */
@@ -214,6 +225,12 @@ body {
   animation: MoveInButton 0.5s ease-out 0.75s;
   /* animation fill mode set to backwards applies the 0% animation declaration to our button before the animation happens. Therefore, we don't have to explicitly apply these styles to the button which prevents confusion. */
   animation-fill-mode: backwards;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
 }
 
 .header {
