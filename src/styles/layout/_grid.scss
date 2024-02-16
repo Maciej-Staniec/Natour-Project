@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
 
   // The :not(selector) pseudo class selects all elements that do not match the specified selector. You can select multiple elements within the :not() pseudo-class separated by comma. These can be html elements, classes or IDs.
@@ -13,7 +12,6 @@
   // The below code is an attribute selector. It targets markup elements based on what the provide inside the quotation marks. The ^ (caret) symbol tells the selector to target all instances. In our case, we want to target all classes that start with the "col-". We could use the asterix symbol * to target every selector containing the "col-" content. The $ symbol means to target all selectors that end with the "col-".
   [class^="col-"] {
     float: left;
-    background-color: $color-primary-light;
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;

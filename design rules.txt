@@ -12,7 +12,7 @@ Default: 400
 900
 
 **** Line heights:
-Default: 1
+Default: 1.7;
 
 
 **** Letter spacing

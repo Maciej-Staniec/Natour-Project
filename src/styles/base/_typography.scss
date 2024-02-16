@@ -43,15 +43,37 @@ body {
   font-size: 3.6rem;
   text-transform: uppercase;
   font-weight: 700;
-  display: inline-block;
   background-image: linear-gradient(
     to right,
     $color-primary-light,
     $color-primary-dark
   );
-  // In case the property is not supported across all browsers, declaring the property with a vendor-specific prefix can help, e.g., a -webkit- prefix indicates that this property is declared to support WebKit-based browsers like Chrome and Safari. In the case of Mozilla, it uses a -moz- prefix, whereas Edge and IE use -m-. Vendor prefixes allow developers to use new or experimental CSS features not broadly supported across web browsers.
+  // In case the property is not supported across all browsers, declaring it with a vendor-specific prefix may help, e.g., a -webkit- prefix indicates that this property is declared to support WebKit-based browsers like Chrome and Safari. In the case of Mozilla, it uses a -moz- prefix, whereas Edge and IE use -m-. Vendor prefixes allow developers to use new or experimental CSS features not broadly supported across web browsers.
   -webkit-background-clip: text;
-  // The "background-cip: text" CSS declaration results in displaying background only behind the text. The property is declared for general use - it isn't browser-specific. The general CSS properties should always be declared after vendor-specific declarations. If it isn't supported, the web browser switches to a vendor-specific CSS declaration.
+  // The "background-cip: text" CSS declaration results in displaying background only behind the text. The property is declared for general use - it isn't browser-specific. The general CSS properties should always be declared after vendor-specific declarations. If it isn't supported, web browser switches to a vendor-specific CSS declaration.
   background-clip: text;
   color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    // skew() syntax - skew(ax, ay), clockwise
+    transform: skew(15deg, 2deg) scale(1.1);
+    // rgba() syntax
+    // rgba(red, green, blue, alpha)
+    // rgba(color/variable, alpha)
+    // alpha - opacity
+    text-shadow: 0.5rem 1rem 1rem rgba($color-black, 0.3);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  margin-bottom:3rem;
 }
