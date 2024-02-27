@@ -1,0 +1,45 @@
+************** PSEUDO ELEMENTS **************
+Pseudo-elements in CSS allow you to style specific parts of an HTML element without adding extra HTML markup code. They target certain parts of an element's content or structure, enabling you to apply styles to those parts. Pseudo-elements are powerful tools to enhance the presentation and styling of specific parts of an element's content or structure without modifying the HTML structure itself.
+
+By default, pseudo-elements are empty and have no content. Adding content allows you to define what appears in these pseudo-elements. If the content property is not used, the pseudo-element won't generate any content and may not be visible. Content property must be declared, even if it is empty.
+
+content: "";
+
+Common Pseudo-elements:
+::before: Adds content before the selected element's content.
+::after: Adds content after the selected element's content.
+::first-line: Styles the first line of text within an element.
+::first-letter: Styles the first letter of text within an element.
+::selection: Styles the portion of text selected by the user.
+
+Pseudo-elements use double colons (::) in modern CSS to distinguish them from pseudo-classes (e.g., :hover, :focus). However, for compatibility reasons, single colons (:) are still supported in some older browsers.
+
+
+
+************** PSEUDO CLASSES **************
+We use pseudoclasses to style elements under certain conditions.
+- :link pseudo-class in CSS targets links (anchor elements <a>) that have not been visited or clicked by the user. It defines the style of unvisited links on a webpage.
+- :visited pseudo class targets links that have already been visited or clicked by the user.
+- :hover: Applies styles when the mouse pointer is hovering over the link element.
+- :active: Applies styles when the link is being activated (usually when it's being clicked).
+
+
+
+************** TIMING FUNCTIONS **************
+A timing function in CSS is used to define the pace or speed curve of a transition or animation between two states of an element. It determines how the intermediate values of a transition are calculated over time, affecting the acceleration and deceleration of the animation.
+
+Common Timing Functions:
+1. Ease (default):
+ease: Starts slow, accelerates, then slows down toward the end of the transition. It's commonly used and provides a smooth and natural transition.
+2. Linear:
+linear: Progresses at a constant speed throughout the transition, without acceleration or deceleration. The change occurs at a constant rate.
+3. Ease-in, Ease-out Variations:
+  - ease-in: Starts the transition slowly and accelerates as it progresses.
+  - ease-out: Begins the transition at full speed and decelerates as it finishes.
+  - ease-in-out: Combines ease-in and ease-out, starting and ending the transition slowly with an acceleration in the middle.
+
+
+
+************** DISPLAY PROPERTY **************
+Using display: inline-block; for the buttons allows them to sit next to each other horizontally in the same line while applying margin between them to create spacing. It also accepts block-level properties such as setting width, height, padding, and margins.
+

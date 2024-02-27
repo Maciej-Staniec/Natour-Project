@@ -17,6 +17,7 @@ html {
   // The issue with setting the font-size to pixels is that it overwrites the font size set by the user in the browser settings. This is especially true for visually impaired people - they change the browser's default font size to a bigger one. By declaring it in pixels, we remove the ability for these people to view our website properly.
   font-size: 10px;
   // The default size of the web browser is 16px. We want to have a default root font size set to 10px. In order to make it possible for the visually impaired people to apply their font size setting, we have to use percentage value as this allows those people to scale font size to their size, unlike setting the font size to the fixed 10px value.
+  // Here we define what 1 rem unit is. 62.5% of 16px is 10px. 
   font-size: 62.5%;
 }
 

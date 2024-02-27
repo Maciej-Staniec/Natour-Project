@@ -1,0 +1,66 @@
+============== BOX SHADOW PROPERTY ==============
+https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+
+box-shadow: x-offset y-offset blur spread color inset;
+
+blur - If three values are specified, the third value is interpreted as <blur-radius>. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed.
+
+spread - If four values are specified, the fourth value is interpreted as <spread-radius>. This value adds shadow to the entire element. Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink.
+
+===================== RGBA() =====================
+rgba(red, green, blue, alpha)
+rgba(color/variable, alpha)
+alpha - opacity
+
+
+=================== OUTLINE ===================
+https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style
+/* color | style | width */
+outline: color style width;
+/// outline: green solid 3px; ///
+
+Outline styles
+outline-style: auto;
+outline-style: none;
+outline-style: dotted;
+outline-style: dashed;
+outline-style: solid;
+outline-style: double;
+outline-style: groove;
+outline-style: ridge;
+outline-style: inset;
+outline-style: outset;
+
+================ OUTLINE  OFFSET ================
+The outline-offset CSS property sets the amount of space between an outline and the edge or border of an element.
+
+SYNTAX: outline-offset: <length> values
+<length> - The width of the space between the element and its outline. A negative value places the outline inside the element.
+
+Examples:
+outline-offset: 3px;
+outline-offset: 0.2em;
+
+
+============== ANIMATION PROPERTY ==============
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+- name: Specifies the name of the @keyframes rule that defines the animation.
+- duration: Specifies how long the animation will take to complete (e.g., 1s, 500ms).
+- timing-function: Defines the speed curve or pacing of the animation (e.g., ease, linear, ease-in-out, cubic-bezier()).
+- delay: Specifies a delay before the animation starts (e.g., 0s, 1s).
+- iteration-count: Defines the number of times the animation will run (infinite or a numeric value).
+- direction: Specifies whether the animation plays forward, backward, or alternates (e.g., normal, reverse, alternate).
+- fill-mode: Controls the styles applied to the element before and after the animation (e.g., forwards, backwards, both).
+- play-state: Specifies whether the animation is running or paused (e.g., running, paused).
+
+animation fill mode set to backwards applies the 0% animation declaration to our button before the animation happens. Therefore, we don't have to explicitly apply these styles to the button which prevents confusion. */
+
+
+
+============== TRANSITION: ALL PROPERTY ==============
+Syntax: transition: all <duration> <timing-function> <delay>; 
+How it works?
+Applies Transition to All Properties: It sets a transition effect for all properties that can be transitioned (e.g., width, height, color, background, etc.) within the specified element.
+Uniform Transition for All Changes: When any of these properties change (due to a CSS change, hover effect, class change, etc.), the transition effect defined by transition: all will be applied uniformly to those changes. */
+
