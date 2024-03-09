@@ -155,6 +155,7 @@ body {
 }
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* We want to see the advanced animation only if we hover over the button */
 }
 .btn:hover::after {
@@ -163,7 +164,7 @@ body {
 }
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 .btn::after {
   content: "";
@@ -206,11 +207,11 @@ body {
   color: #fff;
   transform: translateY(-3px);
   transition: all 0.2s ease;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 .btn-text:active {
   transform: translateY(0px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .composition {
@@ -218,8 +219,8 @@ body {
 }
 .composition__photo {
   width: 55%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: 0.5rem;
+  box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.3rem;
   position: absolute;
   transition: all 0.2s;
 }
@@ -238,7 +239,7 @@ body {
 .composition__photo:hover {
   z-index: 100;
   transform: scale(1.05) translateY(-0.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2.4rem 4rem rgba(0, 0, 0, 0.5);
   outline: #55c57a solid 1.5rem;
   outline-offset: 2rem;
 }
@@ -246,9 +247,25 @@ body {
   transform: scale(0.95);
 }
 
-.feature-box__icon {
-  font-size: 6rem;
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
+  padding: 2.4rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.16);
+  transition: all 0.2s ease-out;
 }
+.feature-box:hover {
+  transform: scale(1.04) translateY(-1.6rem);
+}
+.feature-box__icon {
+  font-size: 6.2rem;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -256,9 +273,14 @@ body {
 }
 
 .section-features {
+  padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
   background-size: cover;
-  background-position: top;
+  transform: skewY(-5deg);
+  margin-top: -7rem;
+}
+.section-features > * {
+  transform: skewY(5deg);
 }
 
 .header {
@@ -272,11 +294,11 @@ body {
 }
 .header__logo-box {
   position: absolute;
-  top: 4rem;
-  left: 4rem;
+  top: 4.4rem;
+  left: 4.4rem;
 }
 .header__logo {
-  height: 3.5rem;
+  height: 3.6rem;
   backface-visibility: hidden;
 }
 .header__logo:hover {
@@ -306,23 +328,23 @@ body {
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
-  margin-right: 6rem;
+  margin-right: 6.4rem;
 }
 .row .col-1-of-2 {
-  width: calc((100% - 6rem) / 2);
+  width: calc((100% - 6.4rem) / 2);
 }
 .row .col-1-of-3 {
-  width: calc((100% - 12rem) / 3);
+  width: calc((100% - 12.8rem) / 3);
 }
 .row .col-1-of-4 {
-  width: calc((100% - 18rem) / 4);
+  width: calc((100% - 19.2rem) / 4);
 }
 .row .col-2-of-3 {
-  width: calc((100% - 12rem) / 3 * 2 + 6rem);
+  width: calc((100% - 12.8rem) / 3 * 2 + 6.4rem);
 }
 .row .col-2-of-4 {
-  width: calc((100% - 18rem) / 4 * 2 + 6rem);
+  width: calc((100% - 19.2rem) / 4 * 2 + 6.4rem);
 }
 .row .col-3-of-4 {
-  width: calc((100% - 18rem) / 4 * 3 + 12rem);
+  width: calc((100% - 19.2rem) / 4 * 3 + 12.8rem);
 }/*# sourceMappingURL=main.css.map */

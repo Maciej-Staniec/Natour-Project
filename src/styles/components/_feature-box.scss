@@ -1,7 +1,23 @@
 .feature-box {
-  &__icon {
-    font-size: 6rem;
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.4rem;
+  padding: 2.4rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.6rem 4rem rgba($color-black, 0.16);
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: scale(1.04) translateY(-1.6rem);
   }
-  &__text {
+
+  &__icon {
+    font-size: 6.2rem;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }

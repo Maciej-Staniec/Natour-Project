@@ -9,12 +9,13 @@
     border-radius: 10rem;
     text-transform: uppercase;
     display: inline-block;
-
     transition: all 0.2s ease;
     position: relative;
   }
   &:hover {
     transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
     /* We want to see the advanced animation only if we hover over the button */
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -23,8 +24,7 @@
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 $vertical-offset-b $blur-active-b
-      rgba($color-black, $opacity-b);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
   &::after {
@@ -73,12 +73,10 @@
     color: $color-white;
     transform: translateY(-3px);
     transition: all 0.2s ease;
-    box-shadow: 0 $vertical-offset-b $blur-hover-b
-      rgba($color-black, $opacity-b);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
   }
   &:active {
     transform: translateY(0px);
-    box-shadow: 0 $vertical-offset-b $blur-active-b
-      rgba($color-black, $opacity-b);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
   }
 }

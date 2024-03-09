@@ -22,6 +22,8 @@ Default: 1.7;
 --- 02. WHITESPACE
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
+1140 px or 1200 px are standard widths of a browser viewport.
+
 
 --- 03. COLOURS
 
@@ -43,15 +45,28 @@ height:
 width:
 
 --- 05. ICONS
-height:
+font-size: 6.2rem;
+
+--- 06. LOGO
+height: 3.6rem
 width:
 
---- 05. LOGO
-height: 35px
-width:
+--- 07. SHADOWS
+== BUTTONS ==
+HOVER:
+box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+ACTIVE:
+box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
 
---- 06. SHADOWS
-box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
+== IMAGES ==
+box-shadow: 0 2.4rem 4rem rgba($color-black, 0.4);
+HOVER:
+box-shadow: 0 1.6rem 3.2rem rgba($color-black, 0.5);
+
+== FEATURE BOX ==
+box-shadow: 0 1.6rem 4rem rgba($color-black 0.15);
+
 
 --- 07. BORDER-RADIUS
-Buttons: 1.6rem 4.8rem
+Buttons: 10rem;
+pictures, feature boxes: 0.3rem;

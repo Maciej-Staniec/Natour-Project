@@ -58,9 +58,20 @@ animation fill mode set to backwards applies the 0% animation declaration to our
 
 
 
-============== TRANSITION: ALL PROPERTY ==============
+============= TRANSITION: ALL PROPERTY =============
 Syntax: transition: all <duration> <timing-function> <delay>; 
+
+default values:
+transition-delay: 0s
+transition-duration: 0s
+transition-property: all
+transition-timing-function: ease
+transition-behavior: normal
+
 How it works?
-Applies Transition to All Properties: It sets a transition effect for all properties that can be transitioned (e.g., width, height, color, background, etc.) within the specified element.
+Applies Transition to all properties: It sets a transition effect for all properties that can be transitioned (e.g., width, height, color, background, etc.) within the specified element.
+
 Uniform Transition for All Changes: When any of these properties change (due to a CSS change, hover effect, class change, etc.), the transition effect defined by transition: all will be applied uniformly to those changes. */
 
+=============== CLIP-PATH POLYGON =================
+syntax: clip-path:polygon(x y(first point), x y (2nd point), x y (3rd point), x y (4th point))
