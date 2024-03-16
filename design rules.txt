@@ -33,12 +33,21 @@ TINTS:
 Light green: #7ed56f
 Dark green: #28b485
 
+SECONDARY COLORS:
+light orange: #ffb900;
+dark orange: #ff7730;
+
+TERTIARY COLORS:
+blue: #2998ff;
+purple: #5643fa;
+
 SHADES:
 
 ACCENTS:
 
 GREYS:
 #777
+#f7f7f7;
 
 --- 04. IMAGES
 height:

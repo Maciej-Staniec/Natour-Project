@@ -1,0 +1,174 @@
+// FUNCTIONALITY
+.card {
+  perspective: 100rem;
+  position: relative;
+  // Because the position of each side of the card is set to absolute, the card height collapses, and we stop seeing the perspective declaration in animation. To mitigate the issue, the height property must also be set on the card side parent element. On floats, we can use the clearfix solution. Unfortunately, there is no such thing for absolutely positioned elements.
+  height: 52rem;
+
+  // We cannot use the overflow CSS property to get the same border-radius when the picture is applied to the card element. It works, but the flipping card animation breaks down. To make it working, we need to apply this property on the __side element.
+  // overflow: hidden;
+
+  &__side {
+    transition: all 0.5s linear;
+    font-size: 3rem;
+    height: 52rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    border-radius: $bradius-picture;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // When the absolute positioning is applied to the element, it adjusts the width to the content. To fill the entire column, we need to set the width to 100%.
+    width: 100%;
+    // We need to declare the backface-visibility property of hidden value to stop seeing the back side of the card element when not hovered.
+    backface-visibility: hidden;
+    overflow: hidden;
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      // The content of the back side should be already flipped and go back to normal when we hover over the card.
+      transform: rotateY(-180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+  // If we chose &__side--front:hover, the transform property animation would wobble and act weird when hovering the cursor over the card element. To stop it, we want to apply the hover on the entire card element; therefore, we want to declare the animation on the .card:hover selector.
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    // Once we hover over the card, the back side should reset to the initial state, which is 0 degrees, so the content of the back of the card isn't flipped.
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: right;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+    &-span {
+      padding: 0.8rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.85),
+          rgba($color-primary-dark, 0.85)
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-tertiary-light, 0.85),
+          rgba($color-tertiary-dark, 0.85)
+        );
+      }
+    }
+  }
+
+  &__details {
+    font-size: 1.6rem;
+    padding: 3.2rem;
+    text-align: center;
+    ul {
+      list-style: none;
+      max-width: 80%;
+      margin: auto;
+    }
+    li {
+      text-decoration: none;
+      padding: 0.8rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-grey-light-1;
+      }
+    }
+  }
+
+  // BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-white;
+    width: 80%;
+    text-align: center;
+    &-only {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+    &-value {
+      font-size: 6.2rem;
+      font-weight: 100;
+      margin-bottom: 8rem;
+    }
+  }
+}

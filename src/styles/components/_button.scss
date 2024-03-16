@@ -44,10 +44,17 @@
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
-    /* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn-white class. */
+    /* We also want to specify the colour of the pseudo element to be white, but this needs to be applied to .btn--white class. */
     &::after {
-      content: "";
       background-color: $color-white;
+    }
+  }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    /* We also want to specify the colour of the pseudo element to be green, but this needs to be applied to .btn--green class. */
+    &::after {
+      background-color: $color-primary;
     }
   }
 
