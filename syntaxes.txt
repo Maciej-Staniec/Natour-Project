@@ -75,3 +75,24 @@ Uniform Transition for All Changes: When any of these properties change (due to 
 
 =============== CLIP-PATH POLYGON =================
 syntax: clip-path:polygon(x y(first point), x y (2nd point), x y (3rd point), x y (4th point))
+
+
+=============== SHAPE-OUSIDE ======================
+shape-outside: value()
+
+The CSS shape-outside property controls how text wraps around any floated image. The text that is wrapped can take the shape of a circle, ellipse, rectangle or polygon.
+
+The shape-outside property takes a “basic shape” and applies a shape function to it. The shape function is used to change the shape of the float area of the shape.
+
+It’s important to note that this property will only work on floated elements for now.
+You must set the height and width of the element. This will be used by the shape function to create a coordinate system that is used when wrapping text around the image.
+
+***** VALUES *****
+circle(r at cx cy): for making circular shapes, where r is the radius of the circle and cx and cy are the coordinates for the center of the circle. If you omit them, the center of the image will be used as the default values.
+
+ellipse(): for making elliptical shapes.
+inset(): for making rectangular shapes.
+polygon(): for creating any shape with 3 or more vertices.
+url(): identifies which image should be used to wrap text around.
+initial: the float area is unaffected.
+inherit: inherits shape-outside value from parent.

@@ -1,0 +1,22 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3.2rem 6.4rem rgba($color-black, 0.1);
+  padding: 6.4rem;
+  border-radius: $br-normal;
+  background-color: rgba($color-white, 0.6);
+  font-size: $default-font-size;
+  &__shape {
+    width: 15.2rem;
+    height: 15.2rem;
+    float: left;
+    background-color: orangered;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    // The CSS shape-outside property controls how text wraps around any floated image. It’s important to note that this property will only work on floated elements. You must set the height and width of the element.
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // The best way to create whitespace between the text and the image element is to use the transform property with the translateX value.
+    transform: translateX(-3.2rem);
+  }
+}

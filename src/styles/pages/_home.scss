@@ -1,11 +1,11 @@
 .section-about {
   background-color: $color-grey-light-1;
-  padding: 19.2rem 0;
+  padding: $section-padding-normal;
   margin-top: -20vh;
 }
 
 .section-features {
-  padding: 19.2rem 0;
+  padding: $section-padding-normal;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -36,6 +36,10 @@
 
 .section-tours {
   background-color: $color-grey-light-1;
-  padding: 25rem 0 15rem 0;
+  padding: $section-padding-normal-bs;
   margin-top: -7rem;
+}
+
+.section-stories {
+  padding: $section-padding-small;
 }

@@ -20,7 +20,7 @@ Default: 1.7;
 1.75rem
 
 --- 02. WHITESPACE
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 152 / 178 / 202 / 226 / 250
 
 1140 px or 1200 px are standard widths of a browser viewport.
 
