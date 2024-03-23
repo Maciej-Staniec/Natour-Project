@@ -424,6 +424,12 @@ body {
 .story__img {
   height: 100%;
   transform: translateX(-4rem) scale(1.4);
+  backface-visibility: hidden;
+  transition: all 0.5s;
+}
+.story:hover .story__img {
+  filter: blur(2px) brightness(0.8);
+  transform: translateX(-4rem) scale(1);
 }
 .story__caption {
   position: absolute;
@@ -437,9 +443,6 @@ body {
   opacity: 0;
   transition: all 0.5s;
   backface-visibility: hidden;
-}
-.story:hover .story__img {
-  filter: blur(50%);
 }
 
 .section-about {
