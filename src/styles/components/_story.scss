@@ -6,17 +6,56 @@
   border-radius: $br-normal;
   background-color: rgba($color-white, 0.6);
   font-size: $default-font-size;
+  padding-left: 9.6rem;
+  transform: skewX(-12deg);
+
+  // As soon as we hover on the story element, we want the animation happen on the __caption element.
+  &:hover &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  & > * {
+    transform: skewX(12deg);
+  }
+
   &__shape {
     width: 15.2rem;
     height: 15.2rem;
     float: left;
-    background-color: orangered;
     -webkit-shape-outside: circle(50% at 50% 50%);
     // The CSS shape-outside property controls how text wraps around any floated image. It’s important to note that this property will only work on floated elements. You must set the height and width of the element.
     shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    // The best way to create whitespace between the text and the image element is to use the transform property with the translateX value.
-    transform: translateX(-3.2rem);
+    // The best way to create whitespace between the text and the floated element is to use the transform property with the translateX value.
+    // We can't apply two transform properties on the individual element. The following declaration block is a subsequent declaration block (there is a direct child selector above), therefore, it overrides the previous declaration of tranform property and the skewX property does not get applied to the element. To mitigate the issue, we need to explicitily declare the skewX value right after translateX value in the same declaration block.
+    transform: translateX(-3.2rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $color-white;
+    z-index: 100;
+    transform: translate(-50%, 20%);
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    // The animation has to be explicitly declared in the element affected by the animation. If declared on a parent element, it will not work. The transition property does not get inherited.
+    transition: all 0.5s;
+    // In animations where elements are rotated or transformed using transform: translate(), sometimes glitches or flickering can occur, especially when the element is rotated and then translated. This can happen because browsers render the element and its back face separately, and in some cases, the back face might become visible during the animation, leading to visual artifacts. By setting backface-visibility: hidden, you're essentially telling the browser not to render the back face of the element during the animation. This can help eliminate the glitch or flickering effect, as the browser won't render the back face, preventing any visual artifacts from appearing during the animation
+    backface-visibility: hidden;
+  }
+
+  &:hover &__img {
+    filter: blur(50%);
   }
 }

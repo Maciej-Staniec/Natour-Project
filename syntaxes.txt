@@ -96,3 +96,17 @@ polygon(): for creating any shape with 3 or more vertices.
 url(): identifies which image should be used to wrap text around.
 initial: the float area is unaffected.
 inherit: inherits shape-outside value from parent.
+
+
+=========== BLUR EFFECT =============
+Syntax
+filter: blur(value);
+
+Accepted values:
+1. Length Values: You can specify the blur radius using length values like pixels (px), ems (em), or rems (rem). For example:
+ - blur(5px): Applies a blur radius of 5 pixels.
+ - blur(2em): Applies a blur radius of 2 ems.
+ - blur(0.5rem): Applies a blur radius of 0.5 rems.
+
+2. Percentage Values: You can also specify the blur radius using percentage values relative to the size of the element. For example:
+ - blur(50%): Applies a blur radius equal to 50% of the width/height of the element.

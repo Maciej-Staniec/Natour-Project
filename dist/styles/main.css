@@ -401,16 +401,45 @@ body {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.6);
   font-size: 1.6rem;
+  padding-left: 9.6rem;
+  transform: skewX(-12deg);
+}
+.story:hover .story__caption {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.story > * {
+  transform: skewX(12deg);
 }
 .story__shape {
   width: 15.2rem;
   height: 15.2rem;
   float: left;
-  background-color: orangered;
   shape-outside: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
-  transform: translateX(-3.2rem);
+  transform: translateX(-3.2rem) skewX(12deg);
+  position: relative;
+}
+.story__img {
+  height: 100%;
+  transform: translateX(-4rem) scale(1.4);
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  z-index: 100;
+  transform: translate(-50%, 20%);
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+}
+.story:hover .story__img {
+  filter: blur(50%);
 }
 
 .section-about {

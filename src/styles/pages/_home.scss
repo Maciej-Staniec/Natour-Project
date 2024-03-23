@@ -16,7 +16,7 @@
   transform: skewY(-5deg);
   margin-top: -7rem;
 
-  // To remove the skew from children elements we will use the direct child selector. We could remove the skew effect explicitly from feauture boxes, but imagine what happens when we add new content to our features section. We would have to remove this effect from the new content as well. Instead, we can select all direct children elements in the section-features selector, avoiding the hassle of removing the skew effect explicitly in all child elements.
+  // To remove the skew from children elements we will use the direct child selector. We could remove the skew effect explicitly from feauture boxes, but imagine what happens when we add new content to our features section. We would have to remove this effect from the new content as well. Instead, we can select all direct children elements found in the section-features element, avoiding the hassle of removing the skew effect explicitly in all child elements.
 
   // What is a direct child element? It is a child element directly adjacent to its parent element.
   & > * {
