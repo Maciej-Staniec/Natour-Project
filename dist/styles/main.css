@@ -445,6 +445,22 @@ body {
   backface-visibility: hidden;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+}
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .section-about {
   background-color: #f7f7f7;
   padding: 19.2rem 0;
@@ -470,6 +486,12 @@ body {
 
 .section-stories {
   padding: 15.2rem 0;
+  position: relative;
+}
+
+.section-book {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  padding: 19.2rem 0;
 }
 
 .header {
