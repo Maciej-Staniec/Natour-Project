@@ -53,3 +53,15 @@
   );
   padding: $section-padding-normal;
 }
+
+.book {
+  background-image: url(../../img/nat-10.jpg);
+  background-size: cover;
+  height: 48rem;
+
+  &__form {
+    width: 50%;
+    padding: 6.2rem;
+    height: 100%;
+  }
+}
