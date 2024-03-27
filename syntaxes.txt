@@ -110,3 +110,29 @@ Accepted values:
 
 2. Percentage Values: You can also specify the blur radius using percentage values relative to the size of the element. For example:
  - blur(50%): Applies a blur radius equal to 50% of the width/height of the element.
+
+
+=========== LINEAR GRADIENT =============
+linear-gradient(45deg, red 0 50%, blue 50% 100%)
+
+Here's what each part of the declaration means:
+
+  1. 45deg: Specifies the direction of the gradient as a 45-degree angle. The gradient will be slanted at a 45-degree angle from its starting point.
+  
+  2. red 0 50%: This part defines the color stops for the red portion of the gradient. It means:
+    
+   - red: Specifies the color red.
+   
+   - 0: Represents the starting point of the gradient. In this case, it starts at the very beginning (leftmost edge) of the gradient.
+    
+   - 50%: Represents the ending point of the red portion of the gradient. It ends at 50% of the length of the gradient (horizontally).
+
+  3. blue 50% 100%: This part defines the color stops for the blue portion of the gradient. It means:
+    
+   - blue: Specifies the color blue.
+
+   - 50%: Represents the starting point of the blue portion of the gradient. It starts at 50% of the length of the gradient (horizontally).
+
+   - 100%: Represents the ending point of the blue portion of the gradient. It ends at the very end (rightmost edge) of the gradient.
+
+

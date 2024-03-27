@@ -15,9 +15,7 @@
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
-    <!-- /////////////////////// -->
-    <!--HEADER -->
-    <!-- /////////////////////// -->
+    <!-- ///////////// HEADER ///////////// -->
     <header class="header">
       <div class="header__logo-box">
         <img src="img/logo-white.png" alt="Logo" class="header__logo" />
@@ -32,9 +30,7 @@
       </div>
     </header>
     <main>
-      <!-- /////////////////////// -->
-      <!--ABOUT SECTION -->
-      <!-- /////////////////////// -->
+      <!-- /////////// ABOUT SECTION ////////// -->
       <section class="section-about">
         <h2 class="heading-secondary u-center-text u-margin-bottom-big">
           Exciting tours for adventurous people
@@ -77,9 +73,7 @@
           </div>
         </div>
       </section>
-      <!-- /////////////////////// -->
-      <!--FEATURES SECTION -->
-      <!-- /////////////////////// -->
+      <!-- //////// FEATURES SECTION //////// -->
       <section class="section-features">
         <div class="row u-center-text">
           <div class="col-1-of-4">
@@ -133,9 +127,7 @@
           </div>
         </div>
       </section>
-      <!-- /////////////////////// -->
-      <!--TOURS SECTION -->
-      <!-- /////////////////////// -->
+      <!-- ///////// TOURS SECTION ///////// -->
       <section class="section-tours">
         <h2 class="heading-secondary u-center-text u-margin-bottom-big">
           Most Popular Tours
@@ -230,7 +222,7 @@
           <a href="#" class="btn btn--green">Discover all tours</a>
         </div>
       </section>
-      <!-- STORIES SECTION -->
+      <!-- //////// STORIES SECTION ///////// -->
       <section class="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
@@ -291,17 +283,33 @@
           <a href="#" class="btn-text">Read all stories &rarr;</a>
         </div>
       </section>
+      <!-- ////////// BOKING SECTION /////////// -->
       <section class="section-book">
         <div class="row">
           <div class="book">
             <div class="book__form">
+              <h2 class="heading-secondary u-margin-bottom-medium">
+                Start booking now
+              </h2>
               <form action="#" class="form">
                 <div class="form__group">
                   <input
                     type="text"
                     id="name"
+                    name="full_name"
                     placeholder="Full name"
-                    class="form__input" />
+                    class="form__input"
+                    required />
+                  <label for="name">Full name</label>
+                </div>
+                <div class="form__group">
+                  <input
+                    type="email"
+                    name="email_address"
+                    id="email"
+                    placeholder="Email address"
+                    required />
+                  <label for="email">Email address</label>
                 </div>
               </form>
             </div>
