@@ -465,12 +465,28 @@ body {
   border-style: none;
   height: 3.2rem;
   width: 90%;
+  padding: 2.4rem 1.6rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: inherit;
+}
+.form__input::-moz-placeholder {
+  color: #c9c9c9;
+}
+.form__input::placeholder {
+  color: #c9c9c9;
 }
 .form__input:focus {
   outline: none;
 }
 .form__label {
   display: block;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  transform: translateY(-4rem);
+  transition: transform 0.3s ease;
 }
 .section-about {
   background-color: #f7f7f7;
