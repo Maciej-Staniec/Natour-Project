@@ -1,0 +1,18 @@
+.form {
+  &__input {
+    border-style: none;
+    height: 3.2rem;
+    width: 90%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__radio-group{
+    
+  }
+}

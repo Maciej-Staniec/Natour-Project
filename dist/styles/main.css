@@ -147,7 +147,7 @@ body {
 
 .btn:link, .btn:visited {
   font-size: 1.6rem;
-  padding: 1.6rem 4.8rem;
+  padding: 1.6rem 4rem;
   text-decoration: none;
   border: none;
   /* cursor: pointer; */
@@ -461,6 +461,17 @@ body {
      object-fit: cover;
 }
 
+.form__input {
+  border-style: none;
+  height: 3.2rem;
+  width: 90%;
+}
+.form__input:focus {
+  outline: none;
+}
+.form__label {
+  display: block;
+}
 .section-about {
   background-color: #f7f7f7;
   padding: 19.2rem 0;
