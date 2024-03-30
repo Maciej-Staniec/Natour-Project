@@ -7,22 +7,37 @@
     font-family: inherit;
     font-size: 1.6rem;
     color: inherit;
+    transition: all 0.3s;
+    // To make the bottom border animation smooth when we select the input field, we've got to declare it first with a transparent colour.
+    border-bottom: 3px solid transparent;
     &::placeholder {
       color: $color-grey-light-2;
     }
     &:focus {
       outline: none;
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+      &:valid {
+        border-bottom: 3px solid $color-primary;
+      }
     }
   }
 
+  &__input:not(:placeholder-shown) + &__label {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   &__label {
-    display: block;
     padding: 0.8rem 1.6rem;
     font-weight: 600;
     font-size: 1.2rem;
     letter-spacing: 1.2px;
     transform: translateY(-4rem);
-    transition: transform 0.3s ease;
+    transition: all 0.3s;
+    display: block;
+    opacity: 0;
   }
 
   &__radio-group {

@@ -469,6 +469,8 @@ body {
   font-family: inherit;
   font-size: 1.6rem;
   color: inherit;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
 }
 .form__input::-moz-placeholder {
   color: #c9c9c9;
@@ -479,14 +481,29 @@ body {
 .form__input:focus {
   outline: none;
 }
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form__input:focus:valid {
+  border-bottom: 3px solid #55c57a;
+}
+.form__input:not(:-moz-placeholder-shown) + .form__label {
+  transform: translateY(0);
+  opacity: 1;
+}
+.form__input:not(:placeholder-shown) + .form__label {
+  transform: translateY(0);
+  opacity: 1;
+}
 .form__label {
-  display: block;
   padding: 0.8rem 1.6rem;
   font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 1.2px;
   transform: translateY(-4rem);
-  transition: transform 0.3s ease;
+  transition: all 0.3s;
+  display: block;
+  opacity: 0;
 }
 .section-about {
   background-color: #f7f7f7;
