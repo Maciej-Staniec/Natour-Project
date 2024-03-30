@@ -145,12 +145,12 @@ body {
   margin-bottom: 9.6rem !important;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   padding: 1.6rem 4rem;
   text-decoration: none;
   border: none;
-  /* cursor: pointer; */
+  cursor: pointer;
   border-radius: 10rem;
   text-transform: uppercase;
   display: inline-block;
@@ -505,6 +505,13 @@ body {
   display: block;
   opacity: 0;
 }
+.form__radio-group {
+  display: inline-block;
+}
+.form__radio-group:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
 .section-about {
   background-color: #f7f7f7;
   padding: 19.2rem 0;

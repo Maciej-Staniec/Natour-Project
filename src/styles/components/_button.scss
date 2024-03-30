@@ -1,11 +1,12 @@
 .btn {
+  &,
   &:link,
   &:visited {
     font-size: $default-font-size;
     padding: 1.6rem 4rem;
     text-decoration: none;
     border: none;
-    /* cursor: pointer; */
+    cursor: pointer;
     border-radius: 10rem;
     text-transform: uppercase;
     display: inline-block;

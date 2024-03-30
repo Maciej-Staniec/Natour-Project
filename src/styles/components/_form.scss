@@ -41,5 +41,9 @@
   }
 
   &__radio-group {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
   }
 }
