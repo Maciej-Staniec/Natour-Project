@@ -40,10 +40,47 @@
     opacity: 0;
   }
 
-  &__radio-group {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 1.6rem;
+  &__radio {
+    &-group {
+      display: inline-block;
+      width: 49%;
+    }
+    &-input,
+    &-label {
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    &-input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $color-primary;
+      background-color: transparent;
+      border: 3px solid $color-primary;
+      border-radius: 50%;
+      position: relative;
+      margin-right: 1.2rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 75%;
+        height: 75%;
+        background-color: $color-primary;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+      &:checked::before {
+        opacity: 1;
+      }
+    }
+    &-label {
+      font-size: $default-font-size;
+      color: $color-grey-dark;
     }
   }
 }
