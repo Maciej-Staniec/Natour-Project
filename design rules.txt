@@ -21,7 +21,7 @@ Default: 1.7;
 1.2px
 
 --- 02. WHITESPACE
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 152 / 178 / 202 / 226 / 250
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 56 / 64 / 80 / 96 / 112 / 128 / 144 / 160 / 176 / 192 / 208 / 224 / 240 / 256
 
 1140 px or 1200 px are standard widths of a browser viewport.
 
@@ -62,8 +62,8 @@ height: 3.6rem
 width:
 
 --- 07. SHADOWS
-== BUTTONS ==
 
+== BUTTONS ==
 HOVER:
 box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
 ACTIVE:
@@ -74,8 +74,12 @@ box-shadow: 0 2.4rem 4rem rgba($color-black, 0.4);
 HOVER:
 box-shadow: 0 1.6rem 3.2rem rgba($color-black, 0.5);
 
-== BOXES ==
+== CARDS ==
 box-shadow: 0 1.6rem 4rem rgba($color-black 0.15);
+
+== INPUT FIELDS ==
+FOCUS:
+box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
 
 
 --- 07. BORDER-RADIUS

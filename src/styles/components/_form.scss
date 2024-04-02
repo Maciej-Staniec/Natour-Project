@@ -1,4 +1,7 @@
 .form {
+  &__group:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
   &__input {
     border-style: none;
     height: 3.2rem;
@@ -10,11 +13,14 @@
     transition: all 0.3s;
     // To make the bottom border animation smooth when we select the input field, we've got to declare it first with a transparent colour.
     border-bottom: 3px solid transparent;
+    // Styling colour of the text inside the input fields
     &::placeholder {
       color: $color-grey-light-2;
     }
+    // Styling the input field box when active
     &:focus {
       outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
       &:invalid {
         border-bottom: 3px solid $color-secondary-dark;
       }
@@ -22,11 +28,16 @@
         border-bottom: 3px solid $color-primary;
       }
     }
+    // Styling the placeholder
+    &::-webkit-input-placeholder{
+      
+    }
   }
 
   &__input:not(:placeholder-shown) + &__label {
     transform: translateY(0);
     opacity: 1;
+    display: block;
   }
 
   &__label {
@@ -36,7 +47,8 @@
     letter-spacing: 1.2px;
     transform: translateY(-4rem);
     transition: all 0.3s;
-    display: block;
+    // To show the default cursor when we hover over the input elements or make them active, the display must be set to hidden.
+    display: hidden;
     opacity: 0;
   }
 

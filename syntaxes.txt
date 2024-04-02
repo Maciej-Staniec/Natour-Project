@@ -77,7 +77,7 @@ Uniform Transition for All Changes: When any of these properties change (due to 
 syntax: clip-path:polygon(x y(first point), x y (2nd point), x y (3rd point), x y (4th point))
 
 
-=============== SHAPE-OUSIDE ======================
+=============== SHAPE-OUTSIDE ======================
 shape-outside: value()
 
 The CSS shape-outside property controls how text wraps around any floated image. The text that is wrapped can take the shape of a circle, ellipse, rectangle or polygon.
