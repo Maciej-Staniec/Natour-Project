@@ -95,10 +95,12 @@
         transform: translate(-50%, -50%);
         opacity: 0;
       }
+      // Style checked state of custom radio button
       &:checked::before {
         opacity: 1;
       }
     }
+    //Style the font of the radio button labels
     &-label {
       font-size: $default-font-size;
       color: $color-grey-dark;
