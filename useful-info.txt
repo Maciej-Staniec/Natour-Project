@@ -43,3 +43,20 @@ linear: Progresses at a constant speed throughout the transition, without accele
 ************** DISPLAY PROPERTY **************
 Using display: inline-block; for the buttons allows them to sit next to each other horizontally in the same line while applying margin between them to create spacing. It also accepts block-level properties such as setting width, height, padding, and margins.
 
+=========== APPEARANCE:NONE VS DISPLAY:NONE =============
+appearance: none; and display: none; are both CSS properties, but they serve different purposes and have different effects on elements:
+
+appearance: none;:
+
+- This property is used to remove the default styling (or appearance) of certain form elements, such as buttons, checkboxes, and radio buttons.
+- When you apply appearance: none;, it removes the default platform-specific styling of the element, allowing you to style it yourself using CSS.
+- This property is particularly useful for creating custom-styled form controls that look consistent across different browsers and operating systems.
+- Note that appearance: none; only affects the appearance of the element, not its visibility or layout.
+
+display: none;:
+
+- This property is used to completely remove an element from the rendering of the page.
+- When you apply display: none; to an element, it hides the element from view and removes it from the document flow, meaning it doesn't take up any space in the layout.
+- Elements with display: none; are not rendered on the page and are not accessible to users.
+- This property is commonly used to hide elements dynamically using JavaScript or to create hidden sections of a webpage.
+

@@ -475,10 +475,7 @@ body {
   transition: all 0.3s;
   border-bottom: 3px solid transparent;
 }
-.form__input::-moz-placeholder {
-  color: #c9c9c9;
-}
-.form__input::placeholder {
+.form__input::-webkit-input-placeholder, .form__input::placeholder {
   color: #c9c9c9;
 }
 .form__input:focus {
@@ -491,25 +488,23 @@ body {
 .form__input:focus:valid {
   border-bottom: 3px solid #55c57a;
 }
-.form__input:not(:-moz-placeholder-shown) + .form__label {
-  transform: translateY(0);
-  opacity: 1;
-  display: block;
+.form__input:-moz-placeholder-shown + .form__label {
+  transform: translateY(-4rem);
+  visibility: hidden;
+  opacity: 0;
 }
-.form__input:not(:placeholder-shown) + .form__label {
-  transform: translateY(0);
-  opacity: 1;
-  display: block;
+.form__input:placeholder-shown + .form__label {
+  transform: translateY(-4rem);
+  visibility: hidden;
+  opacity: 0;
 }
 .form__label {
   padding: 0.8rem 1.6rem;
   font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 1.2px;
-  transform: translateY(-4rem);
   transition: all 0.3s;
-  display: hidden;
-  opacity: 0;
+  display: block;
 }
 .form__radio-group {
   display: inline-block;

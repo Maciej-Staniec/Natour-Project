@@ -10,34 +10,37 @@
     font-family: inherit;
     font-size: 1.6rem;
     color: inherit;
+    // Make the animation of the bottom border colour change
     transition: all 0.3s;
     // To make the bottom border animation smooth when we select the input field, we've got to declare it first with a transparent colour.
     border-bottom: 3px solid transparent;
-    // Styling colour of the text inside the input fields
+    // Styling the placeholder text
+    &::-webkit-input-placeholder,
     &::placeholder {
       color: $color-grey-light-2;
     }
-    // Styling the input field box when active
+    // Styling the input field when is active
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      // Apply an orange bottom border if the input is invalid
       &:invalid {
         border-bottom: 3px solid $color-secondary-dark;
       }
+      // Apply a green bottom border if the input is valid
       &:valid {
         border-bottom: 3px solid $color-primary;
       }
     }
-    // Styling the placeholder
-    &::-webkit-input-placeholder{
-      
-    }
   }
 
-  &__input:not(:placeholder-shown) + &__label {
-    transform: translateY(0);
-    opacity: 1;
-    display: block;
+  // If the placeholder disappears (once text is typed) it applies the styling declaration to the __label element. The adjacent sibling selector, represented by the + symbol in CSS selectors, is used to select an element that comes immediately after another specific element, and they share the same parent.
+  &__input:placeholder-shown + &__label {
+    transform: translateY(-4rem);
+    // The visibility property cannot be animated.
+    visibility: hidden;
+    // We also need to inlcude the opacity property, as the visibility property cannot be animated.
+    opacity: 0;
   }
 
   &__label {
@@ -45,11 +48,9 @@
     font-weight: 600;
     font-size: 1.2rem;
     letter-spacing: 1.2px;
-    transform: translateY(-4rem);
     transition: all 0.3s;
-    // To show the default cursor when we hover over the input elements or make them active, the display must be set to hidden.
-    display: hidden;
-    opacity: 0;
+    // To show the default cursor when we hover over the input elements or make them active, the display of the label element must be set to hidden.
+    display: block;
   }
 
   &__radio {
@@ -63,6 +64,12 @@
       vertical-align: middle;
     }
     &-input {
+      // The appearance property is used to remove the default styling (or appearance) of certain form elements, such as buttons, checkboxes, and radio buttons.
+      // When you apply appearance: none;, it removes the default platform-specific styling of the element, allowing you to style it yourself using CSS.
+      // This property is particularly useful for creating custom-styled form controls that look consistent across different browsers and operating systems.
+      // Note that appearance: none; only affects the appearance of the element, not its visibility or layout.
+
+      // Hide default radio button appearance
       -webkit-appearance: none;
       appearance: none;
       width: 2.4rem;
@@ -73,6 +80,8 @@
       border-radius: 50%;
       position: relative;
       margin-right: 1.2rem;
+
+      // Create custom radio button appearance
       &::before {
         content: "";
         display: block;
