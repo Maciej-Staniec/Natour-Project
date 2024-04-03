@@ -461,7 +461,7 @@ body {
      object-fit: cover;
 }
 
-.form__group:not(:last-child) {
+.form__group {
   margin-bottom: 1.2rem;
 }
 .form__input {

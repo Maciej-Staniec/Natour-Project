@@ -1,4 +1,5 @@
 .btn {
+  // The button element does not have the pseudo classes like :link and :visited. Therefore we have to add the & selector, to add all the styling to the .btn class as well.
   &,
   &:link,
   &:visited {

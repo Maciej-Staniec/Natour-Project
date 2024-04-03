@@ -1,5 +1,5 @@
 .form {
-  &__group:not(:last-child) {
+  &__group {
     margin-bottom: 1.2rem;
   }
   &__input {
@@ -56,7 +56,7 @@
 
   &__radio {
     &-group {
-      // The default display value of radio buttons is set to "block". We want to place them next to each other and style their height and width. Therefore, we need to set the display property value to an "inline-block" value.
+      // The default value of display property of radio buttons is "block". We want them to be situated next to each other and style their height and width. Therefore, we need to set the display property value to an "inline-block" value.
       display: inline-block;
       // Align radio buttons in the same line.
       width: 49%;
@@ -80,15 +80,15 @@
       // Style radio button check mark
       &::before {
         content: "";
-        // The default display value of pseudo elements is set to "inline". Therefore, the width and height properties won't apply to the element.
+        // The default value of the "display" property of pseudo-elements is the "inline" value. Therefore, the width and height properties won't apply to the element.
         display: block;
         width: 75%;
         height: 75%;
         background-color: $color-primary;
         border-radius: 50%;
-        // The "static" value is a default value for the position property of pseudo-elements. To center our check mark, we have to set the position property value to either a relative or absolute value. When using absolute value, remember to set the parent's element position property to relative.
+        // The default value of the "position" property of pseudo-elements is the "static" value. To center our check mark, we have to set the position property value to either a relative or absolute value. When using absolute value, remember to specify the parent's element position property. It can be any value. As long as the position property is specified, the absolute positioning works.
         position: relative;
-        // As the middle of the element (point 0 on the X and Y axes) is positioned at the upper left corner of the radio element, we need to move it to the centre.
+        // Because the middle of the element (point 0 on the X and Y axes) is positioned at the upper left corner of the radio element, we need to move it to the centre.
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
