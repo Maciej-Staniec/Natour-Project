@@ -34,76 +34,87 @@
     }
   }
 
-  // If the placeholder disappears (once text is typed) it applies the styling declaration to the __label element. The adjacent sibling selector, represented by the + symbol in CSS selectors, is used to select an element that comes immediately after another specific element, and they share the same parent.
+  // If the placeholder disappears (once text is typed) it applies styling to the label element. The adjacent sibling selector, represented by the + symbol in CSS selectors, is used to select an element that comes immediately after another specific element, and they share the same parent.
   &__input:placeholder-shown + &__label {
     transform: translateY(-4rem);
     // The visibility property cannot be animated.
     visibility: hidden;
-    // We also need to inlcude the opacity property, as the visibility property cannot be animated.
+    // Opacity can be animated
     opacity: 0;
   }
 
   &__label {
+    // 0.8 rem top/bottom, 1.6rem left/right. Aligns the label's position with the input placeholder.
     padding: 0.8rem 1.6rem;
     font-weight: 600;
     font-size: 1.2rem;
     letter-spacing: 1.2px;
     transition: all 0.3s;
-    // To show the default cursor when we hover over the input elements or make them active, the display of the label element must be set to hidden.
+    // Label elements are inline elements by default. It renders the element on the same line within their containing block, placing them next to each other horizontally.
     display: block;
   }
 
   &__radio {
     &-group {
+      // The default display value of radio buttons is set to "block". We want to place them next to each other and style their height and width. Therefore, we need to set the display property value to an "inline-block" value.
       display: inline-block;
+      // Align radio buttons in the same line.
       width: 49%;
     }
-    &-input,
-    &-label {
-      cursor: pointer;
-      vertical-align: middle;
-    }
-    &-input {
-      // The appearance property is used to remove the default styling (or appearance) of certain form elements, such as buttons, checkboxes, and radio buttons.
-      // When you apply appearance: none;, it removes the default platform-specific styling of the element, allowing you to style it yourself using CSS.
-      // This property is particularly useful for creating custom-styled form controls that look consistent across different browsers and operating systems.
-      // Note that appearance: none; only affects the appearance of the element, not its visibility or layout.
 
+    // Create custom radio button appearance
+    &-input {
       // Hide default radio button appearance
       -webkit-appearance: none;
       appearance: none;
       width: 2.4rem;
       height: 2.4rem;
-      color: $color-primary;
       background-color: transparent;
+      // Create radio button outline
       border: 3px solid $color-primary;
+      // Make the radio button round
       border-radius: 50%;
-      position: relative;
+      // position: relative;
       margin-right: 1.2rem;
 
-      // Create custom radio button appearance
+      // Style radio button check mark
       &::before {
         content: "";
+        // The default display value of pseudo elements is set to "inline". Therefore, the width and height properties won't apply to the element.
         display: block;
         width: 75%;
         height: 75%;
         background-color: $color-primary;
         border-radius: 50%;
-        position: absolute;
+        // The "static" value is a default value for the position property of pseudo-elements. To center our check mark, we have to set the position property value to either a relative or absolute value. When using absolute value, remember to set the parent's element position property to relative.
+        position: relative;
+        // As the middle of the element (point 0 on the X and Y axes) is positioned at the upper left corner of the radio element, we need to move it to the centre.
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        // No check mark in initial state
         opacity: 0;
+        // Animate the check mark
+        transition: all 0.4s;
       }
-      // Style checked state of custom radio button
+
+      // Style checked state of the custom radio button
       &:checked::before {
+        // Show a check mark when the radio button is clicked
         opacity: 1;
       }
     }
-    //Style the font of the radio button labels
+    //Style font of the radio button labels
     &-label {
       font-size: $default-font-size;
       color: $color-grey-dark;
+    }
+
+    &-input,
+    &-label {
+      cursor: pointer;
+      // Align rendering of radio buttons and their labels
+      vertical-align: middle;
     }
   }
 }
