@@ -674,6 +674,7 @@ footer {
 .footer__navigation, .footer__copyright {
   padding-top: 1.6rem;
   width: 80.4%;
+  border-top: 1px solid #777;
 }
 .footer__copyright {
   float: right;
