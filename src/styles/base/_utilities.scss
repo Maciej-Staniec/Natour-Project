@@ -1,3 +1,4 @@
+// We should only use the !important keyword with utility classes. Using it with utility classes is a legitimate reason.
 .u-center-text {
   text-align: center !important;
 }
