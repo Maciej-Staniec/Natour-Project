@@ -47,6 +47,7 @@ SHADES:
 ACCENTS:
 
 GREYS:
+#333333
 #777
 #f7f7f7;
 
