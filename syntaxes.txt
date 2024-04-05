@@ -136,3 +136,24 @@ Here's what each part of the declaration means:
    - 100%: Represents the ending point of the blue portion of the gradient. It ends at the very end (rightmost edge) of the gradient.
 
 
+============= SKEW ==============
+transform: skewX(<angle>);
+
+transform: skewX(30deg); will skew the element by 30 degrees along the horizontal axis, making it slant towards the right.
+
+transform: skewX(-20deg); will skew the element by -20 degrees along the horizontal axis, making it slant towards the left.
+
+******** UNITS
+
+- Degrees (deg): The most common unit used for angles in CSS. You can specify the angle in degrees from 0 to 360.
+Example: skewX(45deg)
+
+- Radians (rad): An alternative unit for angles, where 1 radian is approximately equal to 57.3 degrees.
+Example: skewX(0.7854rad) (approximately equivalent to 45 degrees)
+
+- Gradians (grad): Another alternative unit for angles, where 1 gradian is equal to 1/400 of a full circle.
+Example: skewX(50grad)
+
+- Turns (turn): Specifies the number of full circles the element should be rotated.
+Example: skewX(0.125turn) (equivalent to 45 degrees)
+
