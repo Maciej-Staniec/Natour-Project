@@ -5,3 +5,10 @@
     clear: both;
   }
 }
+
+@mixin navi_icon {
+  display: inline-block;
+  height: 1.5px;
+  width: 3.2rem;
+  background-color: $color-grey-dark-2;
+}

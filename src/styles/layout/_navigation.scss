@@ -1,0 +1,37 @@
+.navigation {
+  &__checkbox {
+    display: none;
+    appearance: none;
+  }
+  &__button {
+    display: inline-block;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    background-color: $color-white;
+    position: fixed;
+    z-index: 100;
+    top: 6.4rem;
+    right: 6.4rem;
+    text-align: center;
+  }
+  &__icon {
+    @include navi_icon;
+    position: relative;
+    top: 50%;
+    &::before,
+    &::after {
+      content: "";
+      @include navi_icon;
+      position: absolute;
+    }
+    &::before {
+      top: -0.8rem;
+      left: 0;
+    }
+    &::after {
+      top: 0.8rem;
+      left: 0%;
+    }
+  }
+}
