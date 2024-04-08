@@ -714,11 +714,11 @@ footer {
   width: 6.4rem;
   height: 6.4rem;
   border-radius: 50%;
-  background-color: #fff;
   position: fixed;
-  z-index: 100;
   top: 6.4rem;
   right: 6.4rem;
+  background-color: #fff;
+  z-index: 100;
   text-align: center;
 }
 .navigation__icon {
@@ -736,6 +736,7 @@ footer {
   width: 3.2rem;
   background-color: #333333;
   position: absolute;
+  transition: all 0.3s;
 }
 .navigation__icon::before {
   top: -0.8rem;
@@ -744,4 +745,24 @@ footer {
 .navigation__icon::after {
   top: 0.8rem;
   left: 0%;
+}
+.navigation__button:hover .navigation__icon::before {
+  transform: scaleY(1.5) translateY(-0.1rem);
+}
+.navigation__button:hover .navigation__icon::after {
+  transform: scaleY(1.5) translateY(0.1rem);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon, .navigation__checkbox:checked + .navigation__button .navigation__icon::before, .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  display: none;
+}
+.navigation__background {
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.4rem;
+  right: 6.4rem;
+  z-index: 99;
+  background-color: #55c57a;
 }/*# sourceMappingURL=main.css.map */

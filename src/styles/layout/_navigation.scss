@@ -1,20 +1,19 @@
 .navigation {
+  // Default checkbox visual styling removal
   &__checkbox {
     display: none;
     appearance: none;
   }
+
+  // Basic hamburger button styling
   &__button {
-    display: inline-block;
-    width: 6.4rem;
-    height: 6.4rem;
-    border-radius: 50%;
+    @include navi_button;
     background-color: $color-white;
-    position: fixed;
     z-index: 100;
-    top: 6.4rem;
-    right: 6.4rem;
     text-align: center;
   }
+
+  // Creation of the hamburger button inner icon
   &__icon {
     @include navi_icon;
     position: relative;
@@ -24,6 +23,7 @@
       content: "";
       @include navi_icon;
       position: absolute;
+      transition: all 0.3s;
     }
     &::before {
       top: -0.8rem;
@@ -33,5 +33,37 @@
       top: 0.8rem;
       left: 0%;
     }
+  }
+
+  // Animation of the hamburger button inner icon
+  &__button:hover &__icon::before {
+    transform: scaleY(1.5) translateY(-0.1rem);
+  }
+  &__button:hover &__icon::after {
+    transform: scaleY(1.5) translateY(0.1rem);
+  }
+
+  &__checkbox:checked + &__button &__icon,
+  &__checkbox:checked + &__button &__icon::before,
+  &__checkbox:checked + &__button &__icon::after {
+    display: none;
+  }
+
+  &__background {
+    @include navi_button;
+    z-index: 99;
+    background-color: $color-primary;
+  }
+
+  &__nav {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
   }
 }

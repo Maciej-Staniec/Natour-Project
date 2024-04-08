@@ -12,3 +12,13 @@
   width: 3.2rem;
   background-color: $color-grey-dark-2;
 }
+
+@mixin navi_button {
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.4rem;
+  right: 6.4rem;
+}
