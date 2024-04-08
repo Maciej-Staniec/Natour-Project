@@ -15,10 +15,13 @@
 
 @mixin navi_button {
   display: inline-block;
-  width: 6.4rem;
-  height: 6.4rem;
   border-radius: 50%;
   position: fixed;
-  top: 6.4rem;
-  right: 6.4rem;
+}
+
+@mixin absolute_positioning_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
