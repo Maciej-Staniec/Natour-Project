@@ -98,7 +98,7 @@ initial: the float area is unaffected.
 inherit: inherits shape-outside value from parent.
 
 
-=========== BLUR EFFECT =============
+================ BLUR EFFECT ==============
 Syntax
 filter: blur(value);
 
@@ -112,7 +112,7 @@ Accepted values:
  - blur(50%): Applies a blur radius equal to 50% of the width/height of the element.
 
 
-=========== LINEAR GRADIENT =============
+============= LINEAR GRADIENT =============
 linear-gradient(45deg, red 0 50%, blue 50% 100%)
 
 Here's what each part of the declaration means:

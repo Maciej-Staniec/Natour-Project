@@ -17,7 +17,7 @@
     text-align: center;
   }
 
-  // Styling of the navigation background that emerges from behind the button
+  // Styling the initial state of the navigation background that emerges from behind the nav button
   &__background {
     @include navi_button;
     width: 6.2rem;
@@ -32,7 +32,7 @@
     transition: all 0.5s linear;
   }
 
-  // Navigation styling when opened
+  // Navigation styling when the nav opens
   &__nav {
     height: 100vh;
     width: 0%;
@@ -43,44 +43,60 @@
     transition: 0.3s all;
   }
 
+  // When the nav opens, set its width to 100% so the links can emerge from the left to the center of the screen.
   &__checkbox:checked ~ &__nav {
     width: 100%;
   }
 
+  // Hiding the nav content when closed and setting its initial position to be centered when the nav opens (and sets its width to 100%)
   &__list {
     @include absolute_positioning_center;
-    text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: 0.3s all;
   }
 
+  // Animating the emergence of the nav content to the center of the screen
   &__checkbox:checked ~ &__nav &__list {
+    text-align: center;
     opacity: 1;
     visibility: visible;
   }
 
+  // Styling the list item elements for the nav
   &__item {
     display: block;
     list-style: none;
     margin: 1.2rem;
   }
 
+  // Styling the initial state of nav links when they emerge from the left side of the screen to the center
   &__link,
   &__link:link,
   &__link:visited {
-    display: inline-block;
-    padding: 0.8rem 2.4rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: $color-white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 3rem;
-    color: $color-white;
-    font-weight: 300;
-  }
+    display: inline-block;
+    padding: 0.8rem 2.4rem;
+    // Setting up static linear background of two colours for the link animation
+    background-image: linear-gradient(
+      120deg,
+      transparent 0 50%,
+      $color-white 50% 100%
+    );
+    transition: all 0.4s;
+    // To make the primary colour cover the entire link and maintain the stylish angled background animation, setting the background-size with a high value is necessary for the primary colour to overflow the entire link element. The white background is pushed out to the right hand side of the element due to the size of the background and its initial position set to 0 on the X and Y axes.
+    background-size: 230%;
 
-  &__link:hover {
-    background-color: $color-white;
-    color: $color-primary;
+    &:hover,
+    &:active {
+      // The default background-position value is 0% (0 at the X and 0 at the Y axis). When set to 100%, the X and Y values are at the maximums of their axis values (bottom-right corner of the background/image)
+      background-position: 100%;
+      color: $color-primary;
+    }
   }
 
   // Styling of the hamburger icon's appearance
