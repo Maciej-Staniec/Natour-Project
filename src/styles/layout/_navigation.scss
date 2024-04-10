@@ -15,6 +15,14 @@
     background-color: $color-white;
     z-index: 300;
     text-align: center;
+    @include button-shadow-static;
+    transition: all 0.2s;
+    &:hover {
+      @include button-shadow-hover;
+    }
+    &:active {
+      @include button-shadow-active;
+    }
   }
 
   // Styling the initial state of the navigation background that emerges from behind the nav button
@@ -88,14 +96,19 @@
       $color-white 50% 100%
     );
     transition: all 0.4s;
-    // To make the primary colour cover the entire link and maintain the stylish angled background animation, setting the background-size with a high value is necessary for the primary colour to overflow the entire link element. The white background is pushed out to the right hand side of the element due to the size of the background and its initial position set to 0 on the X and Y axes.
+    // To make the primary colour cover the entire link element and maintain the stylish angled background animation, setting the background-size with a high value is necessary for the primary colour to overflow the entire element. The white background is pushed out to the right hand side due to the size of the background and its initial position set to 0 on the X and Y axes.
     background-size: 230%;
+
+    span {
+      margin-right: 1.6rem;
+    }
 
     &:hover,
     &:active {
       // The default background-position value is 0% (0 at the X and 0 at the Y axis). When set to 100%, the X and Y values are at the maximums of their axis values (bottom-right corner of the background/image)
       background-position: 100%;
       color: $color-primary;
+      transform: translateX(0.8rem);
     }
   }
 

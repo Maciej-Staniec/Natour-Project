@@ -65,6 +65,8 @@ width:
 --- 07. SHADOWS
 
 == BUTTONS ==
+STATIC:
+box-shadow: 0 1rem 1.5rem rgba($color-black, 0.10);
 HOVER:
 box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
 ACTIVE:

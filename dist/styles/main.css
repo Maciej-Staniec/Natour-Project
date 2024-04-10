@@ -720,6 +720,14 @@ footer {
   background-color: #fff;
   z-index: 300;
   text-align: center;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.navigation__button:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.navigation__button:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .navigation__background {
   display: inline-block;
@@ -776,9 +784,13 @@ footer {
   transition: all 0.4s;
   background-size: 230%;
 }
+.navigation__link span, .navigation__link:link span, .navigation__link:visited span {
+  margin-right: 1.6rem;
+}
 .navigation__link:hover, .navigation__link:active, .navigation__link:link:hover, .navigation__link:link:active, .navigation__link:visited:hover, .navigation__link:visited:active {
   background-position: 100%;
   color: #55c57a;
+  transform: translateX(0.8rem);
 }
 .navigation__icon {
   display: inline-block;
