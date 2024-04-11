@@ -728,18 +728,22 @@ footer {
 }
 .navigation__button:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0.3rem);
 }
 .navigation__background {
   display: inline-block;
   border-radius: 50%;
   position: fixed;
-  width: 6.2rem;
-  height: 6.2rem;
-  top: 6.5rem;
-  right: 6.5rem;
+  width: 5.9rem;
+  height: 5.9rem;
+  top: 6.8rem;
+  right: 6.8rem;
   z-index: 100;
   background-image: radial-gradient(#7ed56f, #28b485);
   transition: all 0.5s linear;
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
 }
 .navigation__nav {
   height: 100vh;
@@ -748,24 +752,24 @@ footer {
   top: 0%;
   left: 0%;
   z-index: 200;
-  transition: 0.3s all;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
 }
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 .navigation__list {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
   transition: 0.3s all;
 }
 .navigation__checkbox:checked ~ .navigation__nav .navigation__list {
   text-align: center;
-  opacity: 1;
-  visibility: visible;
 }
 .navigation__item {
   display: block;
@@ -833,7 +837,4 @@ footer {
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   top: 0;
   transform: rotate(-135deg);
-}
-.navigation__checkbox:checked ~ .navigation__background {
-  transform: scale(80);
 }/*# sourceMappingURL=main.css.map */
