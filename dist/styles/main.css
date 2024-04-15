@@ -740,7 +740,7 @@ footer {
   right: 6.8rem;
   z-index: 100;
   background-image: radial-gradient(#7ed56f, #28b485);
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80);
@@ -753,8 +753,7 @@ footer {
   left: 0%;
   z-index: 200;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
+  transition: opacity 0.8s;
 }
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;

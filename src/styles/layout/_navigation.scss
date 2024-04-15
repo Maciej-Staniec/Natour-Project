@@ -38,7 +38,7 @@
       $color-primary-light,
       $color-primary-dark
     );
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
   }
 
   // Styling of the background on a hamburger button click
@@ -56,8 +56,8 @@
     left: 0%;
     z-index: 200;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s;
+    // visibility: hidden;
+    transition: opacity 0.8s;
   }
 
   // When the nav opens, set its width to 100% so the links can emerge from the left to the center of the screen.
