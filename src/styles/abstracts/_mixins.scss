@@ -6,19 +6,6 @@
   }
 }
 
-@mixin navi_icon {
-  display: inline-block;
-  height: 1.5px;
-  width: 3.2rem;
-  background-color: $color-grey-dark-2;
-}
-
-@mixin navi_button {
-  display: inline-block;
-  border-radius: 50%;
-  position: fixed;
-}
-
 @mixin absolute_positioning_center {
   position: absolute;
   top: 50%;

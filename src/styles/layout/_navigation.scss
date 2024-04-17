@@ -5,9 +5,69 @@
     appearance: none;
   }
 
+  // Styling of the hamburger icon appearance
+  &__icon {
+    position: relative;
+    // Position the text element (&nbsp) at 50% from the top edge of the parent element (__button)
+    top: 50%;
+    &,
+    &::before,
+    &::after {
+      // Styling of the hamburger icon lines
+      display: inline-block;
+      height: 1.5px;
+      width: 3.2rem;
+      background-color: $color-grey-dark-2;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      transition: all 0.3s;
+      left: 0;
+    }
+    &::before {
+      // The % unit would correspond to the height of the relatively positioned element. In this case, it is best to use px/rem units.
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  // Styling the hamburger icon animation on hover
+  &__button:hover &__icon {
+    &::before {
+      transform: scaleY(1.5) translateY(-0.1rem);
+    }
+    &::after {
+      transform: scaleY(1.5) translateY(0.1rem);
+    }
+  }
+
+  // Styling the hamburger icon animation on active
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+    &::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  // Styling hamburger button & subsurface background shape & positioning
+  &__button,
+  &__background {
+    display: inline-block;
+    border-radius: 50%;
+    position: fixed;
+  }
+
   // hamburger button background styling
   &__button {
-    @include navi_button;
     width: 6.4rem;
     height: 6.4rem;
     top: 6.4rem;
@@ -17,7 +77,10 @@
     text-align: center;
     @include button-shadow-static;
     transition: all 0.2s;
+
+    // Styling on hover and active
     &:hover {
+      cursor: pointer;
       @include button-shadow-hover;
     }
     &:active {
@@ -26,9 +89,8 @@
     }
   }
 
-  // Styling the initial state of the navigation background that emerges from behind the nav button
+  // Styling the initial state of the subsurface navigation background that emerges from behind the nav button
   &__background {
-    @include navi_button;
     width: 5.9rem;
     height: 5.9rem;
     top: 6.8rem;
@@ -38,7 +100,7 @@
       $color-primary-light,
       $color-primary-dark
     );
-    transition: all 0.3s linear;
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   // Styling of the background on a hamburger button click
@@ -56,8 +118,9 @@
     left: 0%;
     z-index: 200;
     opacity: 0;
-    // visibility: hidden;
-    transition: opacity 0.8s;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    // background-color: orangered;
   }
 
   // When the nav opens, set its width to 100% so the links can emerge from the left to the center of the screen.
@@ -70,11 +133,6 @@
   // Hiding the nav content when closed and setting its initial position to be centered when the nav opens (and sets its width to 100%)
   &__list {
     @include absolute_positioning_center;
-    transition: 0.3s all;
-  }
-
-  // Animating the emergence of the nav content to the center of the screen
-  &__checkbox:checked ~ &__nav &__list {
     text-align: center;
   }
 
@@ -117,50 +175,5 @@
       color: $color-primary;
       transform: translateX(0.8rem);
     }
-  }
-
-  // Styling of the hamburger icon's appearance
-  &__icon {
-    @include navi_icon;
-    position: relative;
-    top: 50%;
-    &::before,
-    &::after {
-      content: "";
-      @include navi_icon;
-      position: absolute;
-      transition: all 0.3s;
-    }
-    &::before {
-      top: -0.8rem;
-      left: 0;
-    }
-    &::after {
-      top: 0.8rem;
-      left: 0%;
-    }
-  }
-
-  // Styling the hamburger icon's animation on hover
-  &__button:hover &__icon::before {
-    transform: scaleY(1.5) translateY(-0.1rem);
-  }
-
-  &__button:hover &__icon::after {
-    transform: scaleY(1.5) translateY(0.1rem);
-  }
-
-  // Styling the hamburger icon's animation on active
-  &__checkbox:checked + &__button &__icon {
-    background-color: transparent;
-  }
-
-  &__checkbox:checked + &__button &__icon::before {
-    top: 0;
-    transform: rotate(135deg);
-  }
-  &__checkbox:checked + &__button &__icon::after {
-    top: 0;
-    transform: rotate(-135deg);
   }
 }
