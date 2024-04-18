@@ -19,17 +19,40 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 70vh;
-    width: 80%;
+    width: 75%;
+    display: table;
     &-left {
+      display: table-cell;
+      width: calc(100% / 3);
+      padding: 0.8rem;
     }
     &-right {
+      display: table-cell;
+      width: calc((100% / 3) * 2);
+      vertical-align: middle;
+      padding: 2.4rem 4rem;
     }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
   }
 
   &__close {
     position: absolute;
     top: 2.4rem;
     right: 2.4rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light-2;
+  }
+
+  &__button {
+    text-align: center;
   }
 }
