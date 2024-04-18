@@ -549,10 +549,10 @@ body {
 
 .popup {
   position: fixed;
-  height: 100vh;
-  width: 100%;
   top: 0;
   left: 0;
+  height: 100vh;
+  width: 100%;
   z-index: 3000;
   background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
@@ -564,6 +564,7 @@ body {
   opacity: 1;
 }
 .popup__content {
+  border-radius: 3px;
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -571,11 +572,11 @@ body {
   transform: translate(-50%, -50%);
   width: 75%;
   display: table;
+  overflow: hidden;
 }
 .popup__content-left {
   display: table-cell;
   width: 33.3333333333%;
-  padding: 0.8rem;
 }
 .popup__content-right {
   display: table-cell;
@@ -587,10 +588,40 @@ body {
   width: 100%;
   display: block;
 }
+.popup__img:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
 .popup__close {
-  position: absolute;
+  position: fixed;
   top: 2.4rem;
   right: 2.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+.popup__close-btn:link, .popup__close-btn:visited {
+  line-height: 0;
+  color: #777;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  font-size: 3rem;
+  text-decoration: none;
+}
+.popup__close-btn:link:hover, .popup__close-btn:link:active, .popup__close-btn:visited:hover, .popup__close-btn:visited:active {
+  color: #fff;
+}
+.popup__close:hover {
+  background-color: #55c57a;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+.popup__close:active {
+  transform: translateY(1px);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
 }
 .popup__text {
   font-size: 1.4rem;
@@ -600,6 +631,8 @@ body {
        column-gap: 4rem;
   -moz-column-rule: 1px solid #c9c9c9;
        column-rule: 1px solid #c9c9c9;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 .popup__button {
   text-align: center;
@@ -824,10 +857,10 @@ footer {
 }
 .navigation__button:hover {
   cursor: pointer;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .navigation__button:active {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
   transform: translateY(0.3rem);
 }
 .navigation__background {
