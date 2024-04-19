@@ -99,6 +99,7 @@ body {
 }
 
 .heading-secondary {
+  display: inline-block;
   font-size: 3.6rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -632,7 +633,7 @@ body {
   -moz-column-rule: 1px solid #c9c9c9;
        column-rule: 1px solid #c9c9c9;
   -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 .popup__button {
   text-align: center;

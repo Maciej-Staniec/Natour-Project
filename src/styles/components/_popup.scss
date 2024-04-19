@@ -12,7 +12,8 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
-  // Making the popup visible by using the :target pseudo class. It targets an html id. When an anchor element targetting a specific id is clicked, it overwrite styling of the element.
+  // Making the popup visible by using the :target pseudo class.
+  // It targets an HTML ID. When an anchor element targeting a specific ID is clicked, it targets the ID and applies all declared styling to the targeted element (including its children if there are any).
   &:target {
     visibility: visible;
     opacity: 1;
@@ -87,6 +88,9 @@
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
     hyphens: auto;
   }
 
