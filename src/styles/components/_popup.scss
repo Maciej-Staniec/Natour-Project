@@ -1,25 +1,21 @@
-// Popup blackout
+// ========= Closed State ========= //
+
+// Popup background styling
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  // We want it to occupy the whole view of the page
+  // Occupy the whole view of the page
   height: 100vh;
   width: 100%;
   z-index: 3000;
   background-color: rgba(0, 0, 0, 0.8);
-  // It has to be hidden, when the popup is closed
+  // Set to hidden, when the popup is closed
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
-  // Making the popup visible by using the :target pseudo class.
-  // It targets an HTML ID. When an anchor element targeting a specific ID is clicked, it targets the ID and applies all declared styling to the targeted element (including its children if there are any).
-  &:target {
-    visibility: visible;
-    opacity: 1;
-  }
 
-  // Main content window
+  // Main content window styling
   &__content {
     border-radius: 3px;
     background-color: $color-white;
@@ -28,11 +24,17 @@
     display: table;
     // Hide corners of the image when border-radius is applied
     overflow: hidden;
+    opacity: 0;
+    // Scale set to a lower value to make the element look like it emerges towards the user when the popup is opened.
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.3s;
 
+    // Styling the left-side width of the popup content
     &-left {
       display: table-cell;
       width: calc(100% / 3);
     }
+    // Styling the right-side width of the popup content
     &-right {
       display: table-cell;
       width: calc((100% / 3) * 2);
@@ -49,6 +51,39 @@
     }
   }
 
+  &__text {
+    font-size: 1.4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light-2;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  // CTA button styling
+  &__button {
+    text-align: center;
+  }
+
+  // ========= Opened state ========= //
+
+  // Making the popup visible by using the :target pseudo class.
+  // It targets an HTML ID. When an anchor element targeting a specific ID is clicked, it targets the ID and applies all declared styling to the targeted element (including its children if there are any).
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Animation of the popup content (resizing the element)
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  // Styling of the close button
   &__close {
     position: fixed;
     top: 2.4rem;
@@ -57,7 +92,6 @@
     height: 2.4rem;
     border-radius: 50%;
     transition: all 0.2s;
-    // text-align: center;
     &-btn:link,
     &-btn:visited {
       line-height: 0;
@@ -81,20 +115,5 @@
       transform: translateY(1px);
       box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
     }
-  }
-
-  &__text {
-    font-size: 1.4rem;
-    column-count: 2;
-    column-gap: 4rem;
-    column-rule: 1px solid $color-grey-light-2;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-  }
-
-  &__button {
-    text-align: center;
   }
 }
