@@ -571,8 +571,8 @@ body {
   display: table;
   overflow: hidden;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.5);
-  transition: all 0.3s;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.5s 0.2s;
 }
 .popup__content-left {
   display: table-cell;

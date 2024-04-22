@@ -26,8 +26,9 @@
     overflow: hidden;
     opacity: 0;
     // Scale set to a lower value to make the element look like it emerges towards the user when the popup is opened.
-    transform: translate(-50%, -50%) scale(0.5);
-    transition: all 0.3s;
+    transform: translate(-50%, -50%) scale(0);
+    // Delay set to allow black background to emerge first.
+    transition: all 0.5s 0.2s;
 
     // Styling the left-side width of the popup content
     &-left {
