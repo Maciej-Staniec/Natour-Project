@@ -22,3 +22,38 @@
 @mixin button-shadow-active {
   box-shadow: 0 0.5rem 1rem rgba($color-black, 0.25);
 }
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600:      Phone
+600 - 900:    Tablet portrait
+900 - 1200:   Tablet landscape
+1200 - 1800:  Normal style
+1800+:        Big desktop
+*/
+@mixin respond-1449 {
+  // The @content directive allows us to pass/inject code into the mixin
+  @media (max-width: 1449px) {
+    @content;
+  }
+}
+@mixin respond-1377 {
+  // The @content directive allows us to pass/inject code into the mixin
+  @media (max-width: 1377px) {
+    @content;
+  }
+}
+
+@mixin respond-1066 {
+  // The @content directive allows us to pass/inject code into the mixin
+  @media (max-width: 1066px) {
+    @content;
+  }
+}
+
+@mixin respond-1194 {
+  // The @content directive allows us to pass/inject code into the mixin
+  @media (max-width: 1194px) {
+    @content;
+  }
+}
