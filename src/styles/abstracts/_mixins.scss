@@ -23,6 +23,12 @@
   box-shadow: 0 0.5rem 1rem rgba($color-black, 0.25);
 }
 
+// rem and em do not depend on the html font-size in media queries.
+// Instead, 1 rem = 1em = 16px
+// rem units are buggy in some browsers, therefore we should always use em
+// to calculate the width in em, use the following formula: em width = pixels / 16
+// We also don't want to use pixels for accessibility reasons (the user still want to apply their custom web browser font size on our page) and zoom feature.
+
 // MEDIA QUERY MANAGER
 /*
 0 - 600:      Phone
@@ -31,29 +37,13 @@
 1200 - 1800:  Normal style
 1800+:        Big desktop
 */
-@mixin respond-1449 {
-  // The @content directive allows us to pass/inject code into the mixin
-  @media (max-width: 1449px) {
-    @content;
-  }
-}
-@mixin respond-1377 {
-  // The @content directive allows us to pass/inject code into the mixin
-  @media (max-width: 1377px) {
-    @content;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 1449) {
+      @content;
+    }
   }
 }
 
-@mixin respond-1066 {
-  // The @content directive allows us to pass/inject code into the mixin
-  @media (max-width: 1066px) {
-    @content;
-  }
-}
-
-@mixin respond-1194 {
-  // The @content directive allows us to pass/inject code into the mixin
-  @media (max-width: 1194px) {
-    @content;
-  }
-}
+/*======== POPUP MEDIA QUERY ========*/
