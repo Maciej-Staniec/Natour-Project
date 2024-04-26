@@ -1,9 +1,29 @@
 /*
-0 - 600:      Phone
-600 - 900:    Tablet portrait
-900 - 1200:   Tablet landscape
-1200 - 1800:  Normal style
-1800+:        Big desktop
+======== MEDIA QUERY MANAGER ========
+
+0 - 600 (37.5em):         Phone
+600 - 900 (56.25em):      Tablet portrait
+900 - 1200 (75em):     Tablet landscape
+1200 - 1800 (112.5em):    Normal style
+1800+ :                   Big desktop
+*/
+/*
+======== BREAKPOINT ARGUMENTS ========
+- phone
+- tab-port
+- tab-land
+- normal-dt
+  a) normal-dt-s
+  b) normal-dt-m
+  c) normal-dt-b
+- big-dt
+
+The ORDER of styling our webpage with media queries: 
+1. Base + typography
+2. General layout + grid
+3. Page layout
+4. Components
+
 */
 /*======== POPUP MEDIA QUERY ========*/
 /* A cross-browser reset, often referred to as a CSS reset or a CSS normalization, is a technique used to reset or normalize default browser styling to create a consistent starting point for styling elements across different web browsers.
@@ -21,10 +41,30 @@ html {
   font-size: 10px;
   font-size: 62.5%;
 }
+@media screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   padding: 3rem;
   box-sizing: border-box;
+}
+@media screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 @keyframes MoveInLeft {
@@ -98,12 +138,24 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
+@media screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    font-size: 5.2rem;
+    letter-spacing: 1.75rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   letter-spacing: 1.75rem;
   font-weight: 700;
   animation: MoveInRight 1s ease-out;
+}
+@media screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+  }
 }
 
 .heading-secondary {
