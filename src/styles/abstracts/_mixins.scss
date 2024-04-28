@@ -59,13 +59,37 @@ The ORDER of styling our webpage with media queries:
 */
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == phone {
+  @if $breakpoint == phone-sm {
+    // width < 400px
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-med {
+    // width < 500px
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-big {
     // width < 600px
     @media screen and (max-width: 37.5em) {
       @content;
     }
   }
-  @if $breakpoint == tab-port {
+  @if $breakpoint == tab-port-sm {
+    // width < 700px
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port-med {
+    // width < 800px
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port-big {
     // width < 900px
     @media screen and (max-width: 56.25em) {
       @content;

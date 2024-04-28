@@ -26,7 +26,7 @@ body {
     // animation-delay: 3s;
     // animation-iteration-count: 3;
     animation-timing-function: ease-out;
-    @include respond-to(phone) {
+    @include respond-to(phone-big) {
       font-size: 5.2rem;
       letter-spacing: 1.75rem;
     }
@@ -40,7 +40,7 @@ body {
 
     // Let's use a CSS property, which contain all the necessary animation properties to shorten our code.
     animation: MoveInRight 1s ease-out;
-    @include respond-to(phone) {
+    @include respond-to(phone-big) {
       font-size: 1.8rem;
       letter-spacing: 1rem;
     }
@@ -64,6 +64,16 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+
+  @include respond-to(tab-port-big) {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  @include respond-to(phone-big) {
+    font-size: 2.4rem;
+    letter-spacing: 0;
+  }
 
   &:hover {
     // skew() syntax - skew(ax, ay), clockwise

@@ -12,10 +12,15 @@
   // Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.
   background-position: top;
   // syntax: (x y(first point), x y (2nd point), x y (3rd point), x y (4th point)
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
   // clip-path: polygon(0% 100%, 50% 0, 100% 100%);
   position: relative;
+  @include respond-to(tab-land) {
+    max-height: 70%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
+  }
 
   &__logo-box {
     position: absolute;
