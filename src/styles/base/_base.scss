@@ -41,7 +41,7 @@ html {
 body {
   padding: 3rem;
   box-sizing: border-box; // Optional: Include border and padding in the element's total width and height
-  @include respond-to(tab-port) {
+  @include respond-to(tab-port-big) {
     padding: 0;
   }
 }

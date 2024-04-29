@@ -30,6 +30,10 @@ body {
       font-size: 5.2rem;
       letter-spacing: 1.75rem;
     }
+    @include respond-to(phone-med) {
+      font-size: 4.4rem;
+      letter-spacing: 1.5rem;
+    }
   }
 
   &--sub {
@@ -43,6 +47,10 @@ body {
     @include respond-to(phone-big) {
       font-size: 1.8rem;
       letter-spacing: 1rem;
+    }
+    @include respond-to(phone-med) {
+      font-size: 1.6rem;
+      letter-spacing: 0.75rem;
     }
   }
 }
