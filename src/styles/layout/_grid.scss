@@ -9,6 +9,7 @@
 
   @include clearfix;
 }
+
 // The below code is an attribute selector. It targets markup elements based on what the provide inside the quotation marks. The ^ (caret) symbol tells the selector to target all instances. In our case, we want to target all classes that start with the "col-". We could use the asterix symbol * to target every selector containing the "col-" content. The $ symbol means to target all selectors that end with the "col-".
 [class^="col-"] {
   float: left;
