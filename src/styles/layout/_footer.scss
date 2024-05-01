@@ -3,6 +3,9 @@ footer {
   padding: $section-padding-small;
   color: $color-grey-light-1;
   font-size: 1.4rem;
+  @include respond-to(tab-land-med) {
+    padding: $section-padding-tab-land-sm;
+  }
 }
 
 .footer {

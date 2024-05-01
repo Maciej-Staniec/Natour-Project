@@ -32,7 +32,7 @@ $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal-big: 6.4rem;
 $gutter-horizontal-normal: 3.2rem;
-$gutter-horizontal-small: 2.4rem;
+$gutter-horizontal-small: 1.6rem;
 
 // BORDER RADIUS
 $br-normal: 3px;
@@ -41,5 +41,14 @@ $br-normal: 3px;
 $section-padding-normal: 17.6rem 0;
 $section-padding-small: 14.4rem 0;
 $section-padding-bottom-small: 17.6rem 0 14.4rem 0;
+
+$section-padding-tab-land: 16rem 3.2rem;
+$section-padding-tab-land-btm-sm: 16rem 3.2rem 11.2rem 3.2rem;
+$section-padding-tab-land-med: 14.4rem 3.2rem;
+$section-padding-tab-land-sm: 11.2rem 3.2rem;
+
+$section-poadding-tab-port: 14.4rem 2.4rem;
+$section-poadding-tab-port-med: 12.8rem 2.4rem;
+$section-poadding-tab-port-sm: 9.6rem 2.4rem;
 
 // MEDIA QUERIES

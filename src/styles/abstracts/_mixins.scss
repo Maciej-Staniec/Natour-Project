@@ -95,6 +95,20 @@ The ORDER of styling our webpage with media queries:
       @content;
     }
   }
+
+  @if $breakpoint == tab-land-sm {
+    // width < 1000px
+    @media screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land-med {
+    // width < 1100px
+    @media screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
   @if $breakpoint == tab-land {
     // width < 1200px
     @media screen and (max-width: 75em) {
