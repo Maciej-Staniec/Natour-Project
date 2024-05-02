@@ -7,6 +7,9 @@
     margin-bottom: $gutter-vertical;
   }
 
+  @include respond-to(tab-port-med) {
+  }
+
   @include clearfix;
 }
 
@@ -22,6 +25,13 @@
     @include respond-to(tab-land-sm) {
       margin-right: $gutter-horizontal-small;
     }
+    @include respond-to(tab-port-med) {
+      margin-right: 0;
+    }
+  }
+
+  @include respond-to(tab-port-med) {
+    width: 100% !important;
   }
 }
 

@@ -1,5 +1,8 @@
 .composition {
   position: relative;
+  @include respond-to(tab-port-med) {
+    height: 25rem;
+  }
   &__photo {
     width: 55%;
     box-shadow: 0 1.6rem 4rem rgba($color-black, 0.4);
