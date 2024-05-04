@@ -3,8 +3,13 @@ footer {
   padding: $section-padding-small;
   color: $color-grey-light-1;
   font-size: 1.4rem;
-  @include respond-to(tab-land-med) {
+  // width < 1000px
+  @include respond-to(tab-land-sm) {
     padding: $section-padding-tab-land-sm;
+  }
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port-sm;
   }
 }
 
@@ -23,6 +28,17 @@ footer {
     width: 80.4%;
     padding-top: 1.6rem;
     border-top: 1px solid $color-grey-dark;
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__navigation {
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      margin-bottom: 4.8rem;
+    }
   }
 
   &__copyright {

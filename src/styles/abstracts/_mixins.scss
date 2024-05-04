@@ -6,6 +6,34 @@
   }
 }
 
+// Column widths mixins
+@mixin column-width($gutter-horizontal, $no-columns, $occupied-space-col) {
+  @if $no-columns == 2 and $occupied-space-col == 1 {
+    width: calc((100% - $gutter-horizontal) / 2);
+  }
+  @if $no-columns == 3 and $occupied-space-col == 1 {
+    width: calc((100% - (2 * $gutter-horizontal)) / 3);
+  }
+  @if $no-columns == 4 and $occupied-space-col == 1 {
+    width: calc((100% - (3 * $gutter-horizontal)) / 4);
+  }
+  @if $no-columns == 3 and $occupied-space-col == 2 {
+    width: calc(
+      ((100% - (2 * $gutter-horizontal)) / 3) * 2 + $gutter-horizontal
+    );
+  }
+  @if $no-columns == 4 and $occupied-space-col == 2 {
+    width: calc(
+      ((100% - (3 * $gutter-horizontal)) / 4) * 2 + $gutter-horizontal
+    );
+  }
+  @if $no-columns == 4 and $occupied-space-col == 3 {
+    width: calc(
+      ((100% - (3 * $gutter-horizontal)) / 4) * 3 + 2 * $gutter-horizontal
+    );
+  }
+}
+
 @mixin absolute_positioning_center {
   position: absolute;
   top: 50%;
@@ -84,7 +112,6 @@ The ORDER of styling our webpage with media queries:
     }
   }
   @if $breakpoint == tab-port-med {
-    // width < 800px
     @media screen and (max-width: 50em) {
       @content;
     }
