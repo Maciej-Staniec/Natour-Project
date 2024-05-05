@@ -996,7 +996,7 @@ footer {
 }
 .footer__navigation, .footer__copyright {
   display: inline-block;
-  width: 80.4%;
+  width: 84.5%;
   padding-top: 1.6rem;
   border-top: 1px solid #777;
 }
@@ -1005,6 +1005,9 @@ footer {
     width: 100%;
     text-align: center;
   }
+}
+.footer__navigation {
+  text-align: center;
 }
 @media screen and (max-width: 62.5em) {
   .footer__navigation {
@@ -1021,7 +1024,7 @@ footer {
   display: inline-block;
 }
 .footer__item:not(:last-child) {
-  margin-right: 1.2rem;
+  margin-right: 1.6rem;
 }
 .footer__link, .footer__link:link, .footer__link:visited {
   display: inline-block;
