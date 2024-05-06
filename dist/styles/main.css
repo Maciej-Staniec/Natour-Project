@@ -750,6 +750,7 @@ body {
     padding: 24rem 3.2rem 20.8rem 3.2rem;
   }
 }
+
 .section-features {
   padding: 17.6rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
@@ -823,15 +824,32 @@ body {
 }
 .header__logo-box {
   position: absolute;
-  top: 4.4rem;
-  left: 4.4rem;
+  top: 4rem;
+  left: 4rem;
+}
+@media screen and (max-width: 56.25em) {
+  .header__logo-box {
+    top: 6.4rem;
+    left: 6.4rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .header__logo-box {
+    top: 4rem;
+    left: 4rem;
+  }
 }
 .header__logo {
-  height: 3.6rem;
+  height: 4rem;
   backface-visibility: hidden;
 }
 .header__logo:hover {
   animation: enlarge 1s ease-in-out;
+}
+@media screen and (max-width: 37.5em) {
+  .header__logo {
+    height: 4.8rem;
+  }
 }
 .header__text-box {
   position: absolute;
@@ -883,6 +901,7 @@ body {
 @media screen and (max-width: 50em) {
   [class^=col-] {
     width: 100% !important;
+    margin-bottom: 4.8rem;
   }
 }
 
@@ -1109,6 +1128,12 @@ footer {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
   transform: translateY(0.3rem);
 }
+@media screen and (max-width: 37.5em) {
+  .navigation__button {
+    top: 3.6rem;
+    right: 3.6rem;
+  }
+}
 .navigation__background {
   width: 5.9rem;
   height: 5.9rem;
@@ -1117,6 +1142,12 @@ footer {
   z-index: 100;
   background-image: radial-gradient(#7ed56f, #28b485);
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@media screen and (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.8rem;
+    right: 3.8rem;
+  }
 }
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80);

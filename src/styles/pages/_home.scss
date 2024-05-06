@@ -5,9 +5,6 @@
   @include respond-to(tab-land-med) {
     padding: $section-padding-tab-land-top-big;
   }
-  @include respond-to(tab-port-med) {
-
-  }
 }
 
 .section-features {

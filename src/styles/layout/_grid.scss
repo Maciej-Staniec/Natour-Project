@@ -36,6 +36,7 @@
   // width < 800px
   @include respond-to(tab-port-med) {
     width: 100% !important;
+    margin-bottom: 4.8rem;
   }
 }
 

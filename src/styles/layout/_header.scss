@@ -16,6 +16,8 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
   // clip-path: polygon(0% 100%, 50% 0, 100% 100%);
   position: relative;
+
+  // width < 1200px
   @include respond-to(tab-land) {
     max-height: 70%;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
@@ -24,16 +26,34 @@
 
   &__logo-box {
     position: absolute;
-    top: 4.4rem;
-    left: 4.4rem;
+    top: 4rem;
+    left: 4rem;
+
+    // width < 900px
+    @include respond-to(tab-port-big) {
+      top: 6.4rem;
+      left: 6.4rem;
+      // transform: translate(-50%, -50%);
+    }
+
+    // width < 600px
+    @include respond-to(phone-big) {
+      top: 4rem;
+      left: 4rem;
+    }
   }
   &__logo {
     // We don't need to specify the width property. Browsers will figure it out.
-    height: 3.6rem;
+    height: 4rem;
     backface-visibility: hidden;
     // Apply animation on hover
     &:hover {
       animation: enlarge 1s ease-in-out;
+    }
+
+    // width < 600px
+    @include respond-to(phone-big) {
+      height: 4.8rem;
     }
   }
 
