@@ -146,6 +146,7 @@
   &__list {
     @include absolute_positioning_center;
     text-align: center;
+    width: 100%;
   }
 
   // Styling the list item elements for the nav
@@ -186,6 +187,15 @@
       background-position: 100%;
       color: $color-primary;
       transform: translateX(0.8rem);
+    }
+
+    // width < 500px
+    @include respond-to(phone-med) {
+      font-size: 3.6rem;
+    }
+    // width < 400px
+    @include respond-to(phone-sm) {
+      font-size: 4.4rem;
     }
   }
 }

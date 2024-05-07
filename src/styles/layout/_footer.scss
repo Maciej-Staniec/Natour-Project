@@ -20,6 +20,11 @@ footer {
 
     &-box {
       text-align: center;
+      margin-bottom: 6.4rem;
+      // width < 800px
+      @include respond-to(tab-port-med) {
+        margin-bottom: 3.2rem;
+      }
     }
   }
   &__navigation,
@@ -30,20 +35,20 @@ footer {
     border-top: 1px solid $color-grey-dark;
     // width < 1000px
     @include respond-to(tab-land-sm) {
-      width: 100%;
-      text-align: center;
+      width: 60rem;
+      margin: auto 0;
     }
   }
   &__navigation {
     text-align: center;
-    // width < 1000px
-    @include respond-to(tab-land-sm) {
-      margin-bottom: 4.8rem;
-    }
   }
 
   &__copyright {
     float: right;
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      float: none;
+    }
   }
 
   &__list {

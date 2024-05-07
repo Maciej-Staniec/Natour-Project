@@ -112,6 +112,7 @@ The ORDER of styling our webpage with media queries:
     }
   }
   @if $breakpoint == tab-port-med {
+    // width < 800px
     @media screen and (max-width: 50em) {
       @content;
     }
