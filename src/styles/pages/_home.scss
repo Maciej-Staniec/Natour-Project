@@ -2,8 +2,15 @@
   background-color: $color-grey-light-1;
   padding: $section-padding-normal;
   margin-top: -20vh;
+
+  // width < 1100px
   @include respond-to(tab-land-med) {
     padding: $section-padding-tab-land-top-big;
+  }
+
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port;
   }
 }
 
@@ -35,8 +42,15 @@
   //   // .section-features > *
   //   transform: skewY(5deg);
   // }
+
+  // width < 1100px
   @include respond-to(tab-land-med) {
     padding: $section-padding-tab-land;
+  }
+
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port-med;
   }
 }
 
@@ -44,14 +58,25 @@
   background-color: $color-grey-light-1;
   padding: $section-padding-bottom-small;
   margin-top: -7rem;
+
+  // width < 1100px
   @include respond-to(tab-land-med) {
     padding: $section-padding-tab-land-btm-sm;
+  }
+
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port-med;
   }
 }
 
 .section-stories {
   padding: $section-padding-small;
   position: relative;
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port-sm;
+  }
 }
 
 // Booking section general styling
@@ -62,6 +87,16 @@
     $color-primary-dark
   );
   padding: $section-padding-normal;
+
+  // width < 1100px
+  @include respond-to(tab-land-med) {
+    padding: $section-padding-tab-land-sm;
+  }
+
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    padding: $section-padding-tab-port-sm;
+  }
 }
 
 // Booking form layout
@@ -79,12 +114,5 @@
   &__form {
     width: 50%;
     padding: 4.8rem;
-  }
-}
-
-.section-stories,
-.section-book {
-  @include respond-to(tab-land-med) {
-    padding: $section-padding-tab-land-sm;
   }
 }

@@ -11,6 +11,11 @@ footer {
   @include respond-to(tab-port-med) {
     padding: $section-padding-tab-port-sm;
   }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone-sm;
+  }
 }
 
 .footer {
