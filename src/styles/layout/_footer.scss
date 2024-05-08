@@ -33,14 +33,20 @@ footer {
     width: 84.5%;
     padding-top: 1.6rem;
     border-top: 1px solid $color-grey-dark;
-    // width < 1000px
     @include respond-to(tab-land-sm) {
-      width: 60rem;
-      margin: auto 0;
+      width: 100%;
     }
   }
+
   &__navigation {
     text-align: center;
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      margin-bottom: 6.4rem;
+    }
+    @include respond-to($section-padding-tab-port-med) {
+      margin-bottom: 0;
+    }
   }
 
   &__copyright {

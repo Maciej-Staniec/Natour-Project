@@ -225,6 +225,12 @@ body {
   margin-bottom: 9.6rem !important;
 }
 
+@media screen and (max-width: 62.5em) {
+  .u-mediaquery-center {
+    width: 80%;
+  }
+}
+
 .btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   padding: 1.6rem 4rem;
@@ -873,7 +879,7 @@ body {
 }
 @media screen and (max-width: 50em) {
   .row {
-    max-width: 50rem;
+    max-width: 70%;
   }
 }
 
@@ -1027,12 +1033,16 @@ footer {
 }
 @media screen and (max-width: 62.5em) {
   .footer__navigation, .footer__copyright {
-    width: 60rem;
-    margin: auto 0;
+    width: 100%;
   }
 }
 .footer__navigation {
   text-align: center;
+}
+@media screen and (max-width: 62.5em) {
+  .footer__navigation {
+    margin-bottom: 6.4rem;
+  }
 }
 .footer__copyright {
   float: right;

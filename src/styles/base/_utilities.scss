@@ -18,3 +18,10 @@
 .u-margin-bottom-extrabig {
   margin-bottom: 9.6rem !important;
 }
+
+// width < 1000px
+.u-mediaquery-center {
+  @include respond-to(tab-land-sm) {
+    width: 80%;
+  }
+}
