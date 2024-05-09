@@ -5,12 +5,12 @@
 
   // width < 1100px
   @include respond-to(tab-land-med) {
-    padding: $section-padding-tab-land-top-big;
+    padding: $section-padding-tab-land-tb;
   }
 
   // width < 800px
   @include respond-to(tab-port-med) {
-    padding: $section-padding-tab-port;
+    padding: $section-padding-tab-port-tb;
   }
 }
 
@@ -66,13 +66,19 @@
 
   // width < 800px
   @include respond-to(tab-port-med) {
-    padding: $section-padding-tab-port-med;
+    padding: $section-padding-tab-port-tb-bs;
   }
 }
 
 .section-stories {
   padding: $section-padding-small;
   position: relative;
+
+  // width < 1100px
+  @include respond-to(tab-land-med) {
+    padding: $section-padding-tab-land-sm;
+  }
+
   // width < 800px
   @include respond-to(tab-port-med) {
     padding: $section-padding-tab-port-sm;
