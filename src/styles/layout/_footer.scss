@@ -14,7 +14,7 @@ footer {
 
   // width < 600px
   @include respond-to(phone-big) {
-    padding: $section-padding-phone-sm;
+    padding: $section-padding-phone;
   }
 }
 
@@ -49,7 +49,7 @@ footer {
     @include respond-to(tab-land-sm) {
       margin-bottom: 6.4rem;
     }
-    @include respond-to($section-padding-tab-port-med) {
+    @include respond-to($section-padding-tab-port) {
       margin-bottom: 0;
     }
   }

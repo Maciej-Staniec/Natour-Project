@@ -5,12 +5,17 @@
 
   // width < 1100px
   @include respond-to(tab-land-med) {
-    padding: $section-padding-tab-land-tb;
+    padding: $section-padding-tab-land-top-big;
   }
 
   // width < 800px
   @include respond-to(tab-port-med) {
-    padding: $section-padding-tab-port-tb;
+    padding: $section-padding-tab-port-tb-big;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone-tb-big;
   }
 }
 
@@ -50,13 +55,18 @@
 
   // width < 800px
   @include respond-to(tab-port-med) {
-    padding: $section-padding-tab-port-med;
+    padding: $section-padding-tab-port;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone;
   }
 }
 
 .section-tours {
   background-color: $color-grey-light-1;
-  padding: $section-padding-bottom-small;
+  padding: $section-padding-btm-sm;
   margin-top: -7rem;
 
   // width < 1100px
@@ -66,7 +76,12 @@
 
   // width < 800px
   @include respond-to(tab-port-med) {
-    padding: $section-padding-tab-port-tb-bs;
+    padding: $section-padding-tab-port-t-big;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone-tb-big;
   }
 }
 
@@ -82,6 +97,11 @@
   // width < 800px
   @include respond-to(tab-port-med) {
     padding: $section-padding-tab-port-sm;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone;
   }
 }
 
@@ -102,6 +122,11 @@
   // width < 800px
   @include respond-to(tab-port-med) {
     padding: $section-padding-tab-port-sm;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    padding: $section-padding-phone;
   }
 }
 

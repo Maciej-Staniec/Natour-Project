@@ -45,6 +45,32 @@
   }
 }
 
+.u-mediaquery-story {
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    max-width: 85% !important;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    max-width: 90% !important;
+  }
+}
+
+.u-mediaquery-featurebox {
+  // width < 500px
+  @include respond-to(phone-med) {
+    max-width: 80% !important;
+  }
+}
+
+.u-mediaquery-card {
+  // width < 600px
+  @include respond-to(phone-big) {
+    max-width: 80% !important;
+  }
+}
+
 .u-mediaquery-footer {
   // width < 1000px
   @include respond-to(tab-land-sm) {

@@ -9,6 +9,17 @@
   padding-left: 9.6rem;
   transform: skewX(-12deg);
 
+  // width < 800px
+  @include respond-to(tab-port-med) {
+    width: 100%;
+    padding: 3.2rem 3.2rem 3.2rem 4.8rem;
+  }
+
+  // width < 600px
+  @include respond-to(phone-big) {
+    transform: skewX(0);
+  }
+
   // As soon as we hover on the story element, we want the animation happen on the __caption element.
   &:hover &__caption {
     transform: translate(-50%, -50%);
@@ -17,6 +28,10 @@
 
   & > * {
     transform: skewX(12deg);
+    // width < 600px
+    @include respond-to(phone-big) {
+      transform: skewX(0);
+    }
   }
 
   &__shape {
@@ -32,6 +47,11 @@
     // We can't apply two transform properties on the individual element. The following declaration block is a subsequent declaration block (there is a direct child selector above), therefore, it overrides the previous declaration of tranform property and the skewX property does not get applied to the element. To mitigate the issue, we need to explicitily declare the skewX value right after translateX value in the same declaration block.
     transform: translateX(-3.2rem) skewX(12deg);
     position: relative;
+
+    // width < 600px
+    @include respond-to(phone-big) {
+      transform: translateX(-3.2rem) skewX(0);
+    }
   }
 
   &__img {
@@ -61,5 +81,3 @@
     backface-visibility: hidden;
   }
 }
-
-

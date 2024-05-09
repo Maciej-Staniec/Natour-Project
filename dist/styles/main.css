@@ -26,6 +26,10 @@ The ORDER of styling our webpage with media queries:
 
 */
 /*======== POPUP MEDIA QUERY ========*/
+/* ************* DESKTOP *************** */
+/* ************* TABLET LANDSCAPE *************** */
+/* ************* TABLET PORTRAIT *************** */
+/* ************* PHONE *************** */
 /* A cross-browser reset, often referred to as a CSS reset or a CSS normalization, is a technique used to reset or normalize default browser styling to create a consistent starting point for styling elements across different web browsers.
 
 Different browsers have their default styles for various HTML elements. This can lead to inconsistencies in appearance and layout between browsers. A CSS reset aims to neutralize these default styles, removing browser-specific styling differences, and providing a consistent baseline styling for your webpage across different browsers. */
@@ -248,6 +252,29 @@ body {
   }
 }
 
+@media screen and (max-width: 50em) {
+  .u-mediaquery-story {
+    max-width: 85% !important;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .u-mediaquery-story {
+    max-width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 31.25em) {
+  .u-mediaquery-featurebox {
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .u-mediaquery-card {
+    max-width: 80% !important;
+  }
+}
+
 @media screen and (max-width: 62.5em) {
   .u-mediaquery-footer {
     max-width: 80% !important;
@@ -364,6 +391,16 @@ body {
     width: 33.33%;
   }
 }
+@media screen and (max-width: 37.5em) {
+  .composition__photo {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .composition__photo {
+    width: 70%;
+  }
+}
 .composition__photo--p1 {
   top: -2rem;
   left: 0;
@@ -372,6 +409,11 @@ body {
   .composition__photo--p1 {
     top: 0;
     transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .composition__photo--p1 {
+    top: 0;
   }
 }
 .composition__photo--p2 {
@@ -385,6 +427,17 @@ body {
     z-index: 20;
   }
 }
+@media screen and (max-width: 37.5em) {
+  .composition__photo--p2 {
+    top: 7rem;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .composition__photo--p2 {
+    top: -5rem;
+    left: 8rem;
+  }
+}
 .composition__photo--p3 {
   top: 10rem;
   left: 20%;
@@ -394,6 +447,18 @@ body {
     top: 1rem;
     left: 0;
     transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .composition__photo--p3 {
+    top: 0;
+    left: -15rem;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .composition__photo--p3 {
+    top: -5rem;
+    left: 2rem;
   }
 }
 .composition__photo:hover {
@@ -572,12 +637,28 @@ body {
   padding-left: 9.6rem;
   transform: skewX(-12deg);
 }
+@media screen and (max-width: 50em) {
+  .story {
+    width: 100%;
+    padding: 3.2rem 3.2rem 3.2rem 4.8rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .story {
+    transform: skewX(0);
+  }
+}
 .story:hover .story__caption {
   transform: translate(-50%, -50%);
   opacity: 1;
 }
 .story > * {
   transform: skewX(12deg);
+}
+@media screen and (max-width: 37.5em) {
+  .story > * {
+    transform: skewX(0);
+  }
 }
 .story__shape {
   width: 15.2rem;
@@ -588,6 +669,11 @@ body {
   clip-path: circle(50% at 50% 50%);
   transform: translateX(-3.2rem) skewX(12deg);
   position: relative;
+}
+@media screen and (max-width: 37.5em) {
+  .story__shape {
+    transform: translateX(-3.2rem) skewX(0);
+  }
 }
 .story__img {
   height: 100%;
@@ -828,6 +914,11 @@ body {
     padding: 17.6rem 2.4rem 14.4rem 2.4rem;
   }
 }
+@media screen and (max-width: 37.5em) {
+  .section-about {
+    padding: 14.4rem 1.6rem 9.6rem 1.6rem;
+  }
+}
 
 .section-features {
   padding: 17.6rem 0;
@@ -849,6 +940,11 @@ body {
     padding: 12.8rem 2.4rem;
   }
 }
+@media screen and (max-width: 37.5em) {
+  .section-features {
+    padding: 8rem 1.6rem;
+  }
+}
 
 .section-tours {
   background-color: #f7f7f7;
@@ -863,6 +959,11 @@ body {
 @media screen and (max-width: 50em) {
   .section-tours {
     padding: 17.6rem 2.4rem 9.6rem 2.4rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .section-tours {
+    padding: 14.4rem 1.6rem 9.6rem 1.6rem;
   }
 }
 
@@ -880,6 +981,11 @@ body {
     padding: 9.6rem 2.4rem;
   }
 }
+@media screen and (max-width: 37.5em) {
+  .section-stories {
+    padding: 8rem 1.6rem;
+  }
+}
 
 .section-book {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
@@ -893,6 +999,11 @@ body {
 @media screen and (max-width: 50em) {
   .section-book {
     padding: 9.6rem 2.4rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .section-book {
+    padding: 8rem 1.6rem;
   }
 }
 
