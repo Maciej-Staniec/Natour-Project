@@ -27,8 +27,8 @@
       position: relative;
       width: 33.33%;
     }
-    // width < 600px
-    @include respond-to(phone-big) {
+    // width < 700px
+    @include respond-to(tab-port-sm) {
       width: 50%;
     }
     // width < 500px
@@ -46,8 +46,8 @@
         transform: scale(1.2);
       }
 
-      // width < 600px
-      @include respond-to(phone-big) {
+      // width < 700px
+      @include respond-to(tab-port-sm) {
         top: 0;
       }
     }
@@ -62,15 +62,15 @@
         z-index: 20;
       }
 
-      // width < 600px
-      @include respond-to(phone-big) {
+      // width < 700px
+      @include respond-to(tab-port-sm) {
         top: 7rem;
       }
 
       // width < 500px
       @include respond-to(phone-med) {
         top: -5rem;
-        left: 8rem;
+        left: 11rem;
       }
     }
     &--p3 {
@@ -84,8 +84,8 @@
         transform: scale(1.2);
       }
 
-      // width < 600px
-      @include respond-to(phone-big) {
+      // width < 700px
+      @include respond-to(tab-port-sm) {
         top: 0;
         left: -15rem;
       }
