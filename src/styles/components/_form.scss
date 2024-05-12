@@ -1,6 +1,15 @@
 .form {
   &__group {
     margin-bottom: 1.2rem;
+    // width < 800px
+    @include respond-to(tab-port-med) {
+      margin-bottom: 0;
+      max-width: 70%;
+    }
+    // width < 700px
+    @include respond-to(tab-port-sm) {
+      max-width: 80%;
+    }
   }
   &__input {
     border-style: none;
@@ -32,6 +41,12 @@
         border-bottom: 3px solid $color-primary;
       }
     }
+
+    // width < 600px
+    @include respond-to(phone-big) {
+      height: 2.4rem;
+      padding: 1.6rem 1.2rem;
+    }
   }
 
   // If the placeholder disappears (once text is typed) it applies styling to the label element. The adjacent sibling selector, represented by the + symbol in CSS selectors, is used to select an element that comes immediately after another specific element, and they share the same parent.
@@ -51,7 +66,12 @@
     letter-spacing: 1.2px;
     transition: all 0.3s;
     // Label elements are inline elements by default. It renders the element on the same line within their containing block, placing them next to each other horizontally.
-    display: block;
+    display: inline-block;
+
+    // width < 600px
+    @include respond-to(phone-big) {
+      padding: 0.4rem 0.2rem;
+    }
   }
 
   &__radio {
@@ -60,6 +80,14 @@
       display: inline-block;
       // Align radio buttons in the same line.
       width: 49%;
+      // width < 800px
+      @include respond-to(tab-port-med) {
+        display: block;
+        width: auto;
+        &:not(:last-child) {
+          margin-bottom: 0.8rem;
+        }
+      }
     }
 
     // Create custom radio button appearance

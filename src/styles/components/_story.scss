@@ -52,6 +52,14 @@
     @include respond-to(phone-big) {
       transform: translateX(-3.2rem) skewX(0);
     }
+
+    // width < 400px
+    @include respond-to(phone-sm) {
+      float: none;
+      left: 50%;
+      transform: translateX(-50%) skewX(0);
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__img {
@@ -59,6 +67,11 @@
     transform: translateX(-4rem) scale(1.4);
     backface-visibility: hidden;
     transition: all 0.5s;
+
+    // width < 400px
+    @include respond-to(phone-sm) {
+      text-align: center;
+    }
   }
   &:hover &__img {
     filter: blur(2px) brightness(0.8);
