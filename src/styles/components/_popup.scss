@@ -30,17 +30,18 @@
     // Delay set to allow black background to emerge first.
     transition: all 0.5s 0.2s;
 
+    // width < 700px
+    @include respond-to(tab-port-sm) {
+      width: 90%;
+    }
     // Styling the left-side width of the popup content
     &-left {
       display: table-cell;
       width: calc(100% / 3);
-      // @include respond-to(popup-1449) {
-      //   display: block;
-      //   width: 100%;
-      //   margin-bottom: 2.4rem;
-      //   text-align: center;
-      //   padding: 0 6.4rem;
-      // }
+
+      @include respond-to(popup) {
+        display: none;
+      }
     }
     // Styling the right-side width of the popup content
     &-right {
@@ -49,39 +50,22 @@
       vertical-align: middle;
       padding: 2.4rem 4rem;
     }
+    @include respond-to(popup) {
+      background-image: linear-gradient(
+          105deg,
+          rgba($color-white, 0.9) 0% 100%,
+          transparent 100%
+        ),
+        url(../../img/nat-1-large.jpg);
+    }
   }
 
   &__img {
     width: 100%;
     display: block;
 
-    // @include respond-to($popup-1449) {
-    //   max-height: 30rem;
-    //   width: auto;
-    //   display: inline-block;
-    // }
-
-    // @include respond-to(popup-1449) {
-    //   display: inline-block;
-    //   max-height: 30rem;
-    //   width: auto;
-    // }
-    // @include respond-1377 {
-    //   display: inline-block;
-    //   max-height: 25rem;
-    //   width: auto;
-    // }
-    // @include respond-1066 {
-    //   display: inline-block;
-    //   max-height: 22rem;
-    //   width: auto;
-    // }
     &:not(:last-child) {
       margin-bottom: 0.8rem;
-      // @include respond-to(popup-1449) {
-      //   margin-bottom: 0;
-      //   margin-right: 1.6rem;
-      // }
     }
   }
 
@@ -94,6 +78,13 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    text-align: justify;
+
+    // width < 900px
+    @include respond-to(tab-port-big) {
+      column-count: 1;
+      hyphens: none;
+    }
   }
 
   // CTA button styling
@@ -133,10 +124,17 @@
       @include absolute_positioning_center;
       display: inline-block;
       font-size: 3rem;
+      @include respond-to(tab-port-big) {
+        font-size: 4.4rem;
+      }
       text-decoration: none;
       &:hover,
       &:active {
         color: $color-white;
+      }
+
+      // width < 900px
+      @include respond-to(tab-port-big) {
       }
     }
 

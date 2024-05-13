@@ -239,7 +239,6 @@ body {
     max-width: 80% !important;
   }
 }
-
 @media screen and (max-width: 62.5em) {
   .u-mediaquery-composition:not(:last-child) {
     margin-bottom: 8rem;
@@ -250,13 +249,11 @@ body {
     margin-bottom: 8rem;
   }
 }
-
 @media screen and (max-width: 50em) {
   .u-mediaquery-book {
     max-width: 100% !important;
   }
 }
-
 @media screen and (max-width: 50em) {
   .u-mediaquery-story {
     max-width: 85% !important;
@@ -267,22 +264,30 @@ body {
     max-width: 90% !important;
   }
 }
-
 @media screen and (max-width: 31.25em) {
   .u-mediaquery-featurebox {
     max-width: 80% !important;
   }
 }
-
 @media screen and (max-width: 37.5em) {
   .u-mediaquery-card {
     max-width: 80% !important;
   }
 }
-
 @media screen and (max-width: 62.5em) {
   .u-mediaquery-footer {
     max-width: 80% !important;
+  }
+}
+@media screen and (max-width: 90.5625em) {
+  .u-mediaquery__popup-center {
+    text-align: center;
+    display: block;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  .u-mediaquery__popup-center {
+    text-align: start;
   }
 }
 
@@ -384,7 +389,7 @@ body {
 .composition__photo {
   width: 55%;
   box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: br-normal;
+  border-radius: 3px;
   position: absolute;
   transition: all 0.2s;
   z-index: 10;
@@ -800,12 +805,17 @@ body {
 @media screen and (max-width: 50em) {
   .form__group {
     margin-bottom: 0;
-    max-width: 70%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 43.75em) {
   .form__group {
-    max-width: 80%;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .form__group {
+    width: 100%;
   }
 }
 .form__input {
@@ -836,6 +846,7 @@ body {
   .form__input {
     height: 2.4rem;
     padding: 1.6rem 1.2rem;
+    width: 100%;
   }
 }
 .form__input:-moz-placeholder-shown + .form__label {
@@ -937,15 +948,30 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: all 0.5s 0.2s;
 }
+@media screen and (max-width: 43.75em) {
+  .popup__content {
+    width: 90%;
+  }
+}
 .popup__content-left {
   display: table-cell;
   width: 33.3333333333%;
+}
+@media screen and (max-width: 90.5625em) {
+  .popup__content-left {
+    display: none;
+  }
 }
 .popup__content-right {
   display: table-cell;
   width: 66.6666666667%;
   vertical-align: middle;
   padding: 2.4rem 4rem;
+}
+@media screen and (max-width: 90.5625em) {
+  .popup__content {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 100%, transparent 100%), url(../../img/nat-1-large.jpg);
+  }
 }
 .popup__img {
   width: 100%;
@@ -964,6 +990,15 @@ body {
        column-rule: 1px solid #c9c9c9;
   -webkit-hyphens: auto;
   hyphens: auto;
+  text-align: justify;
+}
+@media screen and (max-width: 56.25em) {
+  .popup__text {
+    -moz-column-count: 1;
+         column-count: 1;
+    -webkit-hyphens: none;
+            hyphens: none;
+  }
 }
 .popup__button {
   text-align: center;
@@ -995,6 +1030,11 @@ body {
   display: inline-block;
   font-size: 3rem;
   text-decoration: none;
+}
+@media screen and (max-width: 56.25em) {
+  .popup__close-btn:link, .popup__close-btn:visited {
+    font-size: 4.4rem;
+  }
 }
 .popup__close-btn:link:hover, .popup__close-btn:link:active, .popup__close-btn:visited:hover, .popup__close-btn:visited:active {
   color: #fff;
@@ -1113,7 +1153,17 @@ body {
 }
 @media screen and (max-width: 37.5em) {
   .section-book {
-    padding: 8rem 1.6rem;
+    padding: 8rem;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .section-book {
+    padding: 4.8rem;
+  }
+}
+@media screen and (max-width: 25em) {
+  .section-book {
+    padding: 6.4rem 3.2rem;
   }
 }
 
@@ -1150,8 +1200,14 @@ body {
 }
 @media screen and (max-width: 37.5em) {
   .book__form {
-    padding: 2.4rem;
     width: auto;
+    padding: 7.2rem;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .book__form {
+    width: auto;
+    padding: 3.2rem;
   }
 }
 
@@ -1546,7 +1602,7 @@ footer {
   margin: 1.2rem;
 }
 .navigation__link, .navigation__link:link, .navigation__link:visited {
-  font-size: 3rem;
+  font-size: 3.6rem;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
@@ -1567,11 +1623,6 @@ footer {
 }
 @media screen and (max-width: 31.25em) {
   .navigation__link, .navigation__link:link, .navigation__link:visited {
-    font-size: 3.6rem;
-  }
-}
-@media screen and (max-width: 25em) {
-  .navigation__link, .navigation__link:link, .navigation__link:visited {
-    font-size: 4.4rem;
+    font-size: 3rem;
   }
 }/*# sourceMappingURL=main.css.map */

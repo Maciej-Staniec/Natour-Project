@@ -126,7 +126,16 @@
 
   // width < 600px
   @include respond-to(phone-big) {
-    padding: $section-padding-phone;
+    padding: 8rem;
+  }
+
+  // width < 500px
+  @include respond-to(phone-med) {
+    padding: 4.8rem;
+  }
+  // width < 400px
+  @include respond-to(phone-sm) {
+    padding: 6.4rem 3.2rem;
   }
 }
 
@@ -179,8 +188,14 @@
 
     // width < 600px
     @include respond-to(phone-big) {
-      padding: 2.4rem;
       width: auto;
+      padding: 7.2rem;
+    }
+
+    // width < 500px
+    @include respond-to(phone-med) {
+      width: auto;
+      padding: 3.2rem;
     }
   }
 }

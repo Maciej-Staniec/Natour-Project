@@ -24,61 +24,77 @@
   margin-bottom: 9.6rem !important;
 }
 
-.u-mediaquery-about {
-  // width < 800px
-  @include respond-to(tab-port-med) {
-    max-width: 80% !important;
+.u-mediaquery {
+  &-about {
+    // width < 800px
+    @include respond-to(tab-port-med) {
+      max-width: 80% !important;
+    }
   }
-}
 
-.u-mediaquery-composition {
-  // width < 1000px
-  @include respond-to(tab-land-sm) {
-    &:not(:last-child) {
+  &-composition {
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      &:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+    }
+
+    // width < 800px
+    @include respond-to(tab-port-med) {
       margin-bottom: 8rem;
     }
   }
-  // width < 800px
-  @include respond-to(tab-port-med) {
-    margin-bottom: 8rem;
-  }
-}
-.u-mediaquery-book {
-  // width < 800px
-  @include respond-to(tab-port-med) {
-    max-width: 100% !important;
-  }
-}
 
-.u-mediaquery-story {
-  // width < 800px
-  @include respond-to(tab-port-med) {
-    max-width: 85% !important;
+  &-book {
+    // width < 800px
+    @include respond-to(tab-port-med) {
+      max-width: 100% !important;
+    }
   }
 
-  // width < 600px
-  @include respond-to(phone-big) {
-    max-width: 90% !important;
-  }
-}
+  &-story {
+    // width < 800px
+    @include respond-to(tab-port-med) {
+      max-width: 85% !important;
+    }
 
-.u-mediaquery-featurebox {
-  // width < 500px
-  @include respond-to(phone-med) {
-    max-width: 80% !important;
+    // width < 600px
+    @include respond-to(phone-big) {
+      max-width: 90% !important;
+    }
   }
-}
 
-.u-mediaquery-card {
-  // width < 600px
-  @include respond-to(phone-big) {
-    max-width: 80% !important;
+  &-featurebox {
+    // width < 500px
+    @include respond-to(phone-med) {
+      max-width: 80% !important;
+    }
   }
-}
 
-.u-mediaquery-footer {
-  // width < 1000px
-  @include respond-to(tab-land-sm) {
-    max-width: 80% !important;
+  &-card {
+    // width < 600px
+    @include respond-to(phone-big) {
+      max-width: 80% !important;
+    }
+  }
+
+  &-footer {
+    // width < 1000px
+    @include respond-to(tab-land-sm) {
+      max-width: 80% !important;
+    }
+  }
+
+  &__popup-center {
+    // width < 1449px
+    @include respond-to(popup) {
+      text-align: center;
+      display: block;
+    }
+    // width < 900px
+    @include respond-to(tab-port-big) {
+      text-align: start;
+    }
   }
 }

@@ -160,7 +160,7 @@
   &__link,
   &__link:link,
   &__link:visited {
-    font-size: 3rem;
+    font-size: 3.6rem;
     font-weight: 300;
     color: $color-white;
     text-decoration: none;
@@ -191,11 +191,7 @@
 
     // width < 500px
     @include respond-to(phone-med) {
-      font-size: 3.6rem;
-    }
-    // width < 400px
-    @include respond-to(phone-sm) {
-      font-size: 4.4rem;
+      font-size: 3rem;
     }
   }
 }
