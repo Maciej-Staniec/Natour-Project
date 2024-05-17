@@ -99,16 +99,70 @@
           </div>
           <div class="col-1-of-2 u-mediaquery-composition">
             <div class="composition">
+              <!-- The "w" descriptor stands for the width of the image. If the "w" descriptor is specified, then the browser automatically figures out the most appropriate size of the image (based on the width and density of the screen). Unlike the density descriptors (1x, 2x, 3x) it figures out the screen's density (and width) and picks up the appropriate size of the image. It does all the calculation on the fly to provide the best resolution of the image. Whereas the density descriptor don't do any calculations. You explicitly specify what image browser should choose for specific screen density (e.g., image x on density 1, image y on density 2, image z on density 3. It only works if the width of the image is explicitly declared in px, rem or em units. If you declare it in %, the picture will expand to fit the % of screen size, but it will lost quality if the actual size of the screen is bigger than the resolution of the image. Unlike the "w" descriptor that calculates everything live and chooses the best image for the current density and width of the screen.-->
+              <img
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 1449px) 20vw,
+                      (max-width: 1200px) 22vw,
+                      (max-width: 1100px) 24vw,
+                      (max-width: 1000px) 30vw,
+                      (max-width: 900px) 28vw,
+                      (max-width: 800px) 25vw,
+                      (max-width: 700px) 38vw,
+                      (max-width: 600px) 38vw,
+                      (max-width: 500px) 52vw,
+                      (max-width: 400px) 52vw,
+                      266px"
+                alt="Photo 1" />
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 400px) 52vw,
+                       (max-width: 500px) 52vw,
+                       (max-width: 600px) 38vw,
+                       (max-width: 700px) 38vw,
+                       (max-width: 800px) 25vw,
+                       (max-width: 900px) 28vw,
+                       (max-width: 1000px) 30vw,
+                       (max-width: 1100px) 24vw,
+                       (max-width: 1200px) 22vw,
+                       (max-width: 1449px) 20vw,
+                       266px"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg" />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 400px) 52vw,
+                       (max-width: 500px) 52vw,
+                       (max-width: 600px) 38vw,
+                       (max-width: 700px) 38vw,
+                       (max-width: 800px) 25vw,
+                       (max-width: 900px) 28vw,
+                       (max-width: 1000px) 30vw,
+                       (max-width: 1100px) 24vw,
+                       (max-width: 1200px) 22vw,
+                       (max-width: 1449px) 20vw,
+                       266px"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg" />
+              <!-- 
               <img
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
-                class="composition__photo composition__photo--p1" /><img
+                class="composition__photo composition__photo--p1" />
+              <img
                 src="img/nat-2-large.jpg"
                 alt="Photo 2"
-                class="composition__photo composition__photo--p2" /><img
+                class="composition__photo composition__photo--p2" />
+              <img
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
-                class="composition__photo composition__photo--p3" />
+                class="composition__photo composition__photo--p3" /> 
+              -->
             </div>
           </div>
         </div>
@@ -386,17 +440,32 @@
     <!-- //////////// FOOTER //////////// -->
     <footer>
       <div class="footer__logo-box">
-        <!-- Art direction - change the picture based on factors like screen size, resolution or device capabilities. -->
+        <!-- To make the art direction work, we need to wrap our images in the picture element -->
         <picture class="footer__logo">
-          <source srcset="" media="(max-width: 37.5em)">
-          <!-- Fall back -->
-                  <img
-          srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
-          alt="Full logo"/>
+          <!-- Art direction - change the picture based on factors like screen size, resolution or device capabilities. We can specify multiple sources for different screen widths, example:   
+          
+            <source srcset="image-large-1x.jpg 1x, image-large-2x.jpg 2x" media="(min-width: 768px)">
+            <source srcset="image-medium-1x.jpg 1, image-medium-2x.jpg 2x" media="(min-width: 480px)">
+            <source srcset="image-small-1x.jpg 1, image-small-2x.jpg 2x">
+          
+          -->
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)" />
+
+          <!-- If the width of the screen exceeds doesn't meed any of the above media queries, it falls back to a default image set in the img element -->
+
+          <!-- Density switching.
+             If a monitor uses 2 pixels to display 1 pixel, it is considered as a higher resolution screen. If it uses 1 pixel to display 1 pixel, it is considered as a lower resolution screen. -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png 2x" />
+          <!-- We still include the src attribute in case a browser does not support the srcset. -->
         </picture>
-
-        <!-- Density switching. If a monitor uses 2 pixels to show 1 pixel, it is considered as a higher resolution screen. If it uses 1 pixel to display 1 pixel, it is considered as a lower resolution screen. -->
-
       </div>
 
       <div class="row u-mediaquery-footer">
