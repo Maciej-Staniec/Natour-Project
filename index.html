@@ -99,42 +99,34 @@
           </div>
           <div class="col-1-of-2 u-mediaquery-composition">
             <div class="composition">
-              <!-- The "w" descriptor stands for the width of the image. If the "w" descriptor is specified, then the browser automatically figures out the most appropriate size of the image (based on the width and density of the screen). Unlike the density descriptors (1x, 2x, 3x) it figures out the screen's density (and width) and picks up the appropriate size of the image. It does all the calculation on the fly to provide the best resolution of the image. Whereas the density descriptor don't do any calculations. You explicitly specify what image browser should choose for specific screen density (e.g., image x on density 1, image y on density 2, image z on density 3. It only works if the width of the image is explicitly declared in px, rem or em units. If you declare it in %, the picture will expand to fit the % of screen size, but it will lost quality if the actual size of the screen is bigger than the resolution of the image. Unlike the "w" descriptor that calculates everything live and chooses the best image for the current density and width of the screen.-->
+              <!-- The "w" descriptor stands for the width of the image. If the "w" descriptor is specified, then the browser automatically figures out the most appropriate size of the image (based on the width and density of the screen (NOT THE WIDTH OF THE IMAGE!!!)). Unlike the density descriptors (1x, 2x, 3x) it figures out the screen's density (and width) and picks up the appropriate size of the image. It does all the calculation on the fly to provide the best resolution of the image. Whereas the density descriptor don't do any calculations. You explicitly specify what image browser should choose for specific screen density (e.g., image x on density 1, image y on density 2, image z on density 3. It only works if the width of the image is explicitly declared in px, rem or em units. Remember, that only the width of the screen matters when using the "w" descriptor. If you set the image to be responsible by setting sits width in %, it doesn't count the width of the image, but the viewport of the browser!-->
               <img
                 class="composition__photo composition__photo--p1"
-                src="img/nat-1-large.jpg"
-                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                sizes="(max-width: 1449px) 20vw,
-                      (max-width: 1200px) 22vw,
-                      (max-width: 1100px) 24vw,
-                      (max-width: 1000px) 30vw,
-                      (max-width: 900px) 28vw,
-                      (max-width: 800px) 25vw,
-                      (max-width: 700px) 38vw,
-                      (max-width: 600px) 38vw,
-                      (max-width: 500px) 52vw,
-                      (max-width: 400px) 52vw,
-                      266px"
+                srcset="
+                  img/nat-1-500.jpg   500w,
+                  img/nat-1-1000.jpg 1000w,
+                  img/nat-1-1500.jpg 1500w
+                "
+                sizes="(max-width: 400px) 52vw,
+                       (max-width: 500px) 52vw,
+                       (max-width: 600px) 38vw,
+                       (max-width: 700px) 38vw,
+                       (max-width: 800px) 25vw,
+                       (max-width: 900px) 28vw,
+                       (max-width: 1000px) 30vw,
+                       (max-width: 1100px) 24vw,
+                       (max-width: 1200px) 22vw,
+                       (max-width: 1449px) 20vw,
+                       266px"
+                src="img/nat-1-500.jpg"
                 alt="Photo 1" />
               <img
-                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                sizes="(max-width: 400px) 52vw,
-                       (max-width: 500px) 52vw,
-                       (max-width: 600px) 38vw,
-                       (max-width: 700px) 38vw,
-                       (max-width: 800px) 25vw,
-                       (max-width: 900px) 28vw,
-                       (max-width: 1000px) 30vw,
-                       (max-width: 1100px) 24vw,
-                       (max-width: 1200px) 22vw,
-                       (max-width: 1449px) 20vw,
-                       266px"
-                alt="Photo 2"
+                srcset="
+                  img/nat-2-500.jpg   500w,
+                  img/nat-2-1000.jpg 1000w,
+                  img/nat-2-1500.jpg 1500w
+                "
                 class="composition__photo composition__photo--p2"
-                src="img/nat-2-large.jpg" />
-
-              <img
-                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
                 sizes="(max-width: 400px) 52vw,
                        (max-width: 500px) 52vw,
                        (max-width: 600px) 38vw,
@@ -146,9 +138,28 @@
                        (max-width: 1200px) 22vw,
                        (max-width: 1449px) 20vw,
                        266px"
-                alt="Photo 3"
+                src="img/nat-2-500.jpg"
+                alt="Photo 2" />
+              <img
+                srcset="
+                  img/nat-3-500.jpg   500w,
+                  img/nat-3-1000.jpg 1000w,
+                  img/nat-3-1500.jpg 1500w
+                "
                 class="composition__photo composition__photo--p3"
-                src="img/nat-3-large.jpg" />
+                sizes="(max-width: 400px) 52vw,
+                       (max-width: 500px) 52vw,
+                       (max-width: 600px) 38vw,
+                       (max-width: 700px) 38vw,
+                       (max-width: 800px) 25vw,
+                       (max-width: 900px) 28vw,
+                       (max-width: 1000px) 30vw,
+                       (max-width: 1100px) 24vw,
+                       (max-width: 1200px) 22vw,
+                       (max-width: 1449px) 20vw,
+                       266px"
+                src="img/nat-3-500.jpg"
+                alt="Photo 3" />
               <!-- 
               <img
                 src="img/nat-1-large.jpg"

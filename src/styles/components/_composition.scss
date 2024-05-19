@@ -64,7 +64,8 @@
 
       // width < 700px
       @include respond-to(tab-port-sm) {
-        top: 7rem;
+        top: 4rem;
+        z-index: 10;
       }
 
       // width < 500px
@@ -86,8 +87,8 @@
 
       // width < 700px
       @include respond-to(tab-port-sm) {
-        top: 0;
-        left: -15rem;
+        top: 2rem;
+        left: 7rem;
       }
 
       // width < 500px

@@ -439,7 +439,8 @@ body {
 }
 @media screen and (max-width: 43.75em) {
   .composition__photo--p2 {
-    top: 7rem;
+    top: 4rem;
+    z-index: 10;
   }
 }
 @media screen and (max-width: 31.25em) {
@@ -461,8 +462,8 @@ body {
 }
 @media screen and (max-width: 43.75em) {
   .composition__photo--p3 {
-    top: 0;
-    left: -15rem;
+    top: 2rem;
+    left: 7rem;
   }
 }
 @media screen and (max-width: 31.25em) {
