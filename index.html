@@ -343,9 +343,10 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                src="img/nat-8.jpg"
-                alt="Person on a tour"
-                class="story__img" />
+                srcset="img/nat-8-1000.jpg 1000w, img/nat-8-1500.jpg 1500w, img/nat-8-2000.jpg 2000"
+                class="story__img"
+                src="img/nat-8-1000.jpg"
+                alt="Person on a tour" />
               <figcaption class="story__caption">Mary Smith</figcaption>
             </figure>
             <div class="story__text">
@@ -365,7 +366,8 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                src="img/nat-9.jpg"
+                srcset="img/nat-9-1000.jpg 1000w, img/nat-9-1500.jpg 1500w, img/nat-9-2000.jpg 2000"
+                src="img/nat-9-1000.jpg"
                 alt="Person on a tour"
                 class="story__img" />
               <figcaption class="story__caption">Jack Wilson</figcaption>
@@ -521,8 +523,24 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__content-left">
-          <img src="img/nat-8.jpg" class="popup__img" alt="Tour photo" />
-          <img src="img/nat-9.jpg" class="popup__img" alt="Tour photo" />
+          <img
+            srcset="
+              img/nat-8-1000.jpg 1000w,
+              img/nat-8-1500.jpg 1500w,
+              img/nat-8-2000.jpg 2000w
+            "
+            src="img/nat-8-1000.jpg"
+            class="popup__img"
+            alt="Tour photo" />
+          <img
+            srcset="
+              img/nat-9-1000.jpg 1000w,
+              img/nat-9-1500.jpg 1500w,
+              img/nat-9-2000.jpg 2000w
+            "
+            src="img/nat-9-1000.jpg"
+            class="popup__img"
+            alt="Tour photo" />
         </div>
         <div class="popup__content-right">
           <h2
