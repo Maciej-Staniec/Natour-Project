@@ -1,12 +1,6 @@
 .header {
   // This property sets the height of the HTML element to 95% of the current viewport. Monitors vary in size, so this property resizes the elements based on the maximum height of the view port.
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url(../../img/hero-2000.jpg);
   // Set the image to cover the whole width of the viewport
   background-size: cover;
   // Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.
@@ -16,6 +10,42 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
   // clip-path: polygon(0% 100%, 50% 0, 100% 100%);
   position: relative;
+
+  /* Load hero-1000.jpg image */
+  @media only screen and (max-width: 1000px) and (-webkit-min-device-pixel-ratio: 1),
+    only screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (max-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../../img/hero-1000.jpg);
+  }
+
+  /* Load hero-1500.jpg image */
+  @media only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 1),
+    only screen and (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../../img/hero-1500.jpg);
+  }
+
+  /* Load hero-2000.jpg image */
+  @media only screen and (min-width: 2000px) and (-webkit-min-device-pixel-ratio: 1),
+    only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: 666px) and (-webkit-min-device-pixel-ratio: 3) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../../img/hero-2000.jpg);
+  }
 
   // width < 1200px
   @include respond-to(tab-land) {

@@ -1222,12 +1222,29 @@ body {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-2000.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
   position: relative;
+  /* Load hero-1000.jpg image */
+  /* Load hero-1500.jpg image */
+  /* Load hero-2000.jpg image */
+}
+@media only screen and (max-width: 1000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1000.jpg);
+  }
+}
+@media only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1500.jpg);
+  }
+}
+@media only screen and (min-width: 2000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 666px) and (-webkit-min-device-pixel-ratio: 3) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-2000.jpg);
+  }
 }
 @media screen and (max-width: 75em) {
   .header {
