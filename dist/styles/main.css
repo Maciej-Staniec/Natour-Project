@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 ======== MEDIA QUERY MANAGER ========
 
@@ -25,7 +26,38 @@ The ORDER of styling our webpage with media queries:
 4. Components
 
 */
-/*======== POPUP MEDIA QUERY ========*/
+/*
+  CSS media query syntax for background image explanation:
+
+  "@media"
+    The @media rule is used in CSS to apply styles based on specific conditions, such as the type of device, screen size, or resolution. It allows you to create responsive designs that adapt to different environments.
+
+  "only screen"
+    only: This keyword is used to apply the media query to specific media types and to hide styles from older browsers that do not support media queries. It’s optional but can improve compatibility.
+
+    screen: This keyword specifies that the styles should be applied to screen devices (monitors, tablets, smartphones). Other values could be "print" for print media or "all" for all media types.
+
+  "and"
+    The and keyword is used to combine multiple conditions in a media query. All conditions must be true for the styles to be applied.
+
+  "(max-width: 1000px)"
+    This condition applies the styles if the viewport width is less than or equal to 1000 pixels. It targets devices with smaller screens, such as tablets and smartphones.
+
+  "(min-resolution: 96dpi)"
+    This condition applies the styles if the device has a resolution of at least 96 dots per inch (dpi). This is a standard resolution for many devices.
+
+  "," (Comma)
+    The comma acts as an "or" operator, meaning that if any of the combined conditions (each set of conditions separated by commas) are true, the styles within the media query will be applied.
+  */
+/*
+  Screen resolutions:
+  DPR 1.0 = 96 dpi (standard displays)
+  DPR 2.0 = 192 dpi (2x Retina displays)
+  DPR 3.0 = 288 dpi (3x Retina displays)
+  */
+/* Load a 1000px wide image */
+/* Load a 1500px wide image */
+/* Load a 2000px wide image */
 /* ************* DESKTOP *************** */
 /* ************* TABLET LANDSCAPE *************** */
 /* ************* TABLET PORTRAIT *************** */
@@ -1081,13 +1113,46 @@ body {
 
 .section-features {
   padding: 17.6rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4-2000.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4-1000.jpg);
   background-size: cover;
   transform: skewY(-5deg);
   margin-top: -7rem;
 }
 .section-features > * {
   transform: skewY(5deg);
+}
+@media only screen and (max-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 20.81em) and (min-resolution: 288dpi) {
+  .section-features {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4-1000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≤ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi (standard displays). 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≤ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≤ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (min-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 62.5em) and (min-resolution: 96dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 31.25em) and (min-resolution: 192dpi), only screen and (min-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 20.81em) and (min-resolution: 288dpi) {
+  .section-features {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.8)), url(../../img/nat-4-1500.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≥ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (min-width: 93.75em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 93.75em) and (min-resolution: 96dpi), only screen and (min-width: 46.875em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 46.875em) and (min-resolution: 192dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 31.25em) and (min-resolution: 288dpi) {
+  .section-features {
+    background-image: linear-gradient(to right bottom, rgba(255, 165, 0, 0.8), rgba(255, 165, 0, 0.8)), url(../../img/nat-4-2000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
+    - Screen width ≥ 750px (750px screen width / 16px default font size = 62.5em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 750px = 1500px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 500px = 1500px screen width.
+    */
+  }
 }
 @media screen and (max-width: 68.75em) {
   .section-features {
@@ -1177,14 +1242,75 @@ body {
 }
 
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 50%, transparent 50%), url(../../img/nat-10-2000.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 50%, transparent 50%), url(../../img/nat-10-1000.jpg);
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.15);
 }
-@media screen and (max-width: 43.75em) {
+@media only screen and (max-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 20.81em) and (min-resolution: 288dpi) {
   .book {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 60%, transparent 60%), url(../../img/nat-10.jpg);
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 50%, transparent 50%), url(../../img/nat-10-1000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≤ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi (standard displays). 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≤ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≤ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (min-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 62.5em) and (min-resolution: 96dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 31.25em) and (min-resolution: 192dpi), only screen and (min-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 20.81em) and (min-resolution: 288dpi) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 50%, transparent 50%), url(../../img/nat-10-1500.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≥ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (min-width: 93.75em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 93.75em) and (min-resolution: 96dpi), only screen and (min-width: 46.875em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 46.875em) and (min-resolution: 192dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 31.25em) and (min-resolution: 288dpi) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 50%, transparent 50%), url(../../img/nat-10-2000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
+    - Screen width ≥ 750px (750px screen width / 16px default font size = 62.5em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 750px = 1500px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 500px = 1500px screen width.
+    */
+  }
+}
+@media only screen and (max-width: 43.75em) and (max-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 43.75em) and (max-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 43.75em) and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 43.75em) and (max-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 43.75em) and (max-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 43.75em) and (max-width: 20.81em) and (min-resolution: 288dpi) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 60%, transparent 60%), url(../../img/nat-10-1000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≤ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi (standard displays). 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≤ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≤ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (max-width: 43.75em) and (min-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 43.75em) and (min-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 43.75em) and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 43.75em) and (min-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 43.75em) and (min-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 43.75em) and (min-width: 20.81em) and (min-resolution: 288dpi) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 60%, transparent 60%), url(../../img/nat-10-1500.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≥ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+@media only screen and (max-width: 43.75em) and (min-width: 93.75em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 43.75em) and (min-width: 93.75em) and (min-resolution: 96dpi), only screen and (max-width: 43.75em) and (min-width: 46.875em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 43.75em) and (min-width: 46.875em) and (min-resolution: 192dpi), only screen and (max-width: 43.75em) and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 43.75em) and (min-width: 31.25em) and (min-resolution: 288dpi) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 60%, transparent 60%), url(../../img/nat-10-2000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
+    - Screen width ≥ 750px (750px screen width / 16px default font size = 62.5em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 750px = 1500px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 500px = 1500px screen width.
+    */
   }
 }
 @media screen and (max-width: 37.5em) {
@@ -1222,6 +1348,7 @@ body {
 
 .header {
   height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1000.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
@@ -1231,19 +1358,37 @@ body {
   /* Load hero-1500.jpg image */
   /* Load hero-2000.jpg image */
 }
-@media only screen and (max-width: 1000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (max-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 20.81em) and (min-resolution: 288dpi) {
   .header {
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≤ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi (standard displays). 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≤ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≤ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
   }
 }
-@media only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 334px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (min-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 62.5em) and (min-resolution: 96dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 31.25em) and (min-resolution: 192dpi), only screen and (min-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 20.81em) and (min-resolution: 288dpi) {
   .header {
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1500.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≥ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
   }
 }
-@media only screen and (min-width: 2000px) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 1000px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 666px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (min-width: 93.75em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 93.75em) and (min-resolution: 96dpi), only screen and (min-width: 46.875em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 46.875em) and (min-resolution: 192dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 31.25em) and (min-resolution: 288dpi) {
   .header {
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-2000.jpg);
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
+    - Screen width ≥ 750px (750px screen width / 16px default font size = 62.5em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 750px = 1500px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 500px = 1500px screen width.
+    */
   }
 }
 @media screen and (max-width: 75em) {

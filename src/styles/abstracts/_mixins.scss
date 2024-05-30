@@ -158,4 +158,77 @@ The ORDER of styling our webpage with media queries:
   }
 }
 
-/*======== POPUP MEDIA QUERY ========*/
+/*
+  CSS media query syntax for background image explanation:
+
+  "@media"
+    The @media rule is used in CSS to apply styles based on specific conditions, such as the type of device, screen size, or resolution. It allows you to create responsive designs that adapt to different environments.
+
+  "only screen"
+    only: This keyword is used to apply the media query to specific media types and to hide styles from older browsers that do not support media queries. It’s optional but can improve compatibility.
+
+    screen: This keyword specifies that the styles should be applied to screen devices (monitors, tablets, smartphones). Other values could be "print" for print media or "all" for all media types.
+
+  "and"
+    The and keyword is used to combine multiple conditions in a media query. All conditions must be true for the styles to be applied.
+
+  "(max-width: 1000px)"
+    This condition applies the styles if the viewport width is less than or equal to 1000 pixels. It targets devices with smaller screens, such as tablets and smartphones.
+
+  "(min-resolution: 96dpi)"
+    This condition applies the styles if the device has a resolution of at least 96 dots per inch (dpi). This is a standard resolution for many devices.
+
+  "," (Comma)
+    The comma acts as an "or" operator, meaning that if any of the combined conditions (each set of conditions separated by commas) are true, the styles within the media query will be applied.
+  */
+
+/*
+  Screen resolutions:
+  DPR 1.0 = 96 dpi (standard displays)
+  DPR 2.0 = 192 dpi (2x Retina displays)
+  DPR 3.0 = 288 dpi (3x Retina displays)
+  */
+
+/* Load a 1000px wide image */
+@mixin resolution-media-1000 {
+  @media only screen and (max-width: 62.5em) and (min-resolution: 96dpi),
+    only screen and (max-width: 31.25em) and (min-resolution: 192dpi),
+    only screen and (max-width: 20.81em) and (min-resolution: 288dpi) {
+    @content;
+    /*
+    Media query conditions explained:
+    - Screen width ≤ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi (standard displays). 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≤ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≤ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+
+/* Load a 1500px wide image */
+@mixin resolution-media-1500 {
+  @media only screen and (min-width: 62.5em) and (min-resolution: 96dpi),
+    only screen and (min-width: 31.25em) and (min-resolution: 192dpi),
+    only screen and (min-width: 20.81em) and (min-resolution: 288dpi) {
+    @content;
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 500px = 1000px screen width.
+    - Screen width ≥ 333px (333px screen width/16px default font size = 20.81em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 333px = 999px screen width.
+    */
+  }
+}
+/* Load a 2000px wide image */
+@mixin resolution-media-2000 {
+  @media only screen and (min-width: 93.75em) and (min-resolution: 96dpi),
+    only screen and (min-width: 46.875em) and (min-resolution: 192dpi),
+    only screen and (min-width: 31.25em) and (min-resolution: 288dpi) {
+    @content;
+    /*
+    Media query conditions explained:
+    - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
+    - Screen width ≥ 750px (750px screen width / 16px default font size = 62.5em) with a minimum resolution of 192dpi (2x Retina displays). 2.0DPR x 750px = 1500px screen width.
+    - Screen width ≥ 500px (500px screen width/16px default font size = 31.25em) with a minimum resolution of 288dpi (3x Retina displays). 3.0DPR x 500px = 1500px screen width.
+    */
+  }
+}
