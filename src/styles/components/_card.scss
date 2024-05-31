@@ -20,6 +20,8 @@
     // When the absolute positioning is applied to the element, it adjusts the width to the content. To fill the entire column, we need to set the width to 100%.
     width: 100%;
     // We need to declare the backface-visibility property of hidden value to stop seeing the back side of the card element when not hovered.
+    // Optional - For better browser support
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
     &--front {
