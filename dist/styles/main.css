@@ -272,13 +272,16 @@ body {
   }
 }
 @media screen and (max-width: 62.5em) {
-  .u-mediaquery-composition:not(:last-child) {
+  .u-mediaquery-composition {
     margin-bottom: 8rem;
+  }
+  .u-mediaquery-composition:not(:last-child) {
+    margin-bottom: 8rem !important;
   }
 }
 @media screen and (max-width: 50em) {
-  .u-mediaquery-composition {
-    margin-bottom: 8rem;
+  .u-mediaquery-composition:not(:last-child) {
+    margin-bottom: 11.2rem !important;
   }
 }
 @media screen and (max-width: 50em) {
@@ -460,11 +463,12 @@ body {
 @media screen and (max-width: 43.75em) {
   .composition__photo--p1 {
     top: 0;
-    left: 10%;
+    left: 3rem;
+    transform: scale(1.5);
   }
 }
 .composition__photo--p2 {
-  left: 30%;
+  left: 40%;
   top: 2rem;
 }
 @media screen and (max-width: 62.5em) {
@@ -478,8 +482,9 @@ body {
 @media screen and (max-width: 43.75em) {
   .composition__photo--p2 {
     top: 2rem;
-    left: 6rem;
+    left: 8rem;
     z-index: 10;
+    transform: scale(1.5);
   }
 }
 @media screen and (max-width: 31.25em) {
@@ -501,8 +506,9 @@ body {
 }
 @media screen and (max-width: 43.75em) {
   .composition__photo--p3 {
-    top: 0;
-    left: 30%;
+    top: -2rem;
+    left: -12%;
+    transform: scale(1.5);
   }
 }
 @media screen and (max-width: 31.25em) {
@@ -523,12 +529,23 @@ body {
     transform: scale(1.3) translateY(-0.5rem);
   }
 }
+@media screen and (max-width: 43.75em) {
+  .composition__photo:hover {
+    transform: scale(1.6) translateY(-0.5rem);
+    outline-offset: 1rem;
+  }
+}
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.95);
 }
 @media screen and (max-width: 62.5em) {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(1.1);
+  }
+}
+@media screen and (max-width: 43.75em) {
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(1.4) translateY(-0.5rem);
   }
 }
 
@@ -773,14 +790,20 @@ body {
   }
 }
 .story__shape {
+  float: left;
   width: 15.2rem;
   height: 15.2rem;
-  float: left;
-  shape-outside: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
+  overflow: hidden;
+  border-radius: 50%;
   transform: translateX(-3.2rem) skewX(12deg);
   position: relative;
+}
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+  .story__shape {
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+  }
 }
 @media screen and (max-width: 37.5em) {
   .story__shape {
@@ -1018,7 +1041,7 @@ body {
 }
 @media screen and (max-width: 90.5625em) {
   .popup__content {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0% 100%, transparent 100%), url(../../img/nat-1-large.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95) 0% 100%), url(../../img/nat-1-1500.jpg);
   }
 }
 .popup__img {
@@ -1099,7 +1122,7 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 17.6rem 0;
+  padding: 22.4rem 0;
   margin-top: -20vh;
 }
 @media screen and (max-width: 68.75em) {
@@ -1141,7 +1164,7 @@ body {
 }
 @media only screen and (min-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 62.5em) and (min-resolution: 96dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 31.25em) and (min-resolution: 192dpi), only screen and (min-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 20.81em) and (min-resolution: 288dpi) {
   .section-features {
-    background-image: linear-gradient(to right bottom, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.8)), url(../../img/nat-4-1500.jpg);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4-1500.jpg);
     /*
     Media query conditions explained:
     - Screen width ≥ 1000px (1000px screen width / 16px default font size = 62.5em) with a minimum resolution of 96dpi. 1.0DPR x 1000px = 1000px screen width.
@@ -1152,7 +1175,7 @@ body {
 }
 @media only screen and (min-width: 93.75em) and (-webkit-min-device-pixel-ratio: 1), only screen and (min-width: 93.75em) and (min-resolution: 96dpi), only screen and (min-width: 46.875em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 46.875em) and (min-resolution: 192dpi), only screen and (min-width: 31.25em) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-width: 31.25em) and (min-resolution: 288dpi) {
   .section-features {
-    background-image: linear-gradient(to right bottom, rgba(255, 165, 0, 0.8), rgba(255, 165, 0, 0.8)), url(../../img/nat-4-2000.jpg);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4-2000.jpg);
     /*
     Media query conditions explained:
     - Screen width ≥ 1500px (1500px screen width / 16px default font size = 93.75em) with a minimum resolution of 96dpi. 1.0DPR x 1500px = 1500px screen width.
@@ -1354,16 +1377,20 @@ body {
 }
 
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero-1000.jpg);
   background-size: cover;
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
-  position: relative;
   /* Load hero-1000.jpg image */
   /* Load hero-1500.jpg image */
   /* Load hero-2000.jpg image */
+}
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+  .header {
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+  }
 }
 @media only screen and (max-width: 62.5em) and (-webkit-min-device-pixel-ratio: 1), only screen and (max-width: 62.5em) and (min-resolution: 96dpi), only screen and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 31.25em) and (min-resolution: 192dpi), only screen and (max-width: 20.81em) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 20.81em) and (min-resolution: 288dpi) {
   .header {
@@ -1400,7 +1427,6 @@ body {
 }
 @media screen and (max-width: 75em) {
   .header {
-    max-height: 70%;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
   }

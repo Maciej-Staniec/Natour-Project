@@ -63,12 +63,8 @@
       padding: 2.4rem 4rem;
     }
     @include respond-to(popup) {
-      background-image: linear-gradient(
-          105deg,
-          rgba($color-white, 0.9) 0% 100%,
-          transparent 100%
-        ),
-        url(../../img/nat-1-large.jpg);
+      background-image: linear-gradient(rgba($color-white, 0.95) 0% 100%),
+        url(../../img/nat-1-1500.jpg);
     }
   }
 

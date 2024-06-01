@@ -35,18 +35,34 @@
   }
 
   &__shape {
+    float: left;
     width: 15.2rem;
     height: 15.2rem;
-    float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    // The CSS shape-outside property controls how text wraps around any floated image. It’s important to note that this property will only work on floated elements. You must set the height and width of the element.
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    // Stop the child element from going over the edges of the parent element if web-clip-path not supported.
+    overflow: hidden;
+    border-radius: 50%;
+
     // The best way to create whitespace between the text and the floated element is to use the transform property with the translateX value.
     // We can't apply two transform properties on the individual element. The following declaration block is a subsequent declaration block (there is a direct child selector above), therefore, it overrides the previous declaration of tranform property and the skewX property does not get applied to the element. To mitigate the issue, we need to explicitily declare the skewX value right after translateX value in the same declaration block.
     transform: translateX(-3.2rem) skewX(12deg);
     position: relative;
+
+    // If clip-path property is supported, then:
+    // The attribute values are irrelevant. It doesn't matter what we enter.
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      // The CSS shape-outside property controls how text wraps around any floated image. It’s important to note that this property will only work on floated elements. You must set the height and width of the element.
+      shape-outside: circle(50% at 50% 50%);
+
+      //       clip-path: circle(50% at 50% 50%)
+      // Clips the element to a circular shape, controlling the shape and size of the visible part of the element.
+      //       Characteristics
+      // Shape: Can create more complex shapes beyond just circles, such as ellipses, polygons, or custom paths.
+      // Overflow: Clips the content within the specified shape, hiding anything outside the shape.
+      // Flexibility: More flexible and powerful for creating complex or custom shapes.
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+    }
 
     // width < 600px
     @include respond-to(phone-big) {

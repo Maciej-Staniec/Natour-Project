@@ -1,6 +1,6 @@
 .section-about {
   background-color: $color-grey-light-1;
-  padding: $section-padding-normal;
+  padding: $section-padding-big;
   margin-top: -20vh;
 
   // width < 1100px
@@ -61,8 +61,8 @@
   @include resolution-media-1500 {
     background-image: linear-gradient(
         to right bottom,
-        rgba(blue, 0.8),
-        rgba(blue, 0.8)
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
       ),
       url(../../img/nat-4-1500.jpg);
   }
@@ -71,8 +71,8 @@
   @include resolution-media-2000 {
     background-image: linear-gradient(
         to right bottom,
-        rgba(orange, 0.8),
-        rgba(orange, 0.8)
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
       ),
       url(../../img/nat-4-2000.jpg);
   }

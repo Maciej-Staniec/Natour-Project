@@ -1,6 +1,6 @@
 .header {
   // This property sets the height of the HTML element to 95% of the current viewport. Monitors vary in size, so this property resizes the elements based on the maximum height of the view port.
-  height: 95vh;
+  height: 85vh;
   // Default image
   background-image: linear-gradient(
       to right bottom,
@@ -13,10 +13,16 @@
   // Setting up the image position to top makes it stay at the the middle part of the screen when we use a device with a different viewport size.
   background-position: top;
   // syntax: (x y(first point), x y (2nd point), x y (3rd point), x y (4th point)
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+
   // clip-path: polygon(0% 100%, 50% 0, 100% 100%);
-  position: relative;
+
+  // If clip-path property is supported, then:
+  // The attribute values are irrelevant. It doesn't matter what we enter.
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
+  }
 
   /* Load hero-1000.jpg image */
   @include resolution-media-1000 {
@@ -49,7 +55,6 @@
 
   // width < 1200px
   @include respond-to(tab-land) {
-    max-height: 70%;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 90%);
   }
