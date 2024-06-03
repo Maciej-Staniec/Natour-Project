@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css":"gulp css"
+    "build:all": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -23,18 +23,13 @@
   },
   "homepage": "https://github.com/Maciej-Staniec/Natour-Project#readme",
   "devDependencies": {
-    "sass": "^1.70.0",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.1",
     "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^10.0.0"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.1",
-    "gulp": "^5.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^10.0.0"
+    "gulp-html-minifier-terser": "^7.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.70.0"
   }
 }
