@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var video = document.querySelector(".bg-video__content");
+  // Responsive video
+  const video = document.querySelector(".bg-video__content");
 
   if (video) {
-    var width = window.innerWidth;
+    const width = window.innerWidth;
     if (width <= 900) {
       // Tablet
       video.innerHTML = `
@@ -23,4 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Video element not found");
   }
+  // Navigation functionality
+
+  // Close the nav menu if one of those links is clicked
+  const navLinks = document.querySelectorAll(".navigation_link");
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      const navCheckbox = document.querySelector(".navigation_checkbox");
+      navCheckbox.checked = false;
+    });
+  });
+
+  // Popup close functionality
 });
