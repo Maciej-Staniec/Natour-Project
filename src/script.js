@@ -27,10 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Navigation functionality
 
   // Close the nav menu if one of those links is clicked
-  const navLinks = document.querySelectorAll(".navigation_link");
+  const navLinks = document.querySelectorAll(".navigation__link");
+  console.log(navLinks);
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      const navCheckbox = document.querySelector(".navigation_checkbox");
+      const navCheckbox = document.querySelector(".navigation__checkbox");
+      console.log("Clicked");
       navCheckbox.checked = false;
     });
   });
