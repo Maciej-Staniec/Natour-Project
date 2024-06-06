@@ -91,9 +91,9 @@ Contributions are welcome! To contribute to this project, follow these steps:
 
 3. Commit your changes:
 
-    ````sh
+    ```sh
     git commit -m 'Add some feature'
-      ```
+    ```
 
 4. Push to the branch:
 
