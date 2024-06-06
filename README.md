@@ -1,6 +1,6 @@
 # Natour
 
-Natour is a single home page website developed to learn advanced SCSS and floats. It includes sophisticated animations and responsive design, making it a great example of modern web design techniques. This project was created by following the Udemy course "Advanced CSS and Sass: Flexbox, Grid, Animations and More!" by Jonas Schmedtmann.
+Natour is a single home page website developed to learn advanced SCSS and floats. It includes sophisticated animations and responsive design, making it a great example of modern web design techniques. This project was created by following the Udemy course [Advanced CSS and Sass: Flexbox, Grid, Animations and More!](https://www.udemy.com/course/advanced-css-and-sass) by [Jonas Schmedtmann](https://x.com/jonasschmedtman) .
 
 ## Table of Contents
 
