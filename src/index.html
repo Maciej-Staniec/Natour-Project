@@ -8,8 +8,8 @@
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet" />
 
-    <!-- <link rel="stylesheet" href="dist/styles/main.compiled.css" /> -->
-    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="dist/styles/main.compiled.css" />
+    <!-- <link rel="stylesheet" href="src/styles/main.css" /> -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
@@ -24,33 +24,39 @@
       <nav class="navigation__nav">
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="#" class="navigation__link">
-              <span class="">01</span> about Natours
+            <a href="#section-about" class="navigation__link">
+              <span class="">01</span>
+              about Natours
             </a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span class="">02</span> your benefits</a
-            >
+            <a href="#section-features" class="navigation__link">
+              <span class="">02</span>
+              your benefits
+            </a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span class="">03</span> populars tours</a
-            >
+            <a href="#section-tours" class="navigation__link">
+              <span class="">03</span>
+              populars tours
+            </a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span class="">04</span> stories</a
-            >
+            <a href="#section-stories" class="navigation__link">
+              <span class="">04</span>
+              stories
+            </a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span class="">05</span> book now</a
-            >
+            <a href="#section-book" class="navigation__link">
+              <span class="">05</span>
+              book now
+            </a>
           </li>
         </ul>
       </nav>
     </div>
+
     <!-- ///////////// HEADER ///////////// -->
     <header class="header" id="header">
       <div class="header__logo-box">
@@ -59,12 +65,12 @@
       <!-- h1 headings are very important for search engines to figure out what our webpage is all about. It is important to put a title in the h1 heading-->
       <div class="header__text-box">
         <h1 class="heading-primary">
-          <span class="heading-primary--main">Outdoors</span
-          ><span class="heading-primary--sub">is where life happens</span>
+          <span class="heading-primary--main">Outdoors</span>
+          <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#section-tours" class="btn btn--white btn--animated"
-          >discover our tours</a
-        >
+        <a href="#section-tours" class="btn btn--white btn--animated">
+          discover our tours
+        </a>
       </div>
     </header>
     <main>
@@ -243,9 +249,9 @@
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--1">&nbsp;</div>
                 <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--1"
-                    >The sea explorer</span
-                  >
+                  <span class="card__heading-span card__heading-span--1">
+                    The sea explorer
+                  </span>
                 </h4>
                 <div class="card__details">
                   <ul>
@@ -271,9 +277,9 @@
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--2">&nbsp;</div>
                 <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--2"
-                    >The forest hiker</span
-                  >
+                  <span class="card__heading-span card__heading-span--2">
+                    The forest hiker
+                  </span>
                 </h4>
                 <div class="card__details">
                   <ul>
@@ -299,9 +305,9 @@
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--3">&nbsp;</div>
                 <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--3"
-                    >The snow adventurer</span
-                  >
+                  <span class="card__heading-span card__heading-span--3">
+                    The snow adventurer
+                  </span>
                 </h4>
                 <div class="card__details">
                   <ul>
@@ -343,7 +349,11 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                srcset="img/nat-8-1000.jpg 1000w, img/nat-8-1500.jpg 1500w, img/nat-8-2000.jpg 2000"
+                srcset="
+                  img/nat-8-1000.jpg 1000w,
+                  img/nat-8-1500.jpg 1500w,
+                  img/nat-8-2000.jpg 2000w
+                "
                 class="story__img"
                 sizes="(max-width: 400px) 34vw,
                        (max-width: 500px) 27vw,
@@ -378,7 +388,11 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                srcset="img/nat-9-1000.jpg 1000w, img/nat-9-1500.jpg 1500w, img/nat-9-2000.jpg 2000"
+                srcset="
+                  img/nat-9-1000.jpg 1000w,
+                  img/nat-9-1500.jpg 1500w,
+                  img/nat-9-2000.jpg 2000w
+                "
                 sizes="(max-width: 400px) 34vw,
                        (max-width: 500px) 27vw,
                        (max-width: 600px) 23vw,
@@ -451,9 +465,9 @@
                       name="tour-group"
                       id="smalltour"
                       required />
-                    <label class="form__radio-label" for="smalltour"
-                      >Small tour group</label
-                    >
+                    <label class="form__radio-label" for="smalltour">
+                      Small tour group
+                    </label>
                   </div>
                   <div class="form__radio-group">
                     <input
@@ -462,9 +476,9 @@
                       name="tour-group"
                       id="largetour"
                       required />
-                    <label class="form__radio-label" for="largetour"
-                      >Large tour group</label
-                    >
+                    <label class="form__radio-label" for="largetour">
+                      Large tour group
+                    </label>
                   </div>
                 </div>
                 <button class="btn btn--green">Next step &rarr;</button>
@@ -529,13 +543,14 @@
         </div>
         <div class="col-1-of-2">
           <p class="footer__copyright">
-            Built by <a href="#" class="footer__link">Maciej Staniec</a> with
-            the help of the
+            Built by
+            <a href="#" class="footer__link">Maciej Staniec</a>
+            with the help of the
             <a
               href="https://www.udemy.com/course/advanced-css-and-sass"
-              class="footer__link"
-              >advanced css and sass</a
-            >
+              class="footer__link">
+              advanced css and sass
+            </a>
             Udemy course. Copyright &copy; 2024 Maciej Staniec. All rights
             reserved . Designed by Jonas Schmedtmann.
           </p>
@@ -608,10 +623,9 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-
-    <!-- <script src="script.compiled.js"></script> -->
-    <script src="src/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="dist/script.compiled.js"></script>
+    <!-- <script src="src/script.js"></script> -->
   </body>
 </html>

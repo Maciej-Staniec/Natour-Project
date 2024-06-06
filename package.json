@@ -31,8 +31,5 @@
     "gulp-postcss": "^10.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.70.0"
-  },
-  "dependencies": {
-    "gsap": "^3.12.5"
   }
 }
