@@ -9,31 +9,10 @@ const uglify = require("gulp-uglify");
 gulp.task("css", function () {
   const plugins = [autoprefixer(), cssnano()];
   return gulp
-    .src("src/styles/*.css") // Ścieżka do plików CSS w katalogu 'dist/styles'
-    .pipe(concat("main.compiled.css")) // Konkatenuj pliki CSS do jednego pliku
-    .pipe(postcss(plugins)) // Przetwórz plik CSS za pomocą PostCSS
-    .pipe(gulp.dest("dist/styles")); // Zapisz wynikowy plik w katalogu 'dist/styles'
-});
-
-gulp.task("html", function () {
-  const options = {
-    collapseWhitespace: true,
-    removeComments: true,
-    collapseInlineTagWhitespace: true,
-    collapseInlineWhitespace: true,
-    removeTagWhitespace: true,
-    noNewlinesBeforeTagClose: true,
-    removeEmptyAttributes: true,
-    removeEmptyElements: true,
-    removeRedundantAttributes: true,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
-  };
-  return gulp
-    .src("src/*.html")
-    .pipe(concat("index.compiled.html"))
-    .pipe(htmlmin(options))
-    .pipe(gulp.dest("./"));
+    .src("src/styles/*.css") // Path to CSS files in the 'dist/styles' directory.
+    .pipe(concat("main.compiled.css")) // Concatenate CSS files into one file.
+    .pipe(postcss(plugins)) // Process the CSS file using PostCSS.
+    .pipe(gulp.dest("dist/styles")); // Save the outcome file in the 'dist/styles' directory
 });
 
 gulp.task("js", function () {
@@ -44,4 +23,5 @@ gulp.task("js", function () {
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task("build", gulp.series("css", "html", "js"));
+// Run 2 tasks subsequently
+gulp.task("build", gulp.series("css", "js"));

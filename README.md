@@ -55,26 +55,27 @@ To build the project, use the following commands:
 
 1. To start the development server:
 
-- Install the following VS Code extensions: "Live Sass Compiler," "Live Server," and "Prettier - Code formatter."
-- Modify the Live Sass Compiler settings in its JSON configuration file (.json) as shown below:
+    - Install the following VS Code extensions: "Live Sass Compiler," "Live Server," and "Prettier - Code formatter."
 
-  ```json
-  liveSassCompile.settings.formats": [
-   {
-     "format": "expanded",
-     "extensionName": ".css",
-     "savePath": "/src/styles",
-     "savePathReplacementPairs": null
-   }
-  ]
-  ```
+    - Modify the Live Sass Compiler settings in its JSON configuration file (.json) as shown below:
+
+        ```json
+        liveSassCompile.settings.formats": [
+        {
+          "format": "expanded",
+          "extensionName": ".css",
+          "savePath": "/src/styles",
+          "savePathReplacementPairs": null
+        }
+        ]
+        ```
 
 2. To build the project for production:
 
 - Execute the command in your VS code terminal:
 
   ```sh
-  npm build:all
+  npm run build:all
   ```
 
 ## Contributing
@@ -82,9 +83,24 @@ To build the project, use the following commands:
 Contributions are welcome! To contribute to this project, follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (git checkout -b feature-foo).
-3. Commit your changes (git commit -m 'Add some feature').
-4. Push to the branch (git push origin feature-foo).
+2. Create a new branch:
+
+    ```sh
+    git checkout -b feature-foo.
+    ```
+
+3. Commit your changes:
+
+    ````sh
+    git commit -m 'Add some feature'
+      ```
+
+4. Push to the branch:
+
+    ```sh
+    git push origin feature-foo
+    ```
+
 5. Open a pull request.
 
 ## License
