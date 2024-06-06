@@ -38,10 +38,16 @@ To set up the project locally, follow these steps:
    ```
 
 2. Navigate into the project directory:
+
+   ```sh
    cd Natour-Project
+   ```
 
 3. Install dependencies:
+
+   ```sh
    npm install
+   ```
 
 ## Usage
 
@@ -60,13 +66,16 @@ To build the project, use the following commands:
      "savePath": "/src/styles",
      "savePathReplacementPairs": null
    }
-  ],
+  ]
   ```
 
 2. To build the project for production:
 
 - Execute the command in your VS code terminal:
+
+  ```sh
   npm build:all
+  ```
 
 ## Contributing
 
