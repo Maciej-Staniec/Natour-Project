@@ -55,20 +55,20 @@ To build the project, use the following commands:
 
 1. To start the development server:
 
-    - Install the following VS Code extensions: "Live Sass Compiler," "Live Server," and "Prettier - Code formatter."
+   - Install the following VS Code extensions: "Live Sass Compiler," "Live Server," and "Prettier - Code formatter."
 
-    - Modify the Live Sass Compiler settings in its JSON configuration file (.json) as shown below:
+   - Modify the Live Sass Compiler settings in its JSON configuration file (.json) as shown below:
 
-        ```json
-        liveSassCompile.settings.formats": [
-        {
-          "format": "expanded",
-          "extensionName": ".css",
-          "savePath": "/src/styles",
-          "savePathReplacementPairs": null
-        }
-        ]
-        ```
+     ```json
+     liveSassCompile.settings.formats": [
+     {
+       "format": "expanded",
+       "extensionName": ".css",
+       "savePath": "/src/styles",
+       "savePathReplacementPairs": null
+     }
+     ]
+     ```
 
 2. To build the project for production:
 
@@ -85,21 +85,21 @@ Contributions are welcome! To contribute to this project, follow these steps:
 1. Fork the repository.
 2. Create a new branch:
 
-    ```sh
-    git checkout -b feature-foo.
-    ```
+   ```sh
+   git checkout -b feature-foo.
+   ```
 
 3. Commit your changes:
 
-    ```sh
-    git commit -m 'Add some feature'
-    ```
+   ```sh
+   git commit -m 'Add some feature'
+   ```
 
 4. Push to the branch:
 
-    ```sh
-    git push origin feature-foo
-    ```
+   ```sh
+   git push origin feature-foo
+   ```
 
 5. Open a pull request.
 
@@ -111,6 +111,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 - [Maciej Staniec](https://github.com/Maciej-Staniec/) - GitHub Profile
 - [Project Link](https://github.com/Maciej-Staniec/Natour-Project)
+- [LinkedIn](https://www.linkedin.com/in/maciej-staniec/)
 
 ## Acknowledgments
 

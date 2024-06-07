@@ -1,2 +1,7 @@
 # Ignore node_modules directory
 node_modules/
+
+# Ignore files
+design rules.txt
+syntaxes.txt
+useful-info.txt
